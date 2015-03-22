@@ -1,0 +1,154 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="admin-no-form.master.cs" Inherits="Site.SiteCustom.AdminNoFormMaster" %>
+<%@ Import Namespace="Beweb"%>
+<%@ Import Namespace="Site.Areas.Admin.Controllers" %>
+<%@ Import Namespace="Site.Controllers" %>
+<%--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">--%>
+<!DOCTYPE html>
+<html>
+<head id="Head1" runat="server" title="Site Admin">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Beweb Savvy Content Management System</title>
+	<meta http-equiv="content-language" content="en" />
+	<meta name="google" value="notranslate"/>
+	<script>var isMobile=<%=Web.IsMobile.ToString().ToLower() %></script>
+	<%--<meta http-equiv="X-UA-Compatible" content="IE=9" />--%>
+	<asp:PlaceHolder ID="HeadFileIncludes" runat="server" />
+	<%
+	if (Util.GetSettingBool("OverrideAdminStyles",true) && Beweb.BewebData.TableExists("SavvyAdmin")) {
+		//styles = Models.SavvyAdminList.LoadAll()[0];
+		styles = new Sql("select * from SavvyAdmin").GetHashtable();
+		if(styles!=null)
+		{
+			%>
+			<style>
+				.svyAdmin .top-stripe { border-top-color: <%=styles["HeaderColor"] ?? "#551901" %>}
+				.svyEdit th, .databox .dataheading, .label.section strong, .svyEdit > tbody > tr > th, .formTitle { color: <%=styles["HeaderColor"] ?? "#551901" %>;}
+			</style>
+			<%
+		}
+	}
+	if (Util.GetSettingBool("UseDirtyChecker",false)&&HttpContext.Current.Request.ServerVariables["SCRIPT_NAME"].Contains("Admin/Edit")) {
+		//Util.IncludeJavascriptFile(Page, "~/js/DirtyChecker.js", Util.IncludeRenderMode.Inline); 
+		Util.IncludeJavascriptFile(Page, "~/js/dirtychecker/ays-beforeunload-shim.js", Util.IncludeRenderMode.Inline); 
+		Util.IncludeJavascriptFile(Page, "~/js/dirtychecker/jquery.are-you-sure.js", Util.IncludeRenderMode.Inline); 
+		Util.IncludeJavascript(Page, "$('#form').areYouSure();",true,Util.IncludeRenderMode.Inline); 
+	}
+	%>
+	<asp:ContentPlaceHolder id="HeadContent" runat="server"></asp:ContentPlaceHolder>
+	
+	<script type="text/javascript">
+		$(document).ready(function () {
+
+			$(".svyAdmin .row-odd td:first-child a, .row-even td:first-child a").each(function() {
+				if (($(this).attr('class') + '').search('select2') == -1) {
+					$(this).addClass("btn").addClass("btn-mini");
+				}
+			});
+
+			$('.extra-footer-buttons a').addClass("btn").addClass("btn-mini").attr('target', '_blank');
+
+			$('.databox .row-odd, .databox .row-even').bind('click', function() {
+				if (window.event.ctrlKey) {
+					$(this).toggleClass('row-marked');
+				}
+			});
+
+			$(".svyAdmin .delete").mouseover(function () {
+				$(this).addClass('icon-white');
+			}).mouseout(function () {
+				$(this).removeClass('icon-white');
+			});
+
+			$(".svyAdmin .InfoMessage").addClass("alert alert-info").removeClass("InfoMessage").prepend("<a class='close' data-dismiss='alert' href='#'>×</a>")
+			$(".svyAdmin .ErrorMessage").addClass("alert alert-error").removeClass("ErrorMessage").prepend("<a class='close' data-dismiss='alert' href='#'>×</a>")
+			$(".svyAdmin .WarningMessage").addClass("alert alert-warning").removeClass("WarningMessage").prepend("<a class='close' data-dismiss='alert' href='#'>×</a>")
+
+			$(".svyAdmin a.close").click(function () {
+				$(this).parent().fadeOut(200);
+			});
+
+			//$(".svyAdmin .row-odd td:first-child a:contains('Edit'), .row-even td:first-child a:contains('Edit')").addClass("btn-primary")
+			//			$(".CreateNewButton").hide().each(function () {
+			//				$(this).after('<a href="#" class="btn btn-primary"><i class="icon-plus icon-white"></i> Create New</a>');
+			//			});
+
+			// copy bottom button bar to top
+			if ($(".svyEdit td.footer").length > 0) {
+				$(".svyEdit td.header").html($(".svyEdit td.footer").html());
+			}
+
+		});
+	</script>
+	<%Util.IncludeJavascriptFile("~/js/adminCommon.js"); %>	
+	<!--[if lt IE 10]>
+		<style> input[type=file] { background: #fff; border: 1px solid #aaa; } </style>
+	<![endif]-->
+	<style media="print">
+		.dontprint,.alert,.colheadfilters,.btn,.svySaveButton,.svyEdit .header,.svyEdit .footer{ display:none;  }
+		input{border: none;}
+		.svywrapperouter,.svyEdit {	width: 100%;}
+		.svyWrapperOuter{margin:0;}
+		body{font-size:small;}
+	</style>
+
+</head>
+<body class="svyAdmin">
+	<div class="svyWrapperOuter">
+		<div class="svyWrapper">
+		<script type="text/javascript">var imgbase = '<%=ResolveUrl("~") %>';</script>
+		<% Html.RenderAction<CommonController>(c => c.WarningBar()); %>	
+	
+		<table width="100%">
+			<tr valign="middle">
+				<td>
+					<%if(false){  //set true to show logos, false for no savvy logo %>
+						
+					<%}else if ((Web.PageGlobals["Exporting"] + "").ToBool()){  //set if exporting dont show image %>
+						
+					<%}else if(styles!=null &&styles["ClientLogoPicture"]+""!=""){%>
+						<div class="clientLogo"><a href="<%=Web.Root %>" target="_blank"><img src="<%=Web.Root %>attachments/<%=styles["ClientLogoPicture"].ToString() %>" /></a></div>
+					<%}else{ %>
+						<div class="clientLogo"><img src="<%=Web.ResolveUrl("~/areas/admin/images/savvyicon.gif") %>" width="98" height="40" class="svyLogo" onclick="document.location='http://www.beweb.co.nz'"/></div> 
+					<%} %>
+				</td>
+				<%if (!(Web.PageGlobals["Exporting"] + "").ToBool()){%>
+					<td width="100%">
+					<h1 runat="server" id="AdminHeading" class="adminTitle" style="float:left;"><%=Util.GetSiteName() %> <%if(styles!=null && styles["ShowSavvyLogo"]+""=="True"){ %><em>- Savvy CMS</em><% } %></h1>
+						<%if(!Util.ServerIsLive && !Util.ServerIsDev){ %><br/><div class="svyStagingServer"><%=Util.ServerIs().Replace("STG","Staging")%> Server</div><%} %>
+					</td>
+					<td nowrap="nowrap" align="right">
+						<%if(styles!=null && styles["ClientLogoPicture"]+""!="" && styles["ShowSavvyLogo"]+""=="True"){ %>
+							<img class="dontprint" src="<%=Web.ResolveUrl("~/areas/admin/images/savvyicon.gif") %>" width="98" height="40" class="svyLogo" onclick="document.location='http://www.beweb.co.nz'"/> 
+						<%} %>
+						<%if(styles!=null &&styles["ClientHelpContactName"]+""!=""){%>
+							<div class="svyTopHelp"><i class="icon-question-sign"></i>
+								For help contact <%=styles["ClientHelpContactName"]%> - <%=Fmt.EmailAddress(styles["ClientHelpContactEmail"]+"") %>
+							</div>	
+						<%} %>
+					</td>
+				<%}%>
+			</tr>
+		</table>
+
+		<div class="top-stripe"></div>
+		<ul id="breadcrumb" class="dontprint">
+			<%=(new Savvy.Breadcrumbs(Request,Session)).GetBreadcrumbLinks("",true) %>
+			<li class="launch-site"><a href="<%=Web.Root %>" target="_blank"><i class="icon-search"></i> Launch Site</a></li>
+		</ul>
+		<div style="margin-top: 35px;">
+			<div class="validation-summary-errors" style="display:none"></div>
+			<asp:ContentPlaceHolder ID="BodyContent" runat="server">
+			</asp:ContentPlaceHolder>
+		</div>
+		<div style="clear:both"></div>
+		<%if(Beweb.Util.IsDevAccess()){ %><small>*</small><%} %>
+
+		<%Sql.OutputTraceLog(); %>
+		<%=Fmt.DateTime() %>
+		</div>
+	</div>
+
+	</body>
+</html>

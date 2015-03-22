@@ -1,0 +1,36 @@
+<%@ Page Title="Admin - [---pagetitle---]" Language="C#" MasterPageFile="~/admin/admin-no-form.master" AutoEventWireup="true" CodeFile="[---tablename---]List.aspx.cs" Inherits="Savvy.Admin.[---tablename---]List" %>
+<%@ Import Namespace="Beweb"%>
+<%@ Import Namespace="Models"%>
+
+<asp:Content ID="Content[---tablename---]" ContentPlaceHolderID="BodyContent" Runat="Server">
+	<table class="databox" cellpadding="0" cellspacing="0">
+		<%=dataList.TitleRow("[---pagetitle---] List") %>
+		<tr class="colheadfilters">
+			<td colspan="99">
+	<input type="button" ID="AddNew" value="Add [---pagetitle---]" class="svyAddNew" onclick="document.location='[---tablename---]Edit.aspx'" />
+	<%dataList.Form(() => {%>
+		<%--extra filter--%>
+	<%}); %>
+	
+			</td>
+		</tr>	
+		<tr class="colhead">
+			<td colspan="1"><!--Actions--></td>
+			[---modelheadercolumns---]
+		</tr>
+		<%foreach (var listItem in dataList.GetResults()) {%> 
+			<tr class="<%=dataList.RowClass(listItem) %>">
+				<td>
+					<a href="[---tablename---]Edit.aspx?[---pkname---]=<%=listItem.[---pkname---] %>">Edit</a>
+					<%--
+					| <a href="[---tablename---]View.aspx?[---pkname---]=<%=listItem.[---pkname---] %>">View</a>
+					--%>
+				</td>
+				[---modeldatacolumns---]
+			</tr>
+		<%} %>
+		<%=dataList.ItemCountRow()%>
+	</table>
+
+
+</asp:Content>

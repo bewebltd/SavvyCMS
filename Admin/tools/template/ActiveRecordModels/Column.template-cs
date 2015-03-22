@@ -1,0 +1,39 @@
+﻿	//-------------------------------------------------------------------
+	// PROPERTY: xxxpropertynamexxx
+	//-------------------------------------------------------------------
+	
+	// define column related members in partial table class 
+	public partial class xxxtableclassnamexxx {		
+				
+		[JetBrains.Annotations.CanBeNull]
+		public xxxtypexxx xxxpropertynamexxx {
+			get { return Fields.xxxpropertynamexxx.Value; }
+			set { fields["xxxfieldnamexxx"].ValueObject = value; } 
+		}
+
+		[JetBrains.Annotations.CanBeNull]
+		public static xxxtableclassnamexxx LoadByxxxpropertynamexxx(xxxtypexxx xxxpropertynamecamelxxxValue) {
+			return ActiveRecordLoader.LoadByField<xxxtableclassnamexxx>("xxxfieldnamexxx", xxxpropertynamecamelxxxValue, "xxxtablenamexxx", Otherwise.Null);
+		}
+
+		public partial class xxxtableclassnamexxxFieldReferences {
+			[JetBrains.Annotations.NotNull]
+			public xxxactivefieldtypexxx xxxpropertynamexxx {
+				get { return (xxxactivefieldtypexxx)fields["xxxfieldnamexxx"]; }
+			}
+		}
+
+	}
+	
+	// define list class 
+	public partial class xxxtableclassnamexxxList {		
+				
+		[JetBrains.Annotations.NotNull]
+		public static xxxtableclassnamexxxList LoadByxxxpropertynamexxx(xxxtypexxx xxxpropertynamecamelxxxValue) {
+			var sql = new Sql("select * from ","xxxtablenamexxx".SqlizeName()," where xxxfieldnamexxx=", Sql.Sqlize(xxxpropertynamecamelxxxValue));
+			return xxxtableclassnamexxxList.Load(sql);
+		}		
+		
+	}
+
+

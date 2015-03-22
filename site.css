@@ -1,0 +1,605 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/*-------------------------------------------------------*/
+/* site-wide styles                                      */
+/*-------------------------------------------------------*/
+
+/* beweb standard CSS reset */
+*,p { margin:0; padding:0; outline: 0; } /* set everything to 0 margin/padding -> makes it consistent across all browsers, especially p */
+.normal ol,.mceContentBody ol, .normal ul,.mceContentBody ul{ margin-left:16px; }
+img{border:0;}
+input { padding: 1px; font-family: Arial, sans-serif; }
+textarea { padding: 2px; font-family: Arial, sans-serif; }
+html { overflow-y:scroll; }  /* prevent scrollbar disappearing making page jump */
+table{margin:inherit;}
+/* end beweb standard CSS reset */
+
+
+/* --------------------------------------------------------------------------------------- */
+/* inline document download icons for attachments in html content area */
+/* --------------------------------------------------------------------------------------- */
+
+.normal a[href$='.pdf'] { padding-left:20px; background:transparent url(images/filetypes/PDF_small.gif) no-repeat left; }
+.normal a[href$='.doc'] { padding-left:20px; background:transparent url(images/filetypes/doc_small.gif) no-repeat left; }
+.normal a[href$='.docx'] { padding-left:20px; background:transparent url(images/filetypes/doc_small.gif) no-repeat left; }
+.normal a[href$='.xls'] { padding-left:20px; background:transparent url(images/filetypes/xls_small.gif) no-repeat left; }
+.normal a[href$='.xlsx'] { padding-left:20px; background:transparent url(images/filetypes/xls_small.gif) no-repeat left; }
+.normal a[href$='.ppt'] { padding-left:20px; background:transparent url(images/filetypes/ppt_small.gif) no-repeat left; }
+.normal a[href$='.pptx'] { padding-left:20px; background:transparent url(images/filetypes/ppt_small.gif) no-repeat left; }
+.normal a[href$='.zip'] { padding-left:20px; background:transparent url(images/filetypes/zip_small.gif) no-repeat left; }
+
+.pdf { padding-left:23px; background:transparent url(images/filetypes/PDF_small.gif) no-repeat left; color:#10558a; font-weight: bold;  }
+/* --------------------------------------------------------------------------------------- */
+
+/* Pagingnav Frontend */
+.pagination-wrapper { clear: both; padding: 15px; }
+.pagingnav-wrapper br { clear: both; }
+.pagingnav-wrapper .paging-pagestatus { display: none; }
+
+.pagination-wrapper a, .pagination-wrapper span, .pagingnav-wrapper .paging-pagestatus  { font-family: Arial, sans-serif; float: left; text-decoration: none; font-size: 14px; line-height: 24px; font-weight: normal; text-align: center; font-style: normal; }
+.pagination-wrapper a:hover { text-decoration: none; }
+
+/* Pagingnav Light theme */
+.pagination-wrapper.pagingnav-light-theme a, .pagination-wrapper.pagingnav-light-theme span { color: #666; border: 1px solid #BBB; min-width: 14px; padding: 0 7px; margin: 0 5px 0 0; border-radius: 3px; box-shadow: 0 1px 2px rgba(0,0,0,0.2); background: #efefef; /* Old browsers */ background: -moz-linear-gradient(top, #ffffff 0%, #efefef 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#efefef)); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, #ffffff 0%,#efefef 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, #ffffff 0%,#efefef 100%); /* Opera11.10+ */ background: -ms-linear-gradient(top, #ffffff 0%,#efefef 100%); /* IE10+ */ background: linear-gradient(top, #ffffff 0%,#efefef 100%); /* W3C */ }
+.pagination-wrapper.pagingnav-light-theme span { background: #666; color: #FFF; border-color: #444; box-shadow: 0 1px 0 rgba(255,255,255,1), 0 0 2px rgba(0, 0, 0, 0.3) inset; cursor: default; }
+.pagination-wrapper.pagingnav-light-theme a:hover { background: #FCFCFC; }
+.pagination-wrapper.pagingnav-light-theme .paging-pagestatus {  color: #666; padding: 0 7px; margin: 0 5px 0 0; }
+.pagination-wrapper.pagingnav-light-theme .paging-ellipse {color: #666; background: none; border: none; border-radius: 0; box-shadow: none; font-weight: bold; cursor: default; }
+
+/* Pagingnav Dark theme */
+.pagination-wrapper.pagingnav-dark-theme a, .pagination-wrapper.pagingnav-dark-theme span { color: #CCC; border: 1px solid #222; min-width: 14px; padding: 0 7px; margin: 0 5px 0 0; border-radius: 3px; box-shadow: 0 1px 2px rgba(0,0,0,0.2); background: #555; /* Old browsers */ background: -moz-linear-gradient(top, #555 0%, #333 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#555), color-stop(100%,#333)); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, #555 0%,#333 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, #555 0%,#333 100%); /* Opera11.10+ */ background: -ms-linear-gradient(top, #555 0%,#333 100%); /* IE10+ */ background: linear-gradient(top, #555 0%,#333 100%); /* W3C */ }
+.pagination-wrapper.pagingnav-dark-theme span { background: #222;color: #FFF;border-color: #000;box-shadow: 0 1px 0 rgba(255,255,255,0.2), 0 0 1px 1px rgba(0, 0, 0, 0.1) inset;cursor: default; }
+.pagination-wrapper.pagingnav-dark-theme a:hover { background: #444; }
+.pagination-wrapper.pagingnav-dark-theme .paging-pagestatus {  color: #CCC; padding: 0 7px; margin: 0 5px 0 0; }
+.pagination-wrapper.pagingnav-dark-theme .paging-ellipse {color: #CCC; background: none; border: none; border-radius: 0; box-shadow: none; font-weight: bold; cursor: default; }
+
+/* Pagingnav Compact theme */
+.pagination-wrapper.pagingnav-compact-theme a, .pagination-wrapper.pagingnav-compact-theme span,
+.pagination-wrapper.pagingnav-compact-theme .paging-pagestatus { color: #333; border: 1px solid #AAA; border-right: none; min-width: 14px; padding: 0 7px; box-shadow: 2px 2px 2px rgba(0,0,0,0.2); background: #efefef; /* Old browsers */ background: -moz-linear-gradient(top, #ffffff 0%, #efefef 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#efefef)); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, #ffffff 0%,#efefef 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, #ffffff 0%,#efefef 100%); /* Opera11.10+ */ background: -ms-linear-gradient(top, #ffffff 0%,#efefef 100%); /* IE10+ */ background: linear-gradient(top, #ffffff 0%,#efefef 100%); /* W3C */}
+.pagination-wrapper.pagingnav-compact-theme span { 	background: #bbbbbb; /* Old browsers */ background: -moz-linear-gradient(top, #bbbbbb 0%, #efefef 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bbbbbb), color-stop(100%,#efefef)); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, #bbbbbb 0%,#efefef 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, #bbbbbb 0%,#efefef 100%); /* Opera11.10+ */ background: -ms-linear-gradient(top, #bbbbbb 0%,#efefef 100%); /* IE10+ */ background: linear-gradient(top, #bbbbbb 0%,#efefef 100%); /* W3C */ cursor: default; }
+.pagination-wrapper.pagingnav-compact-theme a:hover { background: #efefef; /* Old browsers */ background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#efefef), color-stop(100%,#bbbbbb)); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, #efefef 0%,#bbbbbb 100%); /* Opera11.10+ */ background: -ms-linear-gradient(top, #efefef 0%,#bbbbbb 100%); /* IE10+ */ background: linear-gradient(top, #efefef 0%,#bbbbbb 100%); /* W3C */ }
+.pagination-wrapper.pagingnav-compact-theme .pagingnav-previous { border-radius: 3px 0 0 3px; }
+.pagination-wrapper.pagingnav-compact-theme .pagingnav-next { border-right: 1px solid #AAA; border-radius: 0 3px 3px 0; }
+.pagination-wrapper.pagingnav-compact-theme .paging-ellipse {color: #333;background: #EAEAEA; padding: 0 10px; cursor: default; }
+
+/* Hide the pagination numbers on small screens */
+@media (max-width: 570px) {
+	.pagination-wrapper .paging-number, .pagination-wrapper .paging-ellipse { display: none; }
+	.pagingnav-wrapper .paging-pagestatus { display: block;}
+}
+
+/*end Pagingnav Frontend*/
+
+.breadcrumb ol { list-style: none; }
+.breadcrumb ol li { display: inline; }
+.breadcrumb ol li::after { display: inline; content: ">"; }
+.breadcrumb ol li:last-child::after { display: none; content: ""; }
+
+/* begin admin tinymce override */
+body#tinymce{margin:10px; background:#fff;}   /* assuming content area has a white background, otherwise change this */
+/*body#tinymce table{margin:0 0 10px 0;}*/
+body#tinymce a:link{
+	/*color:#003f96!important;*/
+}
+
+/* content tables */
+.normal table{
+	padding:0;
+	margin:0 0 10px 0;
+	border:0;
+	border-collapse:collapse;
+}
+.normal table td{	
+	padding:5px;
+	border:0;
+}
+
+body#tinymce table, body#tinymce table td { 
+	border: 1px dashed #ccc; /* Specific for TinyMCE - Not displayed on front end */
+}
+
+.normal table.table-no-gridlines{
+	padding:0;
+	margin:0 0 10px 0;
+	border:0;
+	border-collapse:collapse;
+}
+.normal table.table-no-gridlines td{	
+	padding:5px;
+	border:0;
+}
+.normal table.table-small{
+	padding:0;
+	margin:0 0 10px 0;
+	border:0;
+	border-top:1px solid #ddd;
+	border-left:1px solid #ddd;
+	border-collapse:collapse;
+	color:#777;
+	font-size:10px;
+}
+body#tinymce table.table-small td, div.normal table.table-small td{	
+	padding:5px;
+	border:0;
+	border-bottom:1px solid #ddd;
+	border-right:1px solid #ddd;
+}
+
+.normal table.table-gridlines{
+	padding:0;
+	margin:0 0 10px 0;
+	border:0;
+	border-top:1px solid #ddd;
+	border-left:1px solid #ddd;
+	border-collapse:collapse;
+}
+.normal table.table-gridlines td{	
+	padding:5px;
+	border:0;
+	border-bottom:1px solid #ddd;
+	border-right:1px solid #ddd;
+}
+
+.normal table td p{ /* FF fix */
+	margin:0;
+}
+/*end content tables*/
+
+/* Not sure if it's needed */
+
+.normal ol{
+	margin-left:24px;
+	padding: 0;   
+	padding-left: 26px;
+}
+.normal ul{
+	list-style: none outside none;
+	margin-left:24px;
+	padding: 0;   
+	padding-left: 26px;
+}
+
+.normal ul li{
+    list-style-type: disc;
+    margin-top:10px;
+    padding-left:13px;
+    margin-left:0;
+}
+/* end admin tinymce override */
+
+
+/* savvy validate form validation styles */
+.validation{ display: none; position: relative; }
+.validation .validation_outer,.validation .outer{ background: url(images/error_msg_arrow.png) 15px 19px no-repeat; padding-bottom: 12px;  position: absolute; top: -37px; left: -35px; z-index: 99; width: auto !important; }
+.validation .validation_inner,.validation .inner{ background: #e30418; font-weight: bold; font-size: 11px;line-height: 15px;color: #fff; padding: 5px 10px;  border-radius: 4px; white-space:nowrap; }
+textarea + .validation .validation_outer{ top: -29px; }
+.validation.autoPosition{ position: absolute; }
+.validation.autoPosition .validation_outer,.validation.autoPosition .outer{ left: auto; top: auto; }
+/* end savvy validate form validation styles */
+
+/* Responsive table and image styles for mobile */
+.responsive-table-scroll { overflow: auto; } /* applied automatically in common.js */
+.responsive-image-scroll { overflow: auto; } 
+.responsive-autoshrink { max-width:100%; } /* applied automatically in common.js - apply this if you want an image to shrink to fit on small screens */
+
+@media screen and (max-width: 800px) {
+	html, body { -webkit-text-size-adjust: none; }
+}
+
+/* stripe along top to show if it is a staging server */
+.StagingServer { background: yellowgreen; color: black; font-size: 14px; text-align: center; vertical-align: middle; padding: 5px; margin-bottom: 4px;position: relative; }
+.StagingServer.ConnLVE { background: red; }
+.OldBrowser { background: orange; color: black; font-size: 12px; text-align: center; vertical-align: middle; padding: 5px; margin-bottom: 4px; }
+.StagingServer .close {float: right; position: absolute;right: 5px;top: 3px;cursor: pointer;}
+
+/* Auto clearing rows */
+.row:before, .row:after { display: table; line-height: 0; content: "";}
+.row:after { clear: both; }
+.clearfix:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+
+/* Grid Layout */
+[class*="span"] { float: left; min-height: 1px; margin-left: 20px; }
+/* Default 12 column grid
+.span12 { width: 1170px }
+.span11 { width: 1070px }
+.span10 { width: 970px }
+.span9 { width: 870px }
+.span8 { width: 770px }
+.span7 { width: 670px }
+.span6 { width: 570px }
+.span5 { width: 470px }
+.span4 { width: 370px }
+.span3 { width: 270px }
+.span2 { width: 170px }
+.span1 { width: 70px } 
+
+Custom Span
+.spanMain { width: ???; }*/
+
+/* Media Item = thumbail + header + intro. E.g News List */
+.media, .media-body { overflow: hidden; *overflow: visible; zoom: 1; }
+.media, .media .media { margin-top: 15px }
+.media:first-child { margin-top: 0 }
+.media-object { display: block }
+.media-heading { margin: 0 0 5px }
+.media > .pull-left { margin-right: 10px }
+.media > .pull-right { margin-left: 10px }
+.media-list { margin-left: 0; list-style: none; }
+.pull-right { float: right }
+.pull-left { float: left }
+
+/* File drag and paste css - dont really need this here because we will overwrite if we use on front end but is just an example */
+
+.svyAttachmentCntr {
+	width: 175px;
+}
+
+
+.svyPasteDragContainer {
+	width: 170px;
+	height: 200px;
+}
+
+.svyFileDragTarget {
+	font-weight: bold;
+	text-align: center;
+	color: #555;
+	cursor: default;
+	border: 2px dashed #555;
+	border-radius: 7px;
+	width:150px;
+	height:120px;
+	position:relative;
+	padding-top: 10px;
+		max-height: 90%; 
+	max-width: 90%; 
+	background-size: 140px Auto;
+	background-position: center;
+	background-color: white;
+}
+
+.svyFileDragTarget img {
+	max-height: 90%; 
+	max-width: 90%; 
+	position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.svyFiledragLive {
+	font-weight: bold;
+	text-align: center;
+	color: #555;
+	cursor: default;
+	border: 2px dashed #555;
+	border-radius: 7px;
+	width:150px;
+	height:120px;
+	position:relative;
+	padding-top: 10px;
+	background-color: white;
+	display: block;
+			max-height: 90%; 
+	max-width: 90%; 
+	background-size: 140px Auto;
+	background-position: center;
+	background-color: white;
+}
+
+.svyFiledragLive img {
+	max-height: 90%; 
+	max-width: 90%; 
+	position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* File drag and paste css */
+
+.svyPasteDragContainer {
+	width: 170px;
+	height: 200px !important;
+}
+
+.svypasteLink {
+	color: #0083b3 !important;
+	clear:both;
+}
+
+.svyPasteDragContainer a {
+	font-weight: normal !important;
+	cursor: default !important;
+	color: #0083b3 !important;
+}
+
+.svyFileDragTarget,.uploadedImage img {
+	max-height: 90% !important; 
+	max-width: 90% !important; 
+	position: absolute !important;
+  margin: auto !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+}
+
+.pasteUploadTextContainer {
+	width: 140px !important;
+	height: 132px !important;
+}
+
+.svyFiledragLive,.uploadedImage  {
+	font-weight: bold !important;
+	text-align: center !important;
+	color: #555 !important;
+	cursor: default !important;
+	border: 1px dotted #555 !important;
+	border-radius: 7px !important;
+	width:150px !important;
+	height:140px !important;
+	position:relative !important;
+	background-color: white !important;
+	max-height: 90% !important; 
+	max-width: 90% !important; 
+	background-size: 140px Auto !important;
+	background-position: center !important;
+	background-color: white !important;
+	margin-bottom: 10px !important;
+	display: inline-block;
+}
+
+.svyFiledragLive,.uploadedImage p {
+		white-space: normal !important;
+}
+
+.dragPasteText p {
+	margin-top: 50px !important;
+	white-space: normal !important;
+	text-align:center;
+}
+
+.svyPasteArea {
+	background-image: url("images/fancypastebg.png");	
+	background-size: 100px !important;
+}
+
+.svyDragArea {
+	background-image: url("images/fileUploadBg.png");	
+}
+
+.svyPasteText p {
+	padding: 1px 3px 0px 3px !important;
+	width: 100% !important;
+	white-space: normal !important;
+	text-align:center;
+	white-space: normal !important;
+	text-align:center;font-size: 12px !important;
+	width:auto;
+	z-index: 999999;
+	color: #B5192E;
+	font-size: 13px;
+
+}
+
+.svyDragPaste {
+	background-image: url("images/fileUploadBg.png");
+}
+
+.svyFiledragLive img,.uploadedImage img {
+	max-height: 90% !important; 
+	max-width: 90% !important; 
+	position: absolute !important;
+  margin: auto !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+}
+
+.svyWhiteText {
+	color: white !important;
+}
+
+.imagePasteContainer {
+	width:164px !important;
+}
+
+/*File Upload Example*/
+.svyFiledragLive, .uploadedImage {
+	border: 3px dotted #ccc !important;
+	float: left;
+	clear: left;
+	display: inline-block;
+	width: 144px !important;
+	height: 134px !important;
+	xbackground-image: url("images/fileUploadBg.png");
+}
+
+.svyFiledragProgess {
+	font-size: 11px !important;
+	width: 140px;
+	padding: 2px 5px !important;
+	margin: 2px 0 !important;
+	border-radius: 8px !important;
+	background: #eee !important;
+	margin-top: 5px !important;
+	background-color: white !important;
+	margin-top: 5px !important;
+	border: 1px solid #CCC !important;
+	clear:both;
+}
+
+.svyFiledragProgess p {
+	height:10px !important;
+	padding: 3px !important;
+	margin-bottom: 5px !important;
+	margin-top: 2px !important;
+}
+
+.fancyBackground {
+	xbackground-image: url(images/fancypastebg.png) !important;
+	background-repeat: no-repeat !important;
+	color: white !important;
+	text-align: center !important;
+	font-size: 12px !important;
+}
+
+.svyPasteArea {
+	background-position: center !important;
+	background-repeat: no-repeat !important;
+	border: 1px dotted #black !important;
+}
+
+.svyPasteAreaText {
+	margin-top:-10px !important;
+	height: 130px;
+	width: 140px;
+}
+
+.defaultSkin .svyPasteAreaText {
+	margin-top:0 !important;
+}
+
+.svyFiledragProgess p.success {
+	background: #0c0 none 0 0 no-repeat !important;
+}
+
+.svyFiledragProgess p.failed {
+	background: #c00 none 0 0 no-repeat !important;
+}
+
+.svyWhiteBg {
+	xbackground-color: white !important;
+}
+
+.svyFiledragProgess span {
+	background: #0c0 !important;
+	display: inline-block !important;
+	width: 0%;
+	height: 10px !important;
+	position: relative !important;
+}
+
+.svyPasteForm {
+	height: 166px !important;
+	width: 155px !important;
+}
+
+.svyPicContainer {
+	width: 400px !important;
+	margin-top: 5px;
+}
+
+.pasteImageLink {
+	float: left !important;
+}
+
+.uploadedImage a {
+	margin-top: 40px !important;
+	display: block !important;
+}
+
+.svyAdminBanner {
+	height:45px;
+	width:100%;
+	background-color: black;
+	color:white;
+}
+
+.svyAdminBannerText {
+	float:right;
+	margin-left:25px;
+	padding-top:11px;
+	margin-right: 20px;
+}
+
+.svyAdminBannerNav {
+	margin-left: 50px;
+	float: left;
+}
+
+.svyAdminBannerNavImg {
+		margin-top:12px;
+		float:left;
+		margin-right:10px;
+}
+
+
+.svyAdminBannerLink {
+	float:left;
+	margin-right:30px;
+	padding-top:12px;
+	xmargin-left:25px;
+}
+
+.svyAdminBannerLogoutLink {
+	padding-left: 25px;
+}
+
+.svyAdminBannerLink a {
+	text-decoration: none;
+}
+.svyAdminBannerLink a:hover {
+	color:white;
+}
+.svyAdminBannerLink img {
+	margin-right:10px;
+}
+
+.svyAdminTwichImg img {
+	margin-top: -10px;
+}
+
+.svyAdminBannerImg {
+	margin: 0 10px 0 10px;
+	float:left;
+	padding-top:2px;
+}
+
+ .svyFileUpload {
+	 opacity: 1; width: 0; height: 0; position: absolute; top: 0; right: 0;
+}
+
+/*mobile mce views*/
+
+.svyMobileLayout {
+	margin: 10px; 
+	border-right: 3px dotted #aaa;
+}
+
+/*Responsive table and image styles for mobile*/
+.responsive-table-scroll { overflow: auto; } /* applied automatically in common.js */
+
+/*Sticky Footer*/
+html, body {
+	-webkit-overflow-scrolling: touch; /*jc added 20141210 fluid scrolling with footer*/ 
+	z-index: 0; /*same as above*/
+	height:100%;
+}
+#wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin-bottom: -287px; /*Master value - make sure to change StickyFooter and StickyFooterPush */
+}
+#StickyFooter {
+	max-height: 287px; /*Should match master value*/
+}
+#StickyFooterPush {
+	height: 287px; /*Should match master value*/
+	clear: both
+}
+/*End Sticky Footer*/
+
+/* Custom Site */
+body { font-family: arial, sans-serif; font-size: 13px; }
+/*body.site-body { min-width: 320px; height: 100%; overflow-y:scroll; } overflow-y here may be wrong otherwise it should be taken off html*/ 

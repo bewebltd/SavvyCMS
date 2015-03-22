@@ -1,0 +1,211 @@
+/****** Object:  Table [dbo].[Person]    Script Date: 07/15/2009 11:46:09 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Person](
+	[PersonID] [int] IDENTITY(1,1) NOT NULL,
+	[Email] [nvarchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[Password] [nvarchar](30) COLLATE Latin1_General_CI_AS NULL,
+	[FirstName] [nvarchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[LastName] [nvarchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[IsDevAccess] [bit] NULL,
+	[LoginCount] [int] NULL,
+	[LastIpAddress] [nvarchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[LastLoginDate] [datetime] NULL,
+	[IsActive] [bit] NULL,
+	[FailedLoginCount] [int] NULL,
+	[Role] [nvarchar](50) COLLATE Latin1_General_CI_AS NULL,
+ CONSTRAINT [pk_Administrator] PRIMARY KEY CLUSTERED 
+(
+	[PersonID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+
+
+/****** Object:  Table [dbo].[CommonWord]    Script Date: 10/15/2008 10:38:14 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[CommonWord](
+	[CommonWordID] [int] IDENTITY(1,1) NOT NULL,
+	[CommonWord] [varchar](50) COLLATE Latin1_General_CI_AS NULL,
+ CONSTRAINT [PK_CommonWord] PRIMARY KEY CLUSTERED 
+(
+	[CommonWordID] ASC
+) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+
+/****** Object:  Table [dbo].[ContactUs]    Script Date: 10/15/2008 10:44:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ContactUs](
+	[ContactUsID] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](150) COLLATE Latin1_General_CI_AS NULL,
+	[Email] [nvarchar](100) COLLATE Latin1_General_CI_AS NULL,
+	[Address] [nvarchar](250) COLLATE Latin1_General_CI_AS NULL,
+	[Regarding] [nvarchar](255) COLLATE Latin1_General_CI_AS NULL,
+	[Enquiry] [ntext] COLLATE Latin1_General_CI_AS NULL,
+	[SubmittedDate] [datetime] NULL,
+ CONSTRAINT [PK_ContactUs] PRIMARY KEY CLUSTERED 
+(
+	[ContactUsID] ASC
+) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+/****** Object:  Table [dbo].[FileDownload]    Script Date: 10/15/2008 10:38:50 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[FileDownload](
+	[FileDownloadID] [int] IDENTITY(1,1) NOT NULL,
+	[Description] [nvarchar](150) COLLATE Latin1_General_CI_AS NULL,
+	[FileName] [nvarchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[FileExtension] [nvarchar](10) COLLATE Latin1_General_CI_AS NULL,
+	[FileSize] [int] NULL,
+	[RelatedTable] [nvarchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[RelatedID] [int] NULL,
+ CONSTRAINT [PK_FileDownload] PRIMARY KEY CLUSTERED 
+(
+	[FileDownloadID] ASC
+) ON [PRIMARY]
+) ON [PRIMARY]
+
+/****** Object:  Table [dbo].[NavTree]    Script Date: 10/15/2008 10:39:04 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[NavTree](
+	[NavTreeID] [int] IDENTITY(1,1) NOT NULL,
+	[TableName] [nvarchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[NodeID] [int] NULL,
+	[Title] [nvarchar](250) COLLATE Latin1_General_CI_AS NULL,
+	[URL] [nvarchar](250) COLLATE Latin1_General_CI_AS NULL,
+	[ParentID] [int] NULL,
+	[Depth] [int] NULL,
+	[Lineage] [nvarchar](250) COLLATE Latin1_General_CI_AS NULL,
+	[SortPosition] [float] NULL,
+	[Sorting] [nvarchar](250) COLLATE Latin1_General_CI_AS NULL,
+ CONSTRAINT [PK_NavTree] PRIMARY KEY CLUSTERED 
+(
+	[NavTreeID] ASC
+) ON [PRIMARY]
+) ON [PRIMARY]
+
+/****** Object:  Table [dbo].[Page]    Script Date: 10/15/2008 10:39:18 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Page](
+	[PageID] [int] IDENTITY(1,1) NOT NULL,
+	[ParentPageID] [int] NULL,
+	[PageCode] [nvarchar](25) COLLATE Latin1_General_CI_AS NULL,
+	[NavTitle] [nvarchar](150) COLLATE Latin1_General_CI_AS NULL,
+	[Title] [nvarchar](250) COLLATE Latin1_General_CI_AS NULL,
+	[BodyTextHtml] [ntext] COLLATE Latin1_General_CI_AS NULL,
+	[Picture1] [nvarchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[Picture1Caption] [nvarchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[Picture2] [nvarchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[Picture2Caption] [nvarchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[Picture3] [nvarchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[Picture3Caption] [nvarchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[Attachment] [nvarchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[ShowInNav] [bit] NULL,
+	[SortPosition] [float] NULL,
+	[TemplateID] [int] NULL,
+	[ModifyDate] [datetime] NULL,
+	[IsPageALink] [bit] NULL,
+	[SEOKeywords] [ntext] COLLATE Latin1_General_CI_AS NULL,
+	[SEODescription] [ntext] COLLATE Latin1_General_CI_AS NULL,
+	[SEOTitle] [nvarchar](80) COLLATE Latin1_General_CI_AS NULL,
+	[DateAdded] [datetime] NULL,
+	[URLRewriteTitle] [varchar](80) COLLATE Latin1_General_CI_AS NULL,
+	[PublishDate] [datetime] NULL,
+	[ExpiryDate] [datetime] NULL,
+ CONSTRAINT [PK_Page] PRIMARY KEY CLUSTERED 
+(
+	[PageID] ASC
+) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+
+/****** Object:  Table [dbo].[SearchArea]    Script Date: 10/15/2008 10:39:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[SearchArea](
+	[SearchAreaID] [int] IDENTITY(1,1) NOT NULL,
+	[AreaTitle] [varchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[Page] [varchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[PageTitle] [varchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[TableName] [varchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[IDField] [varchar](50) COLLATE Latin1_General_CI_AS NOT NULL,
+	[TitleField] [varchar](100) COLLATE Latin1_General_CI_AS NULL,
+	[TextFields] [varchar](1000) COLLATE Latin1_General_CI_AS NULL,
+	[RequiresLogin] [bit] NULL,
+	[SortOrder] [int] NULL,
+	[DateField] [varchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[PageWebAddress] [varchar](255) COLLATE Latin1_General_CI_AS NULL,
+	[WhereClause] [varchar](150) COLLATE Latin1_General_CI_AS NULL,
+ CONSTRAINT [PK_SearchArea] PRIMARY KEY CLUSTERED 
+(
+	[SearchAreaID] ASC
+) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+
+/****** Object:  Table [dbo].[Template]    Script Date: 10/15/2008 10:40:39 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Template](
+	[TemplateID] [int] IDENTITY(1,1) NOT NULL,
+	[TemplateName] [nvarchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[IconPicture] [nvarchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[AllowedChildTemplates] [nvarchar](250) COLLATE Latin1_General_CI_AS NULL,
+	[SortPosition] [int] NULL,
+	[RenderPage] [nvarchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[EditRenderPage] [nvarchar](150) COLLATE Latin1_General_CI_AS NULL,
+	[DefaultChildTemplate] [nvarchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[IsSummaryTemplate] [bit] NULL,
+	[HasSubTitle] [bit] NULL,
+	[AllowChildren] [bit] NULL,
+	[HasPicture] [bit] NULL,
+	[HasBody] [bit] NULL,
+	[HasURL] [bit] NULL,
+	[HasPageIntro] [bit] NULL,
+	[HasMetaTags] [bit] NULL,
+	[PictureWidth] [int] NULL,
+	[PictureHeight] [int] NULL,
+	[HasDocuments] [bit] NULL,
+	[HasBullets] [bit] NULL,
+	[HasThumbnail] [bit] NULL,
+ CONSTRAINT [PK_Template] PRIMARY KEY CLUSTERED 
+(
+	[TemplateID] ASC
+) ON [PRIMARY]
+) ON [PRIMARY]
+
+
+

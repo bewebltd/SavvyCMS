@@ -1,0 +1,61 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using Beweb;
+namespace Savvy.Admin
+{
+	public partial class [---tablename---]Edit : EditPage
+	{
+		protected void Page_Init(object sender, EventArgs e)
+		{
+			BehindTheScenesSetUp(EditFV);
+		}
+		
+		protected override void Page_Load(object sender, EventArgs e)
+		{
+			base.Page_Load(sender, e);
+		}	
+		
+		protected override void Page_PreRender(object sender, EventArgs e)
+		{			
+			ErrorMessageArea.Text = PageErrorMessage;
+			ErrorMessageArea.Visible = !String.IsNullOrEmpty(PageErrorMessage);
+
+			base.Page_PreRender(sender, e);
+		}
+		
+		protected override void SetDefaults()
+		{
+			// set control default values here:
+			//((CheckBox)EditFV.FindControl("IsActive")).Checked = true;
+			//((DropDownList)EditFV.FindControl("FKID")).Text = Web.RequestEx["PassedFKID"];		 // passing an FK, set dropbox
+			//((HiddenField)EditFV.FindControl("DateAdded")).Value = DateTime.Now.ToString("dd MMM yyyy HH:mm");
+			//((TextBox)EditFV.FindControl("ControlId")).Text = "value";
+			base.SetDefaults();
+			//((Savvy.UserControl.SortPosition)EditFV.FindControl("SortPosition")).Text = "50";
+		}		
+		
+		protected void EditFV_Inserting(object sender, FormViewInsertEventArgs e)
+		{
+			// use e.Values["fieldname"] to access and manipulate values just before database insert
+			SaveRecord(e.Values, true);
+		}
+
+		protected void EditFV_Updating(object sender, FormViewUpdateEventArgs e)
+		{
+			// use e (e.NewValues[] and e.OldValues[]) to access and manipulate values just before database update
+			SaveRecord(e.NewValues, false);
+		}
+
+		protected void SaveRecord(System.Collections.Specialized.IOrderedDictionary values, bool isNewRecord) {
+			// use values["fieldname"] to access and manipulate values just before database save for insert and update
+		}
+	}
+}

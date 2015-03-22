@@ -1,0 +1,1791 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B593EAE8-B131-430C-8BE1-2DE5AC536103}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Site</RootNamespace>
+    <AssemblyName>Site</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;MVC;DOTNET4;ModificationLog;Keystone;pages</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;Keystone;ModificationLog</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MvcBuildViews>true</MvcBuildViews>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Models\Generated\ArticleGenerated.cs" />
+    <Compile Include="Models\Models\Article.cs" />
+    <Compile Include="Models\Generated\ArticleDocumentGenerated.cs" />
+    <Compile Include="Models\Models\ArticleDocument.cs" />
+    <Compile Include="Models\Generated\ArticleURLGenerated.cs" />
+    <Compile Include="Models\Models\ArticleURL.cs" />
+    <Compile Include="Models\Generated\AutocompletePhraseGenerated.cs" />
+    <Compile Include="Models\Models\AutocompletePhrase.cs" />
+    <Compile Include="Models\Generated\BannerGenerated.cs" />
+    <Compile Include="Models\Models\Banner.cs" />
+    <Compile Include="Models\Generated\BlogGenerated.cs" />
+    <Compile Include="Models\Models\Blog.cs" />
+    <Compile Include="Models\Generated\BlogCommentGenerated.cs" />
+    <Compile Include="Models\Models\BlogComment.cs" />
+    <Compile Include="Models\Generated\ClientContactUsPersonGenerated.cs" />
+    <Compile Include="Models\Models\ClientContactUsPerson.cs" />
+    <Compile Include="Models\Generated\ClientContactUsRegionGenerated.cs" />
+    <Compile Include="Models\Models\ClientContactUsRegion.cs" />
+    <Compile Include="Models\Generated\CommentGenerated.cs" />
+    <Compile Include="Models\Models\Comment.cs" />
+    <Compile Include="Models\Generated\CompanyDetailGenerated.cs" />
+    <Compile Include="Models\Models\CompanyDetail.cs" />
+    <Compile Include="Models\Generated\CompetitionGenerated.cs" />
+    <Compile Include="Models\Models\Competition.cs" />
+    <Compile Include="Models\Generated\CompetitionEntryGenerated.cs" />
+    <Compile Include="Models\Models\CompetitionEntry.cs" />
+    <Compile Include="Models\Generated\ContactUsGenerated.cs" />
+    <Compile Include="Models\Models\ContactUs.cs" />
+    <Compile Include="Models\Generated\DocumentGenerated.cs" />
+    <Compile Include="Models\Models\Document.cs" />
+    <Compile Include="Models\Generated\DocumentCategoryGenerated.cs" />
+    <Compile Include="Models\Models\DocumentCategory.cs" />
+    <Compile Include="Models\Generated\DocumentDownloadGenerated.cs" />
+    <Compile Include="Models\Models\DocumentDownload.cs" />
+    <Compile Include="Models\Generated\DynamicImageGenerated.cs" />
+    <Compile Include="Models\Models\DynamicImage.cs" />
+    <Compile Include="Models\Generated\EventGenerated.cs" />
+    <Compile Include="Models\Models\Event.cs" />
+    <Compile Include="Models\Generated\FAQItemGenerated.cs" />
+    <Compile Include="Models\Models\FAQItem.cs" />
+    <Compile Include="Models\Generated\FAQSectionGenerated.cs" />
+    <Compile Include="Models\Models\FAQSection.cs" />
+    <Compile Include="Models\Generated\GalleryCategoryGenerated.cs" />
+    <Compile Include="Models\Models\GalleryCategory.cs" />
+    <Compile Include="Models\Generated\GalleryImageGenerated.cs" />
+    <Compile Include="Models\Models\GalleryImage.cs" />
+    <Compile Include="Models\Generated\GenTestGenerated.cs" />
+    <Compile Include="Models\Models\GenTest.cs" />
+    <Compile Include="Models\Generated\GenTestCatGenerated.cs" />
+    <Compile Include="Models\Models\GenTestCat.cs" />
+    <Compile Include="Models\Generated\GenTestHasCatGenerated.cs" />
+    <Compile Include="Models\Models\GenTestHasCat.cs" />
+    <Compile Include="Models\Generated\HelpTextGenerated.cs" />
+    <Compile Include="Models\Models\HelpText.cs" />
+    <Compile Include="Models\Generated\HomepageSlideGenerated.cs" />
+    <Compile Include="Models\Models\HomepageSlide.cs" />
+    <Compile Include="Models\Generated\LiveChatGenerated.cs" />
+    <Compile Include="Models\Models\LiveChat.cs" />
+    <Compile Include="Models\Generated\LockGenerated.cs" />
+    <Compile Include="Models\Models\Lock.cs" />
+    <Compile Include="Models\Generated\MailLogGenerated.cs" />
+    <Compile Include="Models\Models\MailLog.cs" />
+    <Compile Include="Models\Generated\MapLocationGenerated.cs" />
+    <Compile Include="Models\Models\MapLocation.cs" />
+    <Compile Include="Models\Generated\MapRegionGenerated.cs" />
+    <Compile Include="Models\Models\MapRegion.cs" />
+    <Compile Include="Models\Generated\ModificationLogGenerated.cs" />
+    <Compile Include="Models\Models\ModificationLog.cs" />
+    <Compile Include="Models\Generated\NewsGenerated.cs" />
+    <Compile Include="Models\Models\News.cs" />
+    <Compile Include="Models\Generated\NewsRSSGenerated.cs" />
+    <Compile Include="Models\Models\NewsRSS.cs" />
+    <Compile Include="Models\Generated\PageGenerated.cs" />
+    <Compile Include="Models\Models\Page.cs" />
+    <Compile Include="Models\Generated\PersonGenerated.cs" />
+    <Compile Include="Models\Models\Person.cs" />
+    <Compile Include="Models\Generated\ProductGenerated.cs" />
+    <Compile Include="Models\Models\Product.cs" />
+    <Compile Include="Models\Generated\ProductCategoryGenerated.cs" />
+    <Compile Include="Models\Models\ProductCategory.cs" />
+    <Compile Include="Models\Generated\RelatedPageGenerated.cs" />
+    <Compile Include="Models\Models\RelatedPage.cs" />
+    <Compile Include="Models\Generated\SavvyAdminGenerated.cs" />
+    <Compile Include="Models\Models\SavvyAdmin.cs" />
+    <Compile Include="Models\Generated\SettingsGenerated.cs" />
+    <Compile Include="Models\Models\Settings.cs" />
+    <Compile Include="Models\Generated\ShoppingCartGenerated.cs" />
+    <Compile Include="Models\Models\ShoppingCart.cs" />
+    <Compile Include="Models\Generated\ShoppingCartOrderGenerated.cs" />
+    <Compile Include="Models\Models\ShoppingCartOrder.cs" />
+    <Compile Include="Models\Generated\TestimonialGenerated.cs" />
+    <Compile Include="Models\Models\Testimonial.cs" />
+    <Compile Include="Models\Generated\TextBlockGenerated.cs" />
+    <Compile Include="Models\Models\TextBlock.cs" />
+    <Compile Include="Models\Generated\TextBlockGroupGenerated.cs" />
+    <Compile Include="Models\Models\TextBlockGroup.cs" />
+    <Compile Include="Models\Generated\UrlRedirectGenerated.cs" />
+    <Compile Include="Models\Models\UrlRedirect.cs" />
+    <Compile Include="Models\Generated\VideoGenerated.cs" />
+    <Compile Include="Models\Models\Video.cs" />
+    <Content Include="Areas\Admin\images\devonly.png" />
+    <Content Include="Areas\Admin\Views\GenTestAdmin\GenTestView.aspx" />
+    <Content Include="Areas\Admin\Views\GenTestAdmin\GenTestExport.aspx" />
+    <Content Include="Areas\Admin\Views\HelpTextAdmin\HelpTextList.aspx" />
+    <Compile Include="Areas\Admin\Controllers\HelpTextAdminController.cs" />
+    <Content Include="Areas\Admin\Views\HelpTextAdmin\HelpTextEdit.aspx" />
+    <Compile Include="Areas\Admin\Controllers\ModificationLogAdminController.cs" />
+    <Compile Include="Admin\tools\ImageCompressor.aspx.cs">
+      <DependentUpon>ImageCompressor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="devtools\DBStructure.aspx.cs">
+      <DependentUpon>DBStructure.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\Controllers\ArticleAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ArticleDocumentAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ArticleURLAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DocumentDownloadAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\GalleryCategoryAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\GalleryImageAdminController.cs" />
+    <Compile Include="Controllers\GalleryCategoryController.cs" />
+    <Compile Include="BewebCore\ThirdParty\NetworkAdapter.cs" />
+    <Compile Include="BewebCore\ThirdParty\NetworkMonitor.cs" />
+    <Compile Include="Controllers\CommentController.cs" />
+    <Compile Include="Controllers\DivisionalReportController.cs" />
+    <Compile Include="Controllers\JsDataController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\TwitterController.cs" />
+    <Content Include="Admin\tools\ImageCompressor.aspx" />
+    <Content Include="Areas\Admin\admin.css" />
+    <Content Include="Areas\Admin\Views\DocumentCategoryAdmin\DocumentCategoryList.aspx" />
+    <Compile Include="Areas\Admin\Controllers\DocumentCategoryAdminController.cs" />
+    <Content Include="Areas\Admin\Views\DocumentCategoryAdmin\DocumentCategoryEdit.aspx" />
+    <Content Include="Areas\Admin\Views\DocumentAdmin\DocumentList.aspx" />
+    <Compile Include="Areas\Admin\Controllers\DocumentAdminController.cs" />
+    <Content Include="Areas\Admin\Views\DocumentAdmin\DocumentEdit.aspx" />
+    <Compile Include="Controllers\DocumentCategoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CompetitionAdminController.cs" />
+    <Compile Include="Controllers\CompetitionController.cs" />
+    <Compile Include="Controllers\SaveController.cs" />
+    <Compile Include="Areas\Admin\admin-no-form.master.cs">
+      <DependentUpon>admin-no-form.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controllers\ImagesController.cs" />
+    <Content Include="Areas\Admin\help\helpwindow.min.js">
+      <DependentUpon>helpwindow.js</DependentUpon>
+    </Content>
+    <Content Include="Areas\Admin\images\bc_bg.png" />
+    <Content Include="Areas\Admin\images\bc_separator.png" />
+    <Content Include="Areas\Admin\images\beweblogo.png" />
+    <Content Include="Areas\Admin\images\fancypastebg.png" />
+    <Content Include="Areas\Admin\images\fancypastebgActive.png" />
+    <Content Include="Areas\Admin\images\fancypastebgActive1.png" />
+    <Content Include="Areas\Admin\images\glyphicons-halflings-white.png" />
+    <Content Include="Areas\Admin\images\glyphicons-halflings.png" />
+    <Content Include="Areas\Admin\images\pastebg.png" />
+    <Content Include="Areas\Admin\images\pastebgactive.png" />
+    <Content Include="Areas\Admin\images\spacer.gif" />
+    <Content Include="Areas\Admin\images\star-gold.gif" />
+    <Content Include="Areas\Admin\images\star-grey.gif" />
+    <Content Include="Areas\Admin\images\testpattern.gif" />
+    <Content Include="Areas\Admin\Views\CompetitionAdmin\CompetitionEdit.aspx" />
+    <Content Include="Areas\Admin\Views\CompetitionAdmin\CompetitionList.aspx" />
+    <Content Include="Areas\Admin\Views\GenTestAdmin\GenTestEditAutocomplete.aspx" />
+    <Content Include="Areas\Admin\Views\GenTestHasCatAdmin\GenTestHasCatList.aspx" />
+    <Compile Include="Areas\Admin\Controllers\GenTestHasCatAdminController.cs" />
+    <Content Include="Areas\Admin\Views\GenTestHasCatAdmin\GenTestHasCatEdit.aspx" />
+    <Content Include="Areas\Admin\Views\GenTestCatAdmin\GenTestCatList.aspx" />
+    <Compile Include="Areas\Admin\Controllers\GenTestCatAdminController.cs" />
+    <Content Include="Areas\Admin\Views\GenTestCatAdmin\GenTestCatEdit.aspx" />
+    <Compile Include="Areas\Admin\Controllers\GenTestAdminController.cs" />
+    <Content Include="Areas\Admin\Views\MailLogAdmin\MailLogList.aspx" />
+    <Compile Include="Areas\Admin\Controllers\MailLogAdminController.cs" />
+    <Content Include="Areas\Admin\Views\MailLogAdmin\MailLogEdit.aspx" />
+    <Content Include="Areas\Admin\Views\GenTestAdmin\GenTestList.aspx" />
+    <Content Include="Areas\Admin\Views\GenTestAdmin\GenTestEdit.aspx" />
+    <Compile Include="Areas\Admin\Controllers\ProductAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductCategoryAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CommonAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SortOrderController.cs" />
+    <Compile Include="Controllers\DownloadController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TextBlockGroupAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomepageSlideAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CommentAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MapLocationAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MapRegionAdminController.cs" />
+    <Compile Include="Controllers\CoolVideosController.cs" />
+    <Compile Include="Controllers\YouTubeSpiderController.cs" />
+    <Content Include="Areas\Admin\Views\ModificationLogAdmin\ModificationLogList.aspx" />
+    <Content Include="Areas\Admin\Views\PageAdmin\PageComparison.aspx" />
+    <Content Include="Areas\Admin\Views\PageAdmin\PageEdit.js" />
+    <Content Include="Areas\Admin\Views\PageAdmin\PageEditRevisions.aspx" />
+    <Content Include="Areas\Admin\Views\PageAdmin\PageList.aspx" />
+    <Content Include="Areas\Admin\Views\PageAdmin\PageRevisionList.aspx" />
+    <Content Include="Areas\Admin\Views\PersonAdmin\PersonExport.aspx" />
+    <Content Include="Areas\Admin\Views\SettingsAdmin\SettingsEdit.aspx" />
+    <Content Include="devtools\DBStructure.aspx" />
+    <Content Include="devtools\scripts\class\DBStructure.class.js" />
+    <Content Include="humans.txt" />
+    <Content Include="images\filetypes\icon-ae.png" />
+    <Content Include="images\filetypes\icon-ai.png" />
+    <Content Include="images\filetypes\icon-avi.png" />
+    <Content Include="images\filetypes\icon-dir.png" />
+    <Content Include="images\filetypes\icon-divx.png" />
+    <Content Include="images\filetypes\icon-doc.png" />
+    <Content Include="images\filetypes\icon-docx.png" />
+    <Content Include="images\filetypes\icon-eps.png" />
+    <Content Include="images\filetypes\icon-fla.png" />
+    <Content Include="images\filetypes\icon-fon.png" />
+    <Content Include="images\filetypes\icon-fw.png" />
+    <Content Include="images\filetypes\icon-generic.png" />
+    <Content Include="images\filetypes\icon-gif.png" />
+    <Content Include="images\filetypes\icon-htm.png" />
+    <Content Include="images\filetypes\icon-html.png" />
+    <Content Include="images\filetypes\icon-indd.png" />
+    <Content Include="images\filetypes\icon-iso.png" />
+    <Content Include="images\filetypes\icon-jpeg.png" />
+    <Content Include="images\filetypes\icon-jpg.png" />
+    <Content Include="images\filetypes\icon-mdb.png" />
+    <Content Include="images\filetypes\icon-mov.png" />
+    <Content Include="images\filetypes\icon-mp3.png" />
+    <Content Include="images\filetypes\icon-one.png" />
+    <Content Include="images\filetypes\icon-otf.png" />
+    <Content Include="images\filetypes\icon-pdf.png" />
+    <Content Include="images\filetypes\icon-pmf.png" />
+    <Content Include="images\filetypes\icon-png.png" />
+    <Content Include="images\filetypes\icon-ppt.png" />
+    <Content Include="images\filetypes\icon-psd.png" />
+    <Content Include="images\filetypes\icon-pub.png" />
+    <Content Include="images\filetypes\icon-swf.png" />
+    <Content Include="images\filetypes\icon-tif.png" />
+    <Content Include="images\filetypes\icon-tiff.png" />
+    <Content Include="images\filetypes\icon-torrent.png" />
+    <Content Include="images\filetypes\icon-ttf.png" />
+    <Content Include="images\filetypes\icon-visio.png" />
+    <Content Include="images\filetypes\icon-xls.png" />
+    <Content Include="images\filetypes\icon-xlsx.png" />
+    <Content Include="images\filetypes\icon-zip.png" />
+    <Content Include="images\filetypes\picture_small.gif" />
+    <Content Include="images\filetypes\URL_small.gif" />
+    <Content Include="images\social\big\facebook.png" />
+    <Content Include="images\social\big\googleplus.png" />
+    <Content Include="images\social\big\linkedin.png" />
+    <Content Include="images\social\big\skype.png" />
+    <Content Include="images\social\big\twitter.png" />
+    <Content Include="images\social\big\youtube.png" />
+    <Content Include="images\social\facebook-share.png" />
+    <Content Include="images\social\facebook.png" />
+    <Content Include="images\social\googleplus-share.png" />
+    <Content Include="images\social\googleplus.png" />
+    <Content Include="images\social\linkedin-share.png" />
+    <Content Include="images\social\linkedin.png" />
+    <Content Include="images\social\pinterest-pinit.png" />
+    <Content Include="images\social\pinterest.png" />
+    <Content Include="images\social\twitter-tweet.png" />
+    <Content Include="images\social\twitter.png" />
+    <Content Include="images\social\youtube.png" />
+    <Content Include="js\BewebCore\beweb-cma.min.js">
+      <DependentUpon>beweb-cma.js</DependentUpon>
+    </Content>
+    <Content Include="js\BewebCore\Beweb.jquery.validate.min.js">
+      <DependentUpon>Beweb.jquery.validate.js</DependentUpon>
+    </Content>
+    <Content Include="js\BewebCore\carousel.js" />
+    <Content Include="js\BewebCore\carousel.min.js">
+      <DependentUpon>carousel.js</DependentUpon>
+    </Content>
+    <Content Include="js\BewebCore\RepositoryDownloader.js" />
+    <Content Include="js\BewebCore\Copy of beweb-cma.min.js">
+      <DependentUpon>RepositoryDownloader.js</DependentUpon>
+    </Content>
+    <Content Include="js\BewebCore\forms.min.js">
+      <DependentUpon>forms.js</DependentUpon>
+    </Content>
+    <Content Include="js\BewebCore\keepalive.min.js">
+      <DependentUpon>keepalive.js</DependentUpon>
+    </Content>
+    <Content Include="js\BewebCore\passwordmeter.min.js">
+      <DependentUpon>passwordmeter.js</DependentUpon>
+    </Content>
+    <Content Include="js\BewebCore\Savvy.validate.js" />
+    <Content Include="js\BewebCore\Savvy.validate.min.js" />
+    <Content Include="js\BewebCore\share.js" />
+    <Content Include="js\BewebCore\TextStatistics.js" />
+    <Content Include="js\colorbox\jquery.colorbox.min.js">
+      <DependentUpon>jquery.colorbox.js</DependentUpon>
+    </Content>
+    <Content Include="js\common-extras.js" />
+    <Content Include="js\adminCommon.js" />
+    <Content Include="js\FileManager\FileManager.class.js" />
+    <Content Include="js\FileManager\FileManager.css" />
+    <Content Include="js\FileManager\FileManagerActions.class.js" />
+    <Content Include="js\FileManager\images\folder96.png" />
+    <Content Include="js\FileManager\images\icons.png" />
+    <Content Include="js\FileManager\jquery.ztree.core-3.5.js" />
+    <Content Include="js\FileManager\jquery.ztree.core-3.5.min.js" />
+    <Content Include="js\FileManager\zTreeStyle\img\diy\1_close.png" />
+    <Content Include="js\FileManager\zTreeStyle\img\diy\1_open.png" />
+    <Content Include="js\FileManager\zTreeStyle\img\diy\2.png" />
+    <Content Include="js\FileManager\zTreeStyle\img\diy\3.png" />
+    <Content Include="js\FileManager\zTreeStyle\img\diy\4.png" />
+    <Content Include="js\FileManager\zTreeStyle\img\diy\5.png" />
+    <Content Include="js\FileManager\zTreeStyle\img\diy\6.png" />
+    <Content Include="js\FileManager\zTreeStyle\img\diy\7.png" />
+    <Content Include="js\FileManager\zTreeStyle\img\diy\8.png" />
+    <Content Include="js\FileManager\zTreeStyle\img\diy\9.png" />
+    <Content Include="js\FileManager\zTreeStyle\img\line_conn.gif" />
+    <Content Include="js\FileManager\zTreeStyle\img\loading.gif" />
+    <Content Include="js\FileManager\zTreeStyle\img\zTreeStandard.gif" />
+    <Content Include="js\FileManager\zTreeStyle\img\zTreeStandard.png" />
+    <Content Include="js\FileManager\zTreeStyle\zTreeStyle.css" />
+    <Content Include="js\imagepaste\sSupa.jar" />
+    <Content Include="js\jquery-1.8.2\jquery-1.8.2-vsdoc.js" />
+    <Content Include="js\jquery-1.8.2\jquery-1.8.2.js" />
+    <Content Include="js\jquery-1.8.2\jquery-1.8.2.min.js">
+      <DependentUpon>jquery-1.8.2.js</DependentUpon>
+    </Content>
+    <Content Include="js\jquery-ui-1.8.4\js\timepicker.min.js">
+      <DependentUpon>timepicker.js</DependentUpon>
+    </Content>
+    <Compile Include="js\tapmodo-Jcrop\svyCropEdit.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="js\tapmodo-Jcrop\js\jquery.Jcrop.min.js" />
+    <Content Include="js\tapmodo-Jcrop\svyCropEdit.aspx" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\advimage\image.aspx" />
+    <Content Include="js\xdate\xdate.js" />
+    <Content Include="js\xdate\xdate.min.js">
+      <DependentUpon>xdate.js</DependentUpon>
+    </Content>
+    <Content Include="robotsLVE.txt" />
+    <Content Include="Areas\Admin\Views\BlogCommentAdmin\BlogCommentList.aspx" />
+    <Compile Include="Areas\Admin\Controllers\BlogCommentAdminController.cs" />
+    <Content Include="Areas\Admin\Views\BlogCommentAdmin\BlogCommentEdit.aspx" />
+    <Content Include="Areas\Admin\Views\BlogAdmin\BlogList.aspx" />
+    <Compile Include="Areas\Admin\Controllers\BlogAdminController.cs" />
+    <Content Include="Areas\Admin\Views\BlogAdmin\BlogEdit.aspx" />
+    <Compile Include="Areas\Admin\Controllers\VideoAdminController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\MapController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ClientContactUsPersonAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ClientContactUsRegionAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ContactUsAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\FAQItemAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\FAQSectionAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ShoppingCartAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ShoppingCartOrderAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TestimonialAdminController.cs" />
+    <Compile Include="Controllers\AboutUsController.cs" />
+    <Compile Include="Controllers\ContactUsController.cs" />
+    <Compile Include="Controllers\LiveChatController.cs" />
+    <Compile Include="Areas\Admin\Controllers\EventAdminController.cs" />
+    <Compile Include="Controllers\EventsController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\PasswordLockController.cs" />
+    <Compile Include="Controllers\QuestionsController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
+    <Content Include="Admin\tools\CreateAdmin.aspx.cs">
+      <DependentUpon>CreateAdmin.aspx</DependentUpon>
+    </Content>
+    <Compile Include="Controllers\ScheduledTaskController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Areas\Admin\AdminCustom\HtmlHelpers.cs" />
+    <Compile Include="Areas\Admin\Controllers\NewsAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\NewsRSSAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PageAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TextBlockAdminController.cs" />
+    <Compile Include="Controllers\TextBlockController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PersonAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SavvyAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SettingsAdminController.cs" />
+    <Compile Include="Areas\Admin\help\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\help\help.master.cs">
+      <DependentUpon>help.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\help\introtext.aspx.cs">
+      <DependentUpon>introtext.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\help\page-title.aspx.cs">
+      <DependentUpon>page-title.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\help\richtexteditor-i.aspx.cs">
+      <DependentUpon>richtexteditor-i.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\help\richtexteditor.aspx.cs">
+      <DependentUpon>richtexteditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\help\title.aspx.cs">
+      <DependentUpon>title.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controllers\NavigationController.cs" />
+    <Compile Include="Controllers\StandardPageController.cs" />
+    <Compile Include="Controllers\XMLController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UrlRedirectAdminController.cs" />
+    <Compile Include="Controllers\UrlRedirectController.cs" />
+    <Compile Include="services\GetAutoComplete.aspx.cs">
+      <DependentUpon>GetAutoComplete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="services\GetClipboardPicture.aspx.cs">
+      <DependentUpon>GetClipboardPicture.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="services\proxy.aspx.cs">
+      <DependentUpon>proxy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="services\proxyimage.aspx.cs">
+      <DependentUpon>proxyimage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SiteCustom\3rdParty\DiffMatchPatch.cs" />
+    <Compile Include="SiteCustom\ArticleCache.cs" />
+    <Compile Include="SiteCustom\PageCache.cs" />
+    <Compile Include="SiteCustom\PersonCache.cs" />
+    <Compile Include="SiteCustom\SecurityRolesCustom.cs" />
+    <Compile Include="SiteCustom\SiteOutputCacheAttribute.cs" />
+    <Compile Include="SiteCustom\TextBlockCache.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SiteCustom\UserSession.cs" />
+    <Compile Include="devtools\AddFields.aspx.cs">
+      <DependentUpon>AddFields.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="devtools\Controller.aspx.cs">
+      <DependentUpon>Controller.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="devtools\DBManager.aspx.cs">
+      <DependentUpon>DBManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="devtools\DBUsage.aspx.cs">
+      <DependentUpon>DBUsage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="devtools\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="devtools\TextCompare.aspx.cs">
+      <DependentUpon>TextCompare.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="devtools\Vacuum.aspx.cs">
+      <DependentUpon>Vacuum.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="devtools\Vacuum2.aspx.cs">
+      <DependentUpon>Vacuum2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tests\carousel.aspx.cs">
+      <DependentUpon>carousel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tests\CreateProject.aspx.cs">
+      <DependentUpon>CreateProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tests\dbupdate-raw.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tests\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SiteCustom\JsCompressor.cs" />
+    <Compile Include="tests\listfiles.aspx.cs">
+      <DependentUpon>listfiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tests\sound.aspx.cs">
+      <DependentUpon>sound.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tests\test-datablock-create.aspx.cs">
+      <DependentUpon>test-datablock-create.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tests\test-db-connection.aspx.cs">
+      <DependentUpon>test-db-connection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tests\test-db-connection.aspx.designer.cs">
+      <DependentUpon>test-db-connection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tests\test35.aspx.cs">
+      <DependentUpon>test35.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tests\testdotnet20.aspx.cs">
+      <DependentUpon>testdotnet20.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tests\testdotnet35.aspx.cs">
+      <DependentUpon>testdotnet35.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\error\401.aspx.cs">
+      <DependentUpon>401.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\error\401.aspx.designer.cs">
+      <DependentUpon>401.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\error\402.aspx.cs">
+      <DependentUpon>402.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\error\402.aspx.designer.cs">
+      <DependentUpon>402.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\error\403.aspx.cs">
+      <DependentUpon>403.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\error\403.aspx.designer.cs">
+      <DependentUpon>403.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\error\404.aspx.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\error\404.aspx.designer.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\error\405.aspx.cs">
+      <DependentUpon>405.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\error\405.aspx.designer.cs">
+      <DependentUpon>405.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\error\406.aspx.cs">
+      <DependentUpon>406.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\error\406.aspx.designer.cs">
+      <DependentUpon>406.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\error\412.aspx.cs">
+      <DependentUpon>412.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\error\412.aspx.designer.cs">
+      <DependentUpon>412.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\error\500.aspx.cs">
+      <DependentUpon>500.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\error\500.aspx.designer.cs">
+      <DependentUpon>500.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\error\501.aspx.cs">
+      <DependentUpon>501.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\error\501.aspx.designer.cs">
+      <DependentUpon>501.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\error\502.aspx.cs">
+      <DependentUpon>502.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\error\502.aspx.designer.cs">
+      <DependentUpon>502.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\error\email.aspx.cs">
+      <DependentUpon>email.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\error\email.aspx.designer.cs">
+      <DependentUpon>email.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\error\error.aspx.cs">
+      <DependentUpon>error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\error\error.aspx.designer.cs">
+      <DependentUpon>error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\error\error.master.cs">
+      <DependentUpon>error.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\error\error.master.designer.cs">
+      <DependentUpon>error.master</DependentUpon>
+    </Compile>
+    <Compile Include="Views\error\filetoobig.aspx.cs">
+      <DependentUpon>filetoobig.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\error\filetoobig.aspx.designer.cs">
+      <DependentUpon>filetoobig.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\error\test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\error\test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Content Include="Admin\images\close.gif" />
+    <Content Include="Admin\images\dataheading-bg-black.gif" />
+    <Content Include="Admin\images\error-icon-small.gif" />
+    <Content Include="Admin\images\help.gif" />
+    <Content Include="Admin\images\info-icon-small.gif" />
+    <Content Include="Admin\images\max.gif" />
+    <Content Include="Admin\images\min.gif" />
+    <Content Include="Admin\images\percentage-bar.gif" />
+    <Content Include="Admin\images\preview.jpg" />
+    <Content Include="Admin\images\question-icon-small.gif" />
+    <Content Include="Admin\images\resize.gif" />
+    <Content Include="Admin\images\restore.gif" />
+    <Content Include="Admin\images\savvyicon.gif" />
+    <Content Include="Admin\images\sort_down_on.gif" />
+    <Content Include="Admin\images\sort_down_on_bl.gif" />
+    <Content Include="Admin\images\sort_down_white.png" />
+    <Content Include="Admin\images\sort_up_on.gif" />
+    <Content Include="Admin\images\sort_up_on_bl.gif" />
+    <Content Include="Admin\images\sort_up_white.png" />
+    <Content Include="Admin\images\spinner.gif" />
+    <Content Include="Admin\images\star-grey.gif" />
+    <Content Include="Admin\images\testpattern.gif" />
+    <Content Include="Admin\images\warning-icon-small.gif" />
+    <Content Include="Admin\tools\CreateAdmin.aspx" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\SecurityController.cs" />
+    <Compile Include="Controllers\CommonController.cs" />
+    <Reference Include="ABCpdf, Version=8.1.2.0, Culture=neutral, PublicKeyToken=a7a0b3f5184f2169, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ABCpdf.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Google.GData.Client, Version=1.6.0.0, Culture=neutral, PublicKeyToken=04a59ca9b0273830, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Google.GData.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.GData.Extensions, Version=1.6.0.0, Culture=neutral, PublicKeyToken=0b4c5df2ebf20876, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Google.GData.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.GData.YouTube, Version=1.6.0.0, Culture=neutral, PublicKeyToken=af04a32718ae8833, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Google.GData.YouTube.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageManipulation, Version=1.0.2991.26405, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ImageManipulation.dll</HintPath>
+    </Reference>
+    <Reference Include="NRtfTree, Version=0.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\NRtfTree.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Abstractions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Routing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+    <Content Include="devtools\AddFields.aspx" />
+    <Content Include="devtools\Controller.aspx" />
+    <Content Include="devtools\DBManager.aspx" />
+    <Content Include="devtools\DBUsage.aspx" />
+    <Content Include="devtools\Default.aspx" />
+    <Content Include="devtools\images\bg.jpg" />
+    <Content Include="devtools\images\close.png" />
+    <Content Include="devtools\images\db-schema.png" />
+    <Content Include="devtools\images\db-table.png" />
+    <Content Include="devtools\images\db-tables.png" />
+    <Content Include="devtools\images\db-view.png" />
+    <Content Include="devtools\images\db-views.png" />
+    <Content Include="devtools\images\dots.gif" />
+    <Content Include="devtools\images\error.png" />
+    <Content Include="devtools\images\loading.gif" />
+    <Content Include="devtools\images\pk.png" />
+    <Content Include="devtools\images\preloader.gif" />
+    <Content Include="devtools\images\success.png" />
+    <Content Include="devtools\images\tab-active.png" />
+    <Content Include="devtools\images\tab-inactive.png" />
+    <Content Include="devtools\images\tabs-bg.png" />
+    <Content Include="devtools\images\view.png" />
+    <Content Include="devtools\scripts\ace\ace.js" />
+    <Content Include="devtools\scripts\ace\ext-beautify.js" />
+    <Content Include="devtools\scripts\ace\ext-chromevox.js" />
+    <Content Include="devtools\scripts\ace\ext-elastic_tabstops_lite.js" />
+    <Content Include="devtools\scripts\ace\ext-emmet.js" />
+    <Content Include="devtools\scripts\ace\ext-error_marker.js" />
+    <Content Include="devtools\scripts\ace\ext-keybinding_menu.js" />
+    <Content Include="devtools\scripts\ace\ext-language_tools.js" />
+    <Content Include="devtools\scripts\ace\ext-modelist.js" />
+    <Content Include="devtools\scripts\ace\ext-old_ie.js" />
+    <Content Include="devtools\scripts\ace\ext-options.js" />
+    <Content Include="devtools\scripts\ace\ext-searchbox.js" />
+    <Content Include="devtools\scripts\ace\ext-settings_menu.js" />
+    <Content Include="devtools\scripts\ace\ext-spellcheck.js" />
+    <Content Include="devtools\scripts\ace\ext-split.js" />
+    <Content Include="devtools\scripts\ace\ext-static_highlight.js" />
+    <Content Include="devtools\scripts\ace\ext-statusbar.js" />
+    <Content Include="devtools\scripts\ace\ext-textarea.js" />
+    <Content Include="devtools\scripts\ace\ext-themelist.js" />
+    <Content Include="devtools\scripts\ace\ext-whitespace.js" />
+    <Content Include="devtools\scripts\ace\keybinding-emacs.js" />
+    <Content Include="devtools\scripts\ace\keybinding-vim.js" />
+    <Content Include="devtools\scripts\ace\mode-abap.js" />
+    <Content Include="devtools\scripts\ace\mode-actionscript.js" />
+    <Content Include="devtools\scripts\ace\mode-ada.js" />
+    <Content Include="devtools\scripts\ace\mode-apache_conf.js" />
+    <Content Include="devtools\scripts\ace\mode-asciidoc.js" />
+    <Content Include="devtools\scripts\ace\mode-assembly_x86.js" />
+    <Content Include="devtools\scripts\ace\mode-autohotkey.js" />
+    <Content Include="devtools\scripts\ace\mode-batchfile.js" />
+    <Content Include="devtools\scripts\ace\mode-c9search.js" />
+    <Content Include="devtools\scripts\ace\mode-cirru.js" />
+    <Content Include="devtools\scripts\ace\mode-clojure.js" />
+    <Content Include="devtools\scripts\ace\mode-cobol.js" />
+    <Content Include="devtools\scripts\ace\mode-coffee.js" />
+    <Content Include="devtools\scripts\ace\mode-coldfusion.js" />
+    <Content Include="devtools\scripts\ace\mode-csharp.js" />
+    <Content Include="devtools\scripts\ace\mode-css.js" />
+    <Content Include="devtools\scripts\ace\mode-curly.js" />
+    <Content Include="devtools\scripts\ace\mode-c_cpp.js" />
+    <Content Include="devtools\scripts\ace\mode-d.js" />
+    <Content Include="devtools\scripts\ace\mode-dart.js" />
+    <Content Include="devtools\scripts\ace\mode-diff.js" />
+    <Content Include="devtools\scripts\ace\mode-django.js" />
+    <Content Include="devtools\scripts\ace\mode-dot.js" />
+    <Content Include="devtools\scripts\ace\mode-ejs.js" />
+    <Content Include="devtools\scripts\ace\mode-erlang.js" />
+    <Content Include="devtools\scripts\ace\mode-forth.js" />
+    <Content Include="devtools\scripts\ace\mode-ftl.js" />
+    <Content Include="devtools\scripts\ace\mode-gherkin.js" />
+    <Content Include="devtools\scripts\ace\mode-glsl.js" />
+    <Content Include="devtools\scripts\ace\mode-golang.js" />
+    <Content Include="devtools\scripts\ace\mode-groovy.js" />
+    <Content Include="devtools\scripts\ace\mode-haml.js" />
+    <Content Include="devtools\scripts\ace\mode-handlebars.js" />
+    <Content Include="devtools\scripts\ace\mode-haskell.js" />
+    <Content Include="devtools\scripts\ace\mode-haxe.js" />
+    <Content Include="devtools\scripts\ace\mode-html.js" />
+    <Content Include="devtools\scripts\ace\mode-html_completions.js" />
+    <Content Include="devtools\scripts\ace\mode-html_ruby.js" />
+    <Content Include="devtools\scripts\ace\mode-ini.js" />
+    <Content Include="devtools\scripts\ace\mode-jack.js" />
+    <Content Include="devtools\scripts\ace\mode-jade.js" />
+    <Content Include="devtools\scripts\ace\mode-java.js" />
+    <Content Include="devtools\scripts\ace\mode-javascript.js" />
+    <Content Include="devtools\scripts\ace\mode-json.js" />
+    <Content Include="devtools\scripts\ace\mode-jsoniq.js" />
+    <Content Include="devtools\scripts\ace\mode-jsp.js" />
+    <Content Include="devtools\scripts\ace\mode-jsx.js" />
+    <Content Include="devtools\scripts\ace\mode-julia.js" />
+    <Content Include="devtools\scripts\ace\mode-latex.js" />
+    <Content Include="devtools\scripts\ace\mode-less.js" />
+    <Content Include="devtools\scripts\ace\mode-liquid.js" />
+    <Content Include="devtools\scripts\ace\mode-lisp.js" />
+    <Content Include="devtools\scripts\ace\mode-livescript.js" />
+    <Content Include="devtools\scripts\ace\mode-logiql.js" />
+    <Content Include="devtools\scripts\ace\mode-lsl.js" />
+    <Content Include="devtools\scripts\ace\mode-lua.js" />
+    <Content Include="devtools\scripts\ace\mode-luapage.js" />
+    <Content Include="devtools\scripts\ace\mode-lucene.js" />
+    <Content Include="devtools\scripts\ace\mode-makefile.js" />
+    <Content Include="devtools\scripts\ace\mode-markdown.js" />
+    <Content Include="devtools\scripts\ace\mode-matlab.js" />
+    <Content Include="devtools\scripts\ace\mode-mel.js" />
+    <Content Include="devtools\scripts\ace\mode-mushcode.js" />
+    <Content Include="devtools\scripts\ace\mode-mushcode_high_rules.js" />
+    <Content Include="devtools\scripts\ace\mode-mysql.js" />
+    <Content Include="devtools\scripts\ace\mode-nix.js" />
+    <Content Include="devtools\scripts\ace\mode-objectivec.js" />
+    <Content Include="devtools\scripts\ace\mode-ocaml.js" />
+    <Content Include="devtools\scripts\ace\mode-pascal.js" />
+    <Content Include="devtools\scripts\ace\mode-perl.js" />
+    <Content Include="devtools\scripts\ace\mode-pgsql.js" />
+    <Content Include="devtools\scripts\ace\mode-php.js" />
+    <Content Include="devtools\scripts\ace\mode-plain_text.js" />
+    <Content Include="devtools\scripts\ace\mode-powershell.js" />
+    <Content Include="devtools\scripts\ace\mode-prolog.js" />
+    <Content Include="devtools\scripts\ace\mode-properties.js" />
+    <Content Include="devtools\scripts\ace\mode-protobuf.js" />
+    <Content Include="devtools\scripts\ace\mode-python.js" />
+    <Content Include="devtools\scripts\ace\mode-r.js" />
+    <Content Include="devtools\scripts\ace\mode-rdoc.js" />
+    <Content Include="devtools\scripts\ace\mode-rhtml.js" />
+    <Content Include="devtools\scripts\ace\mode-ruby.js" />
+    <Content Include="devtools\scripts\ace\mode-rust.js" />
+    <Content Include="devtools\scripts\ace\mode-sass.js" />
+    <Content Include="devtools\scripts\ace\mode-scad.js" />
+    <Content Include="devtools\scripts\ace\mode-scala.js" />
+    <Content Include="devtools\scripts\ace\mode-scheme.js" />
+    <Content Include="devtools\scripts\ace\mode-scss.js" />
+    <Content Include="devtools\scripts\ace\mode-sh.js" />
+    <Content Include="devtools\scripts\ace\mode-sjs.js" />
+    <Content Include="devtools\scripts\ace\mode-smarty.js" />
+    <Content Include="devtools\scripts\ace\mode-snippets.js" />
+    <Content Include="devtools\scripts\ace\mode-soy_template.js" />
+    <Content Include="devtools\scripts\ace\mode-space.js" />
+    <Content Include="devtools\scripts\ace\mode-sql.js" />
+    <Content Include="devtools\scripts\ace\mode-stylus.js" />
+    <Content Include="devtools\scripts\ace\mode-svg.js" />
+    <Content Include="devtools\scripts\ace\mode-tcl.js" />
+    <Content Include="devtools\scripts\ace\mode-tex.js" />
+    <Content Include="devtools\scripts\ace\mode-text.js" />
+    <Content Include="devtools\scripts\ace\mode-textile.js" />
+    <Content Include="devtools\scripts\ace\mode-tmsnippet.js" />
+    <Content Include="devtools\scripts\ace\mode-toml.js" />
+    <Content Include="devtools\scripts\ace\mode-twig.js" />
+    <Content Include="devtools\scripts\ace\mode-typescript.js" />
+    <Content Include="devtools\scripts\ace\mode-vbscript.js" />
+    <Content Include="devtools\scripts\ace\mode-velocity.js" />
+    <Content Include="devtools\scripts\ace\mode-verilog.js" />
+    <Content Include="devtools\scripts\ace\mode-vhdl.js" />
+    <Content Include="devtools\scripts\ace\mode-xml.js" />
+    <Content Include="devtools\scripts\ace\mode-xquery.js" />
+    <Content Include="devtools\scripts\ace\mode-yaml.js" />
+    <Content Include="devtools\scripts\ace\snippets\abap.js" />
+    <Content Include="devtools\scripts\ace\snippets\actionscript.js" />
+    <Content Include="devtools\scripts\ace\snippets\ada.js" />
+    <Content Include="devtools\scripts\ace\snippets\apache_conf.js" />
+    <Content Include="devtools\scripts\ace\snippets\asciidoc.js" />
+    <Content Include="devtools\scripts\ace\snippets\assembly_x86.js" />
+    <Content Include="devtools\scripts\ace\snippets\autohotkey.js" />
+    <Content Include="devtools\scripts\ace\snippets\batchfile.js" />
+    <Content Include="devtools\scripts\ace\snippets\c9search.js" />
+    <Content Include="devtools\scripts\ace\snippets\cirru.js" />
+    <Content Include="devtools\scripts\ace\snippets\clojure.js" />
+    <Content Include="devtools\scripts\ace\snippets\cobol.js" />
+    <Content Include="devtools\scripts\ace\snippets\coffee.js" />
+    <Content Include="devtools\scripts\ace\snippets\coldfusion.js" />
+    <Content Include="devtools\scripts\ace\snippets\csharp.js" />
+    <Content Include="devtools\scripts\ace\snippets\css.js" />
+    <Content Include="devtools\scripts\ace\snippets\curly.js" />
+    <Content Include="devtools\scripts\ace\snippets\c_cpp.js" />
+    <Content Include="devtools\scripts\ace\snippets\d.js" />
+    <Content Include="devtools\scripts\ace\snippets\dart.js" />
+    <Content Include="devtools\scripts\ace\snippets\diff.js" />
+    <Content Include="devtools\scripts\ace\snippets\django.js" />
+    <Content Include="devtools\scripts\ace\snippets\dot.js" />
+    <Content Include="devtools\scripts\ace\snippets\ejs.js" />
+    <Content Include="devtools\scripts\ace\snippets\erlang.js" />
+    <Content Include="devtools\scripts\ace\snippets\forth.js" />
+    <Content Include="devtools\scripts\ace\snippets\ftl.js" />
+    <Content Include="devtools\scripts\ace\snippets\gherkin.js" />
+    <Content Include="devtools\scripts\ace\snippets\glsl.js" />
+    <Content Include="devtools\scripts\ace\snippets\golang.js" />
+    <Content Include="devtools\scripts\ace\snippets\groovy.js" />
+    <Content Include="devtools\scripts\ace\snippets\haml.js" />
+    <Content Include="devtools\scripts\ace\snippets\handlebars.js" />
+    <Content Include="devtools\scripts\ace\snippets\haskell.js" />
+    <Content Include="devtools\scripts\ace\snippets\haxe.js" />
+    <Content Include="devtools\scripts\ace\snippets\html.js" />
+    <Content Include="devtools\scripts\ace\snippets\html_completions.js" />
+    <Content Include="devtools\scripts\ace\snippets\html_ruby.js" />
+    <Content Include="devtools\scripts\ace\snippets\ini.js" />
+    <Content Include="devtools\scripts\ace\snippets\jack.js" />
+    <Content Include="devtools\scripts\ace\snippets\jade.js" />
+    <Content Include="devtools\scripts\ace\snippets\java.js" />
+    <Content Include="devtools\scripts\ace\snippets\javascript.js" />
+    <Content Include="devtools\scripts\ace\snippets\json.js" />
+    <Content Include="devtools\scripts\ace\snippets\jsoniq.js" />
+    <Content Include="devtools\scripts\ace\snippets\jsp.js" />
+    <Content Include="devtools\scripts\ace\snippets\jsx.js" />
+    <Content Include="devtools\scripts\ace\snippets\julia.js" />
+    <Content Include="devtools\scripts\ace\snippets\latex.js" />
+    <Content Include="devtools\scripts\ace\snippets\less.js" />
+    <Content Include="devtools\scripts\ace\snippets\liquid.js" />
+    <Content Include="devtools\scripts\ace\snippets\lisp.js" />
+    <Content Include="devtools\scripts\ace\snippets\livescript.js" />
+    <Content Include="devtools\scripts\ace\snippets\logiql.js" />
+    <Content Include="devtools\scripts\ace\snippets\lsl.js" />
+    <Content Include="devtools\scripts\ace\snippets\lua.js" />
+    <Content Include="devtools\scripts\ace\snippets\luapage.js" />
+    <Content Include="devtools\scripts\ace\snippets\lucene.js" />
+    <Content Include="devtools\scripts\ace\snippets\makefile.js" />
+    <Content Include="devtools\scripts\ace\snippets\markdown.js" />
+    <Content Include="devtools\scripts\ace\snippets\matlab.js" />
+    <Content Include="devtools\scripts\ace\snippets\mel.js" />
+    <Content Include="devtools\scripts\ace\snippets\mushcode.js" />
+    <Content Include="devtools\scripts\ace\snippets\mushcode_high_rules.js" />
+    <Content Include="devtools\scripts\ace\snippets\mysql.js" />
+    <Content Include="devtools\scripts\ace\snippets\nix.js" />
+    <Content Include="devtools\scripts\ace\snippets\objectivec.js" />
+    <Content Include="devtools\scripts\ace\snippets\ocaml.js" />
+    <Content Include="devtools\scripts\ace\snippets\pascal.js" />
+    <Content Include="devtools\scripts\ace\snippets\perl.js" />
+    <Content Include="devtools\scripts\ace\snippets\pgsql.js" />
+    <Content Include="devtools\scripts\ace\snippets\php.js" />
+    <Content Include="devtools\scripts\ace\snippets\plain_text.js" />
+    <Content Include="devtools\scripts\ace\snippets\powershell.js" />
+    <Content Include="devtools\scripts\ace\snippets\prolog.js" />
+    <Content Include="devtools\scripts\ace\snippets\properties.js" />
+    <Content Include="devtools\scripts\ace\snippets\protobuf.js" />
+    <Content Include="devtools\scripts\ace\snippets\python.js" />
+    <Content Include="devtools\scripts\ace\snippets\r.js" />
+    <Content Include="devtools\scripts\ace\snippets\rdoc.js" />
+    <Content Include="devtools\scripts\ace\snippets\rhtml.js" />
+    <Content Include="devtools\scripts\ace\snippets\ruby.js" />
+    <Content Include="devtools\scripts\ace\snippets\rust.js" />
+    <Content Include="devtools\scripts\ace\snippets\sass.js" />
+    <Content Include="devtools\scripts\ace\snippets\scad.js" />
+    <Content Include="devtools\scripts\ace\snippets\scala.js" />
+    <Content Include="devtools\scripts\ace\snippets\scheme.js" />
+    <Content Include="devtools\scripts\ace\snippets\scss.js" />
+    <Content Include="devtools\scripts\ace\snippets\sh.js" />
+    <Content Include="devtools\scripts\ace\snippets\sjs.js" />
+    <Content Include="devtools\scripts\ace\snippets\smarty.js" />
+    <Content Include="devtools\scripts\ace\snippets\snippets.js" />
+    <Content Include="devtools\scripts\ace\snippets\soy_template.js" />
+    <Content Include="devtools\scripts\ace\snippets\space.js" />
+    <Content Include="devtools\scripts\ace\snippets\sql.js" />
+    <Content Include="devtools\scripts\ace\snippets\stylus.js" />
+    <Content Include="devtools\scripts\ace\snippets\svg.js" />
+    <Content Include="devtools\scripts\ace\snippets\tcl.js" />
+    <Content Include="devtools\scripts\ace\snippets\tex.js" />
+    <Content Include="devtools\scripts\ace\snippets\text.js" />
+    <Content Include="devtools\scripts\ace\snippets\textile.js" />
+    <Content Include="devtools\scripts\ace\snippets\toml.js" />
+    <Content Include="devtools\scripts\ace\snippets\twig.js" />
+    <Content Include="devtools\scripts\ace\snippets\typescript.js" />
+    <Content Include="devtools\scripts\ace\snippets\vbscript.js" />
+    <Content Include="devtools\scripts\ace\snippets\velocity.js" />
+    <Content Include="devtools\scripts\ace\snippets\verilog.js" />
+    <Content Include="devtools\scripts\ace\snippets\vhdl.js" />
+    <Content Include="devtools\scripts\ace\snippets\xml.js" />
+    <Content Include="devtools\scripts\ace\snippets\xquery.js" />
+    <Content Include="devtools\scripts\ace\snippets\yaml.js" />
+    <Content Include="devtools\scripts\ace\theme-ambiance.js" />
+    <Content Include="devtools\scripts\ace\theme-chaos.js" />
+    <Content Include="devtools\scripts\ace\theme-chrome.js" />
+    <Content Include="devtools\scripts\ace\theme-clouds.js" />
+    <Content Include="devtools\scripts\ace\theme-clouds_midnight.js" />
+    <Content Include="devtools\scripts\ace\theme-cobalt.js" />
+    <Content Include="devtools\scripts\ace\theme-crimson_editor.js" />
+    <Content Include="devtools\scripts\ace\theme-dawn.js" />
+    <Content Include="devtools\scripts\ace\theme-dreamweaver.js" />
+    <Content Include="devtools\scripts\ace\theme-eclipse.js" />
+    <Content Include="devtools\scripts\ace\theme-github.js" />
+    <Content Include="devtools\scripts\ace\theme-idle_fingers.js" />
+    <Content Include="devtools\scripts\ace\theme-katzenmilch.js" />
+    <Content Include="devtools\scripts\ace\theme-kr.js" />
+    <Content Include="devtools\scripts\ace\theme-kuroir.js" />
+    <Content Include="devtools\scripts\ace\theme-merbivore.js" />
+    <Content Include="devtools\scripts\ace\theme-merbivore_soft.js" />
+    <Content Include="devtools\scripts\ace\theme-monokai.js" />
+    <Content Include="devtools\scripts\ace\theme-mono_industrial.js" />
+    <Content Include="devtools\scripts\ace\theme-pastel_on_dark.js" />
+    <Content Include="devtools\scripts\ace\theme-solarized_dark.js" />
+    <Content Include="devtools\scripts\ace\theme-solarized_light.js" />
+    <Content Include="devtools\scripts\ace\theme-terminal.js" />
+    <Content Include="devtools\scripts\ace\theme-textmate.js" />
+    <Content Include="devtools\scripts\ace\theme-tomorrow.js" />
+    <Content Include="devtools\scripts\ace\theme-tomorrow_night.js" />
+    <Content Include="devtools\scripts\ace\theme-tomorrow_night_blue.js" />
+    <Content Include="devtools\scripts\ace\theme-tomorrow_night_bright.js" />
+    <Content Include="devtools\scripts\ace\theme-tomorrow_night_eighties.js" />
+    <Content Include="devtools\scripts\ace\theme-twilight.js" />
+    <Content Include="devtools\scripts\ace\theme-vibrant_ink.js" />
+    <Content Include="devtools\scripts\ace\theme-xcode.js" />
+    <Content Include="devtools\scripts\ace\worker-coffee.js" />
+    <Content Include="devtools\scripts\ace\worker-css.js" />
+    <Content Include="devtools\scripts\ace\worker-html.js" />
+    <Content Include="devtools\scripts\ace\worker-javascript.js" />
+    <Content Include="devtools\scripts\ace\worker-json.js" />
+    <Content Include="devtools\scripts\ace\worker-lua.js" />
+    <Content Include="devtools\scripts\ace\worker-php.js" />
+    <Content Include="devtools\scripts\ace\worker-xquery.js" />
+    <Content Include="devtools\scripts\class\DBManager.class.js" />
+    <Content Include="devtools\scripts\class\ServerMonitor.class.js" />
+    <Content Include="devtools\scripts\class\TextCompare.class.js" />
+    <Content Include="devtools\scripts\class\Vacuum.class.js" />
+    <Content Include="devtools\scripts\class\Vacuum2.class.js" />
+    <Content Include="devtools\scripts\codemirror-diff-merge.js" />
+    <Content Include="devtools\scripts\core.js" />
+    <Content Include="devtools\scripts\excanvas.min.js" />
+    <Content Include="devtools\scripts\jqplot.pieRenderer.min.js" />
+    <Content Include="devtools\scripts\jquery.jqplot.min.js" />
+    <Content Include="devtools\scripts\jquery.min.js" />
+    <Content Include="devtools\scripts\Modal.js" />
+    <Content Include="devtools\styles\codemirror-diff-merge.css" />
+    <Content Include="devtools\styles\global.css" />
+    <Content Include="devtools\styles\jquery.jqplot.min.css" />
+    <Content Include="devtools\styles\reset.css" />
+    <Content Include="devtools\TextCompare.aspx" />
+    <Content Include="devtools\Vacuum.aspx" />
+    <Content Include="devtools\Vacuum2.aspx" />
+    <Content Include="tests\carousel.aspx" />
+    <Content Include="tests\CreateProject\01.core.manifest.html" />
+    <Content Include="tests\CreateProject\09.savvyconsole.manifest.html" />
+    <Content Include="tests\CreateProject\10.cms.manifest.html" />
+    <Content Include="tests\CreateProject\10d.cms-page-revisions-and-editor-roles.manifest.html" />
+    <Content Include="tests\CreateProject\14b.search.extract.docandpdf.manifest.html" />
+    <Content Include="tests\CreateProject\34.jscountdowntimer.manifest.html" />
+    <Content Include="tests\CreateProject\15.savvy-share.manifest.html" />
+    <Content Include="tests\CreateProject\77.facebook.manifest.html" />
+    <Content Include="tests\CreateProject\82.documentrepository.manifest.html" />
+    <Content Include="tests\CreateProject\25.maillog.manifest.html" />
+    <Content Include="tests\CreateProject\31.js-date-parser.manifest.html" />
+    <Content Include="tests\CreateProject\52.product.manifest.html" />
+    <Content Include="tests\CreateProject\61.gecko-pdf.manifest.html" />
+    <Content Include="tests\CreateProject\71.sample-report.manifest.html" />
+    <Content Include="tests\CreateProject\72.legacy-data-migration.manifest.html" />
+    <Content Include="tests\CreateProject\72.sample-twitterapi.manifest.html" />
+    <Content Include="tests\CreateProject\73.competitions.manifest.html" />
+    <Content Include="tests\CreateProject\10c.tinymce349.manifest.html" />
+    <Content Include="tests\CreateProject\80.intranet.manifest.html" />
+    <Content Include="tests\CreateProject\81.articlepage.manifest.html" />
+    <Content Include="tests\CreateProject\75.devtools.manifest.html" />
+    <Content Include="tests\CreateProject\76.gallery.manifest.html" />
+    <Content Include="tests\CreateProject\62.masonry.manifest.html" />
+    <Content Include="tests\CreateProject\78.instagram.manifest.html" />
+    <Content Include="tests\CreateProject\15.image-processing-gif.html" />
+    <Content Include="tests\CreateProject\15.abcpdf.html" />
+    <Content Include="tests\CreateProject\15.image-processing-jpg.html" />
+    <Content Include="tests\CreateProject\15.image-processing-png.html" />
+    <Content Include="tests\CreateProject\04.JsonParse.SystemWebHelpers.html" />
+    <Content Include="tests\CreateProject\21.savvy-carousel.manifest.html" />
+    <Content Include="theme\blanktheme\bootstrap.min.css" />
+    <Content Include="theme\blanktheme\bootstrap.min.js" />
+    <Content Include="theme\blanktheme\headings.css" />
+    <Content Include="theme\focus\bootstrap.min.css" />
+    <Content Include="theme\focus\bootstrap.min.js" />
+    <Content Include="theme\focus\faq.js" />
+    <Content Include="theme\focus\focus.js" />
+    <Content Include="theme\focus\font-awesome.css" />
+    <Content Include="theme\focus\font\fontawesome-webfont.svg" />
+    <Content Include="theme\focus\headings.css" />
+    <Content Include="theme\focus\images\bg.png" />
+    <Content Include="theme\focus\images\footer-logo.jpg" />
+    <Content Include="theme\focus\images\footer-logo.png" />
+    <Content Include="theme\focus\images\gallery\1_large.jpg" />
+    <Content Include="theme\focus\images\gallery\1_small.jpg" />
+    <Content Include="theme\focus\images\gallery\2_large.jpg" />
+    <Content Include="theme\focus\images\gallery\2_small.jpg" />
+    <Content Include="theme\focus\images\gallery\3_large.jpg" />
+    <Content Include="theme\focus\images\gallery\3_small.jpg" />
+    <Content Include="theme\focus\images\glyphicons-halflings-white.png" />
+    <Content Include="theme\focus\images\glyphicons-halflings.png" />
+    <Content Include="theme\focus\images\masthead\masthead-2.jpg" />
+    <Content Include="theme\focus\images\masthead\masthead-3.jpg" />
+    <Content Include="theme\focus\images\masthead\masthead-4.jpg" />
+    <Content Include="theme\focus\images\masthead\masthead.jpg" />
+    <Content Include="theme\focus\images\profiles\profile-1.png" />
+    <Content Include="theme\focus\images\profiles\profile-2.png" />
+    <Content Include="theme\focus\images\profiles\profile-3.png" />
+    <Content Include="theme\focus\images\responsive-nav-bg.png" />
+    <Content Include="theme\focus\images\social\social-sprite.png" />
+    <Content Include="theme\focus\images\title.png" />
+    <Content Include="theme\focus\theme.css" />
+    <Content Include="Views\CommonAdmin\MapLocationEditPanel.ascx" />
+    <Content Include="Views\CommonAdmin\ModificationHistoryPanel.ascx" />
+    <Content Include="Views\Common\DocumentCategory.ascx" />
+    <Content Include="Views\Common\WarningBar.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\default.aspx" />
+    <Compile Include="Areas\Admin\admin.master.cs">
+      <DependentUpon>admin.master</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\AdminCustom\AdminEditViewModel.cs" />
+    <Compile Include="Areas\Admin\AdminCustom\AdminListViewModel.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminBaseController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminMenuController.cs" />
+    <Compile Include="Controllers\ApplicationController.cs" />
+    <Content Include="Admin\default.aspx" />
+    <Content Include="Areas\Admin\admin-ie7.css" />
+    <Content Include="Areas\Admin\admin-ie_all.css" />
+    <Content Include="Areas\Admin\help\Default.aspx" />
+    <Content Include="Areas\Admin\help\help.css" />
+    <Content Include="Areas\Admin\help\helpwindow.css" />
+    <Content Include="Areas\Admin\help\helpwindow.js" />
+    <Content Include="Areas\Admin\help\images\beweb-savvy-logo.gif" />
+    <Content Include="Areas\Admin\help\images\bullet-bronze.gif" />
+    <Content Include="Areas\Admin\help\images\bullet-red.gif" />
+    <Content Include="Areas\Admin\help\images\RichTextEditor-b.gif" />
+    <Content Include="Areas\Admin\help\images\RichTextEditor-b_over.gif" />
+    <Content Include="Areas\Admin\help\images\RichTextEditor-format.gif" />
+    <Content Include="Areas\Admin\help\images\RichTextEditor-format_over.gif" />
+    <Content Include="Areas\Admin\help\images\RichTextEditor-hr.gif" />
+    <Content Include="Areas\Admin\help\images\RichTextEditor-html.gif" />
+    <Content Include="Areas\Admin\help\images\RichTextEditor-htmleditor.gif" />
+    <Content Include="Areas\Admin\help\images\RichTextEditor-i.gif" />
+    <Content Include="Areas\Admin\help\images\RichTextEditor-i_over.gif" />
+    <Content Include="Areas\Admin\help\images\RichTextEditor-link.gif" />
+    <Content Include="Areas\Admin\help\images\RichTextEditor-link_dialog.gif" />
+    <Content Include="Areas\Admin\help\images\RichTextEditor-link_over.gif" />
+    <Content Include="Areas\Admin\help\images\RichTextEditor-ol.gif" />
+    <Content Include="Areas\Admin\help\images\RichTextEditor-ol_over.gif" />
+    <Content Include="Areas\Admin\help\images\RichTextEditor-redo.gif" />
+    <Content Include="Areas\Admin\help\images\RichTextEditor-redo_over.gif" />
+    <Content Include="Areas\Admin\help\images\RichTextEditor-resize.gif" />
+    <Content Include="Areas\Admin\help\images\RichTextEditor-u.gif" />
+    <Content Include="Areas\Admin\help\images\RichTextEditor-ul.gif" />
+    <Content Include="Areas\Admin\help\images\RichTextEditor-ul_over.gif" />
+    <Content Include="Areas\Admin\help\images\RichTextEditor-undo.gif" />
+    <Content Include="Areas\Admin\help\images\RichTextEditor-u_over.gif" />
+    <Content Include="Areas\Admin\help\images\RichTextEditor.gif" />
+    <Content Include="Areas\Admin\help\introtext.aspx" />
+    <Content Include="Areas\Admin\help\page-title.aspx" />
+    <Content Include="Areas\Admin\help\richtexteditor-i.aspx" />
+    <Content Include="Areas\Admin\help\richtexteditor.aspx" />
+    <Content Include="Areas\Admin\help\title.aspx" />
+    <Content Include="Areas\Admin\images\close.gif" />
+    <Content Include="Areas\Admin\images\dataheading-bg-black.gif" />
+    <Content Include="Areas\Admin\images\error-icon-small.gif" />
+    <Content Include="Areas\Admin\images\help.gif" />
+    <Content Include="Areas\Admin\images\info-icon-small.gif" />
+    <Content Include="Areas\Admin\images\max.gif" />
+    <Content Include="Areas\Admin\images\min.gif" />
+    <Content Include="Areas\Admin\images\percentage-bar.gif" />
+    <Content Include="Areas\Admin\images\preview.jpg" />
+    <Content Include="Areas\Admin\images\question-icon-small.gif" />
+    <Content Include="Areas\Admin\images\resize.gif" />
+    <Content Include="Areas\Admin\images\restore.gif" />
+    <Content Include="Areas\Admin\images\savvyicon.gif" />
+    <Content Include="Areas\Admin\images\sort_down_on.gif" />
+    <Content Include="Areas\Admin\images\sort_down_on_bl.gif" />
+    <Content Include="Areas\Admin\images\sort_down_white.png" />
+    <Content Include="Areas\Admin\images\sort_up_on.gif" />
+    <Content Include="Areas\Admin\images\sort_up_on_bl.gif" />
+    <Content Include="Areas\Admin\images\sort_up_white.png" />
+    <Content Include="Areas\Admin\images\spinner.gif" />
+    <Content Include="Areas\Admin\images\warning-icon-small.gif" />
+    <Content Include="Areas\Admin\Views\AdminMenu\AdminMenu.aspx" />
+    <Content Include="Areas\Admin\Views\ClientContactUsPersonAdmin\ClientContactUsPersonEdit.aspx" />
+    <Content Include="Areas\Admin\Views\ClientContactUsPersonAdmin\ClientContactUsPersonList.aspx" />
+    <Content Include="Areas\Admin\Views\ClientContactUsRegionAdmin\ClientContactUsRegionEdit.aspx" />
+    <Content Include="Areas\Admin\Views\ClientContactUsRegionAdmin\ClientContactUsRegionList.aspx" />
+    <Content Include="Areas\Admin\Views\CommentAdmin\CommentEdit.aspx" />
+    <Content Include="Areas\Admin\Views\CommentAdmin\CommentList.aspx" />
+    <Content Include="Areas\Admin\Views\ContactUsAdmin\ContactUsEdit.aspx" />
+    <Content Include="Areas\Admin\Views\ContactUsAdmin\ContactUsList.aspx" />
+    <Content Include="Areas\Admin\Views\EventAdmin\EventEdit.aspx" />
+    <Content Include="Areas\Admin\Views\EventAdmin\EventList.aspx" />
+    <Content Include="Areas\Admin\Views\FAQItemAdmin\FAQItemEdit.aspx" />
+    <Content Include="Areas\Admin\Views\FAQItemAdmin\FAQItemList.aspx" />
+    <Content Include="Areas\Admin\Views\FAQSectionAdmin\FAQSectionEdit.aspx" />
+    <Content Include="Areas\Admin\Views\FAQSectionAdmin\FAQSectionList.aspx" />
+    <Content Include="Areas\Admin\Views\HomepageSlideAdmin\HomepageSlideEdit.aspx" />
+    <Content Include="Areas\Admin\Views\HomepageSlideAdmin\HomepageSlideList.aspx" />
+    <Content Include="Areas\Admin\Views\MapLocationAdmin\MapLocationEdit.aspx" />
+    <Content Include="Areas\Admin\Views\MapLocationAdmin\MapLocationList.aspx" />
+    <Content Include="Areas\Admin\Views\MapRegionAdmin\MapRegionEdit.aspx" />
+    <Content Include="Areas\Admin\Views\MapRegionAdmin\MapRegionList.aspx" />
+    <Content Include="Areas\Admin\Views\NewsAdmin\NewsEdit.aspx" />
+    <Content Include="Areas\Admin\Views\NewsAdmin\NewsList.aspx" />
+    <Content Include="Areas\Admin\Views\NewsRSSAdmin\NewsRSSEdit.aspx" />
+    <Content Include="Areas\Admin\Views\NewsRSSAdmin\NewsRSSList.aspx" />
+    <Content Include="Areas\Admin\Views\NewsRSSAdmin\RSSFeedEditor.aspx" />
+    <Content Include="Areas\Admin\Views\PageAdmin\PageEdit.aspx" />
+    <Content Include="Areas\Admin\Views\PageAdmin\PageHierarchy.aspx" />
+    <Content Include="Areas\Admin\Views\PersonAdmin\PersonEdit.aspx" />
+    <Content Include="Areas\Admin\Views\PersonAdmin\PersonList.aspx" />
+    <Content Include="Areas\Admin\Views\ProductAdmin\ProductEdit.aspx" />
+    <Content Include="Areas\Admin\Views\ProductAdmin\ProductList.aspx" />
+    <Content Include="Areas\Admin\Views\ProductCategoryAdmin\ProductCategoryEdit.aspx" />
+    <Content Include="Areas\Admin\Views\ProductCategoryAdmin\ProductCategoryList.aspx" />
+    <Content Include="Areas\Admin\Views\ShoppingCartOrderAdmin\ShoppingCartOrderEdit.aspx" />
+    <Content Include="Areas\Admin\Views\ShoppingCartOrderAdmin\ShoppingCartOrderList.aspx" />
+    <Content Include="Areas\Admin\Views\SortOrder\SortOrderView.aspx" />
+    <Content Include="Areas\Admin\Views\TestimonialAdmin\TestimonialEdit.aspx" />
+    <Content Include="Areas\Admin\Views\TestimonialAdmin\TestimonialList.aspx" />
+    <Content Include="Areas\Admin\Views\TextBlockAdmin\TextBlockEdit.aspx" />
+    <Content Include="Areas\Admin\Views\TextBlockAdmin\TextBlockList.aspx" />
+    <Content Include="Areas\Admin\Views\TextBlockGroupAdmin\TextBlockGroupEdit.aspx" />
+    <Content Include="Areas\Admin\Views\TextBlockGroupAdmin\TextBlockGroupList.aspx" />
+    <Content Include="Areas\Admin\Views\UrlRedirectAdmin\UrlRedirectEdit.aspx" />
+    <Content Include="Areas\Admin\Views\UrlRedirectAdmin\UrlRedirectList.aspx" />
+    <Content Include="Areas\Admin\Views\VideoAdmin\VideoApproval.aspx" />
+    <Content Include="Areas\Admin\Views\VideoAdmin\VideoEdit.aspx" />
+    <Content Include="Areas\Admin\Views\VideoAdmin\VideoList.aspx" />
+    <Content Include="images\blank.gif" />
+    <Content Include="images\body_background.png" />
+    <Content Include="images\bubbletip-B-tail.png" />
+    <Content Include="images\bubbletip-B.png" />
+    <Content Include="images\bubbletip-BL-corner.png" />
+    <Content Include="images\bubbletip-BR-corner.png" />
+    <Content Include="images\bubbletip-L-R.png" />
+    <Content Include="images\bubbletip-L-tail.png" />
+    <Content Include="images\bubbletip-L.png" />
+    <Content Include="images\bubbletip-R-tail.png" />
+    <Content Include="images\bubbletip-R.png" />
+    <Content Include="images\bubbletip-T-B.png" />
+    <Content Include="images\bubbletip-T-tail.png" />
+    <Content Include="images\bubbletip-T.png" />
+    <Content Include="images\bubbletip-TL-corner.png" />
+    <Content Include="images\bubbletip-TR-corner.png" />
+    <Content Include="images\bubbletip.png" />
+    <Content Include="images\bullet.gif" />
+    <Content Include="images\credit.png" />
+    <Content Include="images\filetypes\DOC_small.gif" />
+    <Content Include="images\filetypes\generic_small.gif" />
+    <Content Include="images\filetypes\pdf.gif" />
+    <Content Include="images\filetypes\PDF_small.gif" />
+    <Content Include="images\filetypes\PPT_small.gif" />
+    <Content Include="images\filetypes\XLS_small.gif" />
+    <Content Include="images\filetypes\ZIP_small.gif" />
+    <Content Include="images\heading-arrow.png" />
+    <Content Include="images\heading-bg.png" />
+    <Content Include="images\ico-calendar.gif" />
+    <Content Include="images\mainmenu-item.png" />
+    <Content Include="images\spacer.gif" />
+    <Content Include="js\BewebCore\beweb-cma.js" />
+    <Content Include="js\BewebCore\Beweb.jquery.validate.js" />
+    <Content Include="js\BewebCore\forms.js" />
+    <Content Include="js\BewebCore\jquery-placeholder-1.1.9.js" />
+    <Content Include="js\BewebCore\keepalive.js" />
+    <Content Include="js\BewebCore\passwordmeter.js" />
+    <Content Include="js\DirtyChecker.js" />
+    <Content Include="js\googlemap.js" />
+    <Content Include="js\jquery-ui-1.8.4\css\redmond\images\ui-anim_basic_16x16.gif" />
+    <Content Include="js\jquery-ui-1.8.4\css\redmond\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="js\jquery-ui-1.8.4\css\redmond\images\ui-bg_flat_55_fbec88_40x100.png" />
+    <Content Include="js\jquery-ui-1.8.4\css\redmond\images\ui-bg_glass_75_d0e5f5_1x400.png" />
+    <Content Include="js\jquery-ui-1.8.4\css\redmond\images\ui-bg_glass_85_dfeffc_1x400.png" />
+    <Content Include="js\jquery-ui-1.8.4\css\redmond\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="js\jquery-ui-1.8.4\css\redmond\images\ui-bg_gloss-wave_55_5c9ccc_500x100.png" />
+    <Content Include="js\jquery-ui-1.8.4\css\redmond\images\ui-bg_inset-hard_100_f5f8f9_1x100.png" />
+    <Content Include="js\jquery-ui-1.8.4\css\redmond\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="js\jquery-ui-1.8.4\css\redmond\images\ui-icons_217bc0_256x240.png" />
+    <Content Include="js\jquery-ui-1.8.4\css\redmond\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="js\jquery-ui-1.8.4\css\redmond\images\ui-icons_469bdd_256x240.png" />
+    <Content Include="js\jquery-ui-1.8.4\css\redmond\images\ui-icons_6da8d5_256x240.png" />
+    <Content Include="js\jquery-ui-1.8.4\css\redmond\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="js\jquery-ui-1.8.4\css\redmond\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="js\jquery-ui-1.8.4\css\redmond\images\ui-icons_f9bd01_256x240.png" />
+    <Content Include="js\jquery-ui-1.8.4\css\redmond\jquery-ui-1.8.4.css" />
+    <Content Include="js\jquery-ui-1.8.4\js\jquery-ui-1.8.4.js" />
+    <Compile Include="services\GetAttachmentPictures.aspx.cs">
+      <DependentUpon>GetAttachmentPictures.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SiteCustom\DefaultPictureMetaData.cs" />
+    <Compile Include="SiteCustom\Site.cs" />
+    <Compile Include="SiteCustom\SiteHtmlHelpers.cs" />
+    <Compile Include="SiteCustom\PageTemplateViewModel.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SiteCustom\TrackingBreadcrumb.cs" />
+    <Compile Include="SiteCustom\ViewMaster.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Web.config" />
+    <Content Include="Global.asax" />
+    <Content Include="js\jquery.validate-1.6\jquery.validate-vsdoc.js" />
+    <Content Include="js\jquery.validate-1.6\jquery.validate.js" />
+    <Content Include="js\jquery.validate-1.6\jquery.validate.min.js" />
+    <Content Include="js\tiny_mce_3_4_9\langs\en.js" />
+    <Content Include="js\tiny_mce_3_4_9\license.txt" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\advhr\css\advhr.css" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\advhr\editor_plugin.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\advhr\editor_plugin_src.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\advhr\js\rule.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\advhr\langs\en_dlg.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\advhr\rule.htm" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\advimage\css\advimage.css" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\advimage\css\advimage20100823 - todo.css" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\advimage\editor_plugin.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\advimage\editor_plugin_src.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\advimage\image.htm" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\advimage\image20100823 - todo.aspx" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\advimage\images\folder.gif" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\advimage\images\folderup.gif" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\advimage\images\image_center.gif" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\advimage\images\image_float_left.gif" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\advimage\images\image_float_right.gif" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\advimage\images\image_left.gif" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\advimage\images\image_right.gif" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\advimage\img\sample.gif" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\advimage\js\image.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\advimage\langs\en_dlg.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\advlink\css\advlink.css" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\advlink\editor_plugin.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\advlink\editor_plugin_src.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\advlink\js\advlink.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\advlink\langs\en_dlg.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\advlink\link.htm" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\attachment\attachment.aspx" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\attachment\css\attachment.css" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\attachment\editor_plugin.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\attachment\editor_plugin_src.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\attachment\images\folder.gif" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\attachment\images\folderup.gif" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\attachment\images\loading.gif" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\attachment\images\spinner.gif" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\attachment\js\attachment.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\attachment\langs\en_dlg.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\contextmenu\editor_plugin.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\contextmenu\editor_plugin_src.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\iespell\editor_plugin.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\iespell\editor_plugin_src.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\insertdatetime\editor_plugin.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\insertdatetime\editor_plugin_src.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\mediaupload\css\mediaupload.css" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\mediaupload\editor_plugin.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\mediaupload\editor_plugin_src.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\mediaupload\images\folder.gif" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\mediaupload\images\folderup.gif" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\mediaupload\images\loading.gif" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\mediaupload\images\spinner.gif" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\mediaupload\js\mediaupload.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\mediaupload\langs\en_dlg.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\mediaupload\mediaupload.aspx" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\media\css\media.css" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\media\editor_plugin.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\media\editor_plugin_src.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\media\js\embed.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\media\js\media.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\media\langs\en_dlg.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\media\media.htm" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\media\moxieplayer.swf" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\paste\xeditor_plugin.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\paste\editor_plugin.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\paste\js\beweb_smartpaste.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\paste\js\pastetext.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\paste\js\pasteword.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\paste\langs\en_dlg.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\paste\pastetext.htm" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\paste\pasteword.htm" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\print\editor_plugin.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\print\editor_plugin_src.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\save\editor_plugin.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\save\editor_plugin_src.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\searchreplace\css\searchreplace.css" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\searchreplace\editor_plugin.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\searchreplace\editor_plugin_src.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\searchreplace\js\searchreplace.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\searchreplace\langs\en_dlg.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\searchreplace\searchreplace.htm" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\table\cell.htm" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\table\css\cell.css" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\table\css\row.css" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\table\css\table.css" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\table\editor_plugin.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\table\editor_plugin_src.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\table\js\cell.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\table\js\merge_cells.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\table\js\row.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\table\js\table.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\table\langs\en_dlg.js" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\table\merge_cells.htm" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\table\row.htm" />
+    <Content Include="js\tiny_mce_3_4_9\plugins\table\table.htm" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\about.htm" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\anchor.htm" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\charmap.htm" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\color_picker.htm" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\editor_template.js" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\editor_template_src.js" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\image.htm" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\img\colorpicker.jpg" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\img\flash.gif" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\img\icons.gif" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\img\iframe.gif" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\img\pagebreak.gif" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\img\quicktime.gif" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\img\realmedia.gif" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\img\shockwave.gif" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\img\trans.gif" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\img\video.gif" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\img\windowsmedia.gif" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\js\about.js" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\js\anchor.js" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\js\charmap.js" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\js\color_picker.js" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\js\image.js" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\js\link.js" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\js\source_editor.js" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\langs\en.js" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\langs\en_dlg.js" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\link.htm" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\shortcuts.htm" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\skins\default\content.css" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\skins\default\dialog.css" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\skins\default\img\buttons.png" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\skins\default\img\items.gif" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\skins\default\img\menu_arrow.gif" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\skins\default\img\menu_check.gif" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\skins\default\img\progress.gif" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\skins\default\img\tabs.gif" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\skins\default\ui.css" />
+    <Content Include="js\tiny_mce_3_4_9\themes\advanced\source_editor.htm" />
+    <Content Include="js\tiny_mce_3_4_9\tiny_mce.js" />
+    <Content Include="js\tiny_mce_3_4_9\tiny_mce_popup.js" />
+    <Content Include="js\tiny_mce_3_4_9\tiny_mce_src.js" />
+    <Content Include="js\tiny_mce_3_4_9\utils\editable_selects.js" />
+    <Content Include="js\tiny_mce_3_4_9\utils\form_utils.js" />
+    <Content Include="js\tiny_mce_3_4_9\utils\mctabs.js" />
+    <Content Include="js\tiny_mce_3_4_9\utils\validate.js" />
+    <Content Include="Models\Models\this includes classes that must exist in order to allow full compile, but may also be generated partials.txt" />
+    <Content Include="Models\Models\_partial extensions to generated models go here.txt" />
+    <Content Include="services\GetAttachmentPictures.aspx" />
+    <Content Include="services\GetAutoComplete.aspx" />
+    <Content Include="services\GetClipboardPicture.aspx" />
+    <Content Include="services\proxy.aspx" />
+    <Content Include="services\proxyimage.aspx" />
+    <Content Include="site.css" />
+    <Content Include="site_ie6.css" />
+    <Content Include="swfs\expressInstall.swf" />
+    <Content Include="swfs\placeholder_160x83.swf" />
+    <Content Include="swfs\placeholder_253x206.swf" />
+    <Content Include="swfs\src\calendar.xml" />
+    <Content Include="swfs\src\expressInstall.swf" />
+    <Content Include="swfs\src\main.swf" />
+    <Content Include="swfs\src\stub.swf" />
+    <Content Include="Testimonials.aspx" />
+    <Content Include="tests\CreateProject.aspx" />
+    <Content Include="tests\CreateProject\02.scheduledtask.manifest.html" />
+    <Content Include="tests\CreateProject\03.keystone-removed.manifest.html" />
+    <Content Include="tests\CreateProject\03.keystone.manifest.html" />
+    <Content Include="tests\CreateProject\06.admin.manifest.html" />
+    <Content Include="tests\CreateProject\07.textblock.manifest.html" />
+    <Content Include="tests\CreateProject\08.download.manifest.html" />
+    <Content Include="tests\CreateProject\10b.modificationlog.manifest.html" />
+    <Content Include="tests\CreateProject\20.news.manifest.html" />
+    <Content Include="tests\CreateProject\20.faq.manifest.html" />
+    <Content Include="tests\CreateProject\20.comment.manifest.html" />
+    <Content Include="tests\CreateProject\14.search.manifest.html" />
+    <Content Include="tests\CreateProject\14a.search-autocomplete.manifest.html" />
+    <Content Include="tests\CreateProject\15.sitemap.manifest.html" />
+    <Content Include="tests\CreateProject\20.contactusform.manifest.html" />
+    <Content Include="tests\CreateProject\20.events.manifest.html" />
+    <Content Include="tests\CreateProject\20.team-staff-clientcontact-aboutus.manifest.html" />
+    <Content Include="tests\CreateProject\25.cms-sorter.manifest.html" />
+    <Content Include="tests\CreateProject\32.livechat.manifest.html" />
+    <Content Include="tests\CreateProject\63.shoppingcart.manifest.html" />
+    <Content Include="tests\CreateProject\20.testimonials.manifest.html" />
+    <Content Include="tests\CreateProject\36.blog.manifest.html" />
+    <Content Include="tests\CreateProject\37.map-locations.manifest.html" />
+    <Content Include="tests\CreateProject\38.cool-youtube-videos.manifest.html" />
+    <Content Include="tests\CreateProject\21.dumb-carousel.manifest.html" />
+    <Content Include="tests\CreateProject\21.boostrap-carousel.manifest.html" />
+    <Content Include="tests\CreateProject\50.ftp.manifest.html" />
+    <Content Include="tests\CreateProject\51.smtpmail.manifest.html" />
+    <Content Include="tests\CreateProject\999.orphans-ignore.manifest.html" />
+    <Content Include="tests\CreateProject\20.banner.manifest.html" />
+    <Content Include="tests\CreateProject\60.products.manifest.html" />
+    <Content Include="tests\dbupdate-raw.aspx" />
+    <Content Include="tests\Default.aspx" />
+    <Content Include="tests\listfiles.aspx" />
+    <Content Include="tests\lorem.html" />
+    <Content Include="tests\recaptcha-sample-csharp.aspx" />
+    <Content Include="tests\sound.aspx" />
+    <Content Include="tests\test-colorbox.html" />
+    <Content Include="tests\test-datablock-create.aspx" />
+    <Content Include="tests\test-db-connection.aspx" />
+    <Content Include="tests\test35.aspx" />
+    <Content Include="tests\testdotnet20.aspx" />
+    <Content Include="tests\testdotnet35.aspx" />
+    <Content Include="Views\AboutUs\AboutUs.aspx" />
+    <Content Include="Views\Blog\Blog.aspx" />
+    <Content Include="Views\Blog\BlogDetail.aspx" />
+    <Content Include="Views\Comment\CommentThankYou.ascx" />
+    <Content Include="Views\Comment\CommentView.ascx" />
+    <Content Include="Views\CommonAdmin\PublishSettingsEditPanel.ascx" />
+    <Content Include="Views\CommonAdmin\SEOEditPanel.ascx" />
+    <Content Include="Views\Competition\CompetitionView.aspx" />
+    <Content Include="Views\ContactUs\ContactUs.aspx" />
+    <Content Include="Views\ContactUs\ContactUsThanks.aspx" />
+    <Content Include="Views\CoolVideos\CoolVideos.aspx" />
+    <Content Include="Views\DocumentCategory\DocumentCategory.aspx" />
+    <Content Include="Views\error\401.aspx" />
+    <Content Include="Views\error\402.aspx" />
+    <Content Include="Views\error\403.aspx" />
+    <Content Include="Views\error\404.aspx" />
+    <Content Include="Views\error\405.aspx" />
+    <Content Include="Views\error\406.aspx" />
+    <Content Include="Views\error\412.aspx" />
+    <Content Include="Views\error\500.aspx" />
+    <Content Include="Views\error\501.aspx" />
+    <Content Include="Views\error\502.aspx" />
+    <Content Include="Views\error\email.aspx" />
+    <Content Include="Views\error\error.aspx" />
+    <Content Include="Views\error\filetoobig.aspx" />
+    <Content Include="Views\error\test.aspx" />
+    <Content Include="Views\error\test.html" />
+    <Content Include="Views\Events\Events.aspx" />
+    <Content Include="Views\Home\DumbCarousel.ascx" />
+    <Content Include="Views\Home\SavvyCarousel.ascx" />
+    <Content Include="Views\Home\Home.aspx" />
+    <Content Include="Views\LiveChat\LiveChat.aspx" />
+    <Content Include="Views\LiveChat\LiveChat.ascx" />
+    <Content Include="Views\Map\Map.aspx" />
+    <Content Include="Views\Navigation\Breadcrumb.ascx" />
+    <Content Include="Views\Navigation\SideNav.ascx" />
+    <Content Include="Views\Navigation\SubNav.ascx" />
+    <Content Include="Views\Navigation\FooterNav.ascx" />
+    <Content Include="Views\Navigation\Header.ascx" />
+    <Content Include="Views\Navigation\MainNav.ascx" />
+    <Content Include="Views\Navigation\SecondaryNav.ascx" />
+    <Content Include="Views\News\News.aspx" />
+    <Content Include="Views\News\NewsDetail.aspx" />
+    <Content Include="Views\PasswordLock\PasswordLockView.aspx" />
+    <Content Include="Views\Products\Products.aspx" />
+    <Content Include="Views\Questions\Questions.aspx" />
+    <Content Include="Views\Search\SearchField.ascx" />
+    <Content Include="Views\Search\SearchResults.aspx" />
+    <Content Include="Views\Security\ChangePassword.aspx" />
+    <Content Include="Views\Security\Login.aspx" />
+    <Content Include="Views\ShoppingCart\Cart.aspx" />
+    <Content Include="Views\SiteMap\SiteMap.aspx" />
+    <Content Include="Views\StandardPage\StandardPage.aspx" />
+    <Content Include="Views\TextBlock\Index.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="site.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web_AppSettings.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web_ConnectionStrings.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\ImageManipulation.dll" />
+    <Content Include="js\autocomplete\ajax-loader.gif" />
+    <Content Include="js\autocomplete\jquery.autocomplete.css" />
+    <Content Include="js\autocomplete\jquery.autocomplete.min.js" />
+    <Content Include="js\colorbox\colorbox.css" />
+    <Content Include="js\colorbox\images\border.png" />
+    <Content Include="js\colorbox\images\controls.png" />
+    <Content Include="js\colorbox\images\internet_explorer\borderBottomCenter.png" />
+    <Content Include="js\colorbox\images\internet_explorer\borderBottomLeft.png" />
+    <Content Include="js\colorbox\images\internet_explorer\borderBottomRight.png" />
+    <Content Include="js\colorbox\images\internet_explorer\borderMiddleLeft.png" />
+    <Content Include="js\colorbox\images\internet_explorer\borderMiddleRight.png" />
+    <Content Include="js\colorbox\images\internet_explorer\borderTopCenter.png" />
+    <Content Include="js\colorbox\images\internet_explorer\borderTopLeft.png" />
+    <Content Include="js\colorbox\images\internet_explorer\borderTopRight.png" />
+    <Content Include="js\colorbox\images\loading.gif" />
+    <Content Include="js\colorbox\images\loading_background.png" />
+    <Content Include="js\colorbox\images\overlay.png" />
+    <Content Include="js\colorbox\jquery.colorbox-min.js" />
+    <Content Include="js\colorbox\jquery.colorbox.js" />
+    <Content Include="js\common.js" />
+    <Content Include="js\jquery-ui-1.8.4\js\timepicker.js" />
+    <Content Include="js\_javascript client side files go here.txt" />
+    <Content Include="Areas\Admin\admin.master" />
+    <Content Include="Areas\Admin\help\help.master" />
+    <None Include="Admin\tools\template\ActiveRecordModels\Column.template-cs" />
+    <Content Include="Admin\tools\template\ActiveRecordModels\ForeignKey.template-cs" />
+    <None Include="Admin\tools\template\ActiveRecordModels\Main.template-cs" />
+    <None Include="Admin\tools\template\ActiveRecordModels\ManyToMany.template-cs" />
+    <None Include="Admin\tools\template\ActiveRecordModels\Table.template-cs" />
+    <None Include="Admin\tools\template\ActiveRecordModels\UserCodeTable.template-cs" />
+    <None Include="Admin\tools\template\LinqToSqlModels\ColumnTemplate.template-cs" />
+    <None Include="Admin\tools\template\LinqToSqlModels\ForeignKeyTemplate.template-cs" />
+    <None Include="Admin\tools\template\LinqToSqlModels\MainTemplate.template-cs" />
+    <None Include="Admin\tools\template\LinqToSqlModels\TableTemplate.template-cs" />
+    <None Include="Admin\tools\template\pages_models\EditPage.template-aspx" />
+    <None Include="Admin\tools\template\pages_models\EditPage.template-aspx-cs" />
+    <None Include="Admin\tools\template\pages_models\ListPage.template-aspx" />
+    <None Include="Admin\tools\template\pages_models\ListPage.template-aspx-cs" />
+    <None Include="Admin\tools\template\pages_mvc\Controller.template-cs" />
+    <None Include="Admin\tools\template\pages_mvc\Edit.template-aspx" />
+    <None Include="Admin\tools\template\pages_mvc\Export.template-aspx" />
+    <None Include="Admin\tools\template\pages_mvc\Index.template-aspx" />
+    <None Include="Admin\tools\template\pages_mvc\View.template-aspx" />
+    <None Include="Admin\tools\template\pages_webforms\EditPage.template-aspx" />
+    <None Include="Admin\tools\template\pages_webforms\EditPage.template-aspx-cs" />
+    <None Include="Admin\tools\template\pages_webforms\ListPage.template-aspx" />
+    <None Include="Admin\tools\template\pages_webforms\ListPage.template-aspx-cs" />
+    <Content Include="Areas\Admin\admin-export.master" />
+    <Content Include="Areas\Admin\admin-no-form.master" />
+    <Content Include="Areas\Admin\help\helpwindow.min.js.map">
+      <DependentUpon>helpwindow.js</DependentUpon>
+    </Content>
+    <Content Include="Admin\tools\Web.config" />
+    <None Include="CodeTemplates\AddController\Controller.tt" />
+    <None Include="CodeTemplates\AddView\Create.tt" />
+    <None Include="CodeTemplates\AddView\Delete.tt" />
+    <None Include="CodeTemplates\AddView\Details.tt" />
+    <None Include="CodeTemplates\AddView\Edit.tt" />
+    <None Include="CodeTemplates\AddView\Empty.tt" />
+    <None Include="CodeTemplates\AddView\List.tt" />
+    <Content Include="js\jquery-ui-1.8.4\js\timepicker.min.js.map">
+      <DependentUpon>timepicker.js</DependentUpon>
+    </Content>
+    <Content Include="js\BewebCore\beweb-cma.min.js.map">
+      <DependentUpon>beweb-cma.js</DependentUpon>
+    </Content>
+    <Content Include="js\BewebCore\Beweb.jquery.validate.min.js.map">
+      <DependentUpon>Beweb.jquery.validate.js</DependentUpon>
+    </Content>
+    <Content Include="js\BewebCore\carousel.min.js.map">
+      <DependentUpon>carousel.js</DependentUpon>
+    </Content>
+    <Content Include="js\BewebCore\forms.min.js.map">
+      <DependentUpon>forms.js</DependentUpon>
+    </Content>
+    <Content Include="js\BewebCore\keepalive.min.js.map">
+      <DependentUpon>keepalive.js</DependentUpon>
+    </Content>
+    <Content Include="js\BewebCore\passwordmeter.min.js.map">
+      <DependentUpon>passwordmeter.js</DependentUpon>
+    </Content>
+    <Content Include="js\jquery-1.8.2\jquery-1.8.2.min.js.map">
+      <DependentUpon>jquery-1.8.2.js</DependentUpon>
+    </Content>
+    <Content Include="js\colorbox\jquery.colorbox.min.js.map">
+      <DependentUpon>jquery.colorbox.js</DependentUpon>
+    </Content>
+    <Content Include="js\xdate\xdate.min.js.map">
+      <DependentUpon>xdate.js</DependentUpon>
+    </Content>
+    <Content Include="devtools\DevTools.master" />
+    <Content Include="js\BewebCore\Copy of beweb-cma.min.js.map">
+      <DependentUpon>RepositoryDownloader.js</DependentUpon>
+    </Content>
+    <Content Include="js\BewebCore\Savvy.validate.min.js.map" />
+    <None Include="tests\testpdf-template.pdf" />
+    <Content Include="Views\error\error.master" />
+    <Content Include="theme\focus\font\fontawesome-webfont.eot" />
+    <Content Include="theme\focus\font\fontawesome-webfont.svgz" />
+    <Content Include="theme\focus\font\fontawesome-webfont.ttf" />
+    <Content Include="theme\focus\font\fontawesome-webfont.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="BewebCore\SavvyCore.csproj">
+      <Project>{BFBD2C71-8623-4D3E-9CFC-D1763C2D70F2}</Project>
+      <Name>SavvyCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="Keystone\Keystone.csproj">
+      <Project>{24B07B7E-3A1F-4E67-8F63-F0A9C1327AA2}</Project>
+      <Name>Keystone</Name>
+    </ProjectReference>
+    <ProjectReference Include="SavvyMVC\SavvyMVC.csproj">
+      <Project>{4A66EC81-6C58-4885-95C0-761DE2728F8F}</Project>
+      <Name>SavvyMVC</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Views\SavvyAdmin\" />
+    <Folder Include="attachments\docs\" />
+    <Folder Include="attachments\pics\" />
+    <Folder Include="Views\Shared\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <Target Name="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)" />
+    <!--     <AspNetCompiler VirtualPath="temp" PhysicalPath="$(MSBuildBinPath)" />
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="web.config" />
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="Web_AppSettings.config" />
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="Web_ConnectionStrings.config" />
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="Global.asax" />
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="Global.asax.cs" />
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)Views\" />
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)Areas\Admin\Views\" /> -->
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>28837</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/SavvyCMS</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>
+			mkdir $(SolutionDir)bin-pub
+			copy $(TargetPath) $(SolutionDir)bin-pub\
+			copy $(TargetDir)Site.pdb $(SolutionDir)bin-pub\Site.pdb
+		</PostBuildEvent>
+  </PropertyGroup>
+</Project>

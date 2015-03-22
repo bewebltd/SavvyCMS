@@ -1,0 +1,46 @@
+﻿namespace Models
+{
+	using System.Data.Linq.Mapping;
+
+	// define column related members in partial table class 
+	public partial class xxxtablenamexxx {
+		private xxxtypexxx _xxxpropertynamexxx;
+
+		partial void OnxxxpropertynamexxxChanging(xxxtypexxx value);
+		partial void OnxxxpropertynamexxxChanged();
+		
+		[Column(Name="xxxfieldnamexxx", Storage = "_xxxpropertynamexxx", DbType = "xxxdbtypexxx" xxxotherattributesxxx)]
+		public xxxtypexxx xxxpropertynamexxx
+		{
+			get
+			{
+				return this._xxxpropertynamexxx;
+			}
+			set
+			{
+				if ((this._xxxpropertynamexxx != value))
+				{
+					this.OnxxxpropertynamexxxChanging(value);
+					this.SendPropertyChanging();
+					this._xxxpropertynamexxx = value;
+					this.SendPropertyChanged("xxxpropertynamexxx");
+					this.OnxxxpropertynamexxxChanged();
+				}
+			}
+		}
+		
+		
+		// special property for binding the field to beweb forms controls
+		public Beweb.Forms.SavvyFieldBinder xxxpropertynamexxx_Binder = CreateFieldBinder("xxxpropertynamexxx");
+		
+		
+		// metadata for this column
+		public partial class MetaData {
+			public partial class xxxpropertynamexxx {
+				public readonly int MaxLength = xxxmaxlenxxx;
+				public readonly string DataType = "xxxdbtype";
+			}
+		}
+		
+	}
+}

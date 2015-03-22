@@ -1,0 +1,16 @@
+C:\data\projects\CodelibMVCOpenSource\SavvyMVC\bin\Debug\SavvyMVC.dll
+C:\data\projects\CodelibMVCOpenSource\SavvyMVC\bin\Debug\SavvyMVC.pdb
+C:\data\projects\CodelibMVCOpenSource\SavvyMVC\bin\Debug\BewebCore.dll
+C:\data\projects\CodelibMVCOpenSource\SavvyMVC\bin\Debug\Keystone.dll
+C:\data\projects\CodelibMVCOpenSource\SavvyMVC\bin\Debug\nQuant.Core.dll
+C:\data\projects\CodelibMVCOpenSource\SavvyMVC\bin\Debug\ImageManipulation.dll
+C:\data\projects\CodelibMVCOpenSource\SavvyMVC\bin\Debug\BitMiracle.LibJpeg.NET.dll
+C:\data\projects\CodelibMVCOpenSource\SavvyMVC\bin\Debug\itextsharp.dll
+C:\data\projects\CodelibMVCOpenSource\SavvyMVC\bin\Debug\SharpZipLib.dll
+C:\data\projects\CodelibMVCOpenSource\SavvyMVC\bin\Debug\NRtfTree.dll
+C:\data\projects\CodelibMVCOpenSource\SavvyMVC\bin\Debug\BewebCore.pdb
+C:\data\projects\CodelibMVCOpenSource\SavvyMVC\bin\Debug\Keystone.pdb
+C:\data\projects\CodelibMVCOpenSource\SavvyMVC\bin\Debug\BitMiracle.LibJpeg.NET.xml
+C:\data\projects\CodelibMVCOpenSource\SavvyMVC\obj\Debug\SavvyMVC.csprojResolveAssemblyReference.cache
+C:\data\projects\CodelibMVCOpenSource\SavvyMVC\obj\Debug\SavvyMVC.dll
+C:\data\projects\CodelibMVCOpenSource\SavvyMVC\obj\Debug\SavvyMVC.pdb

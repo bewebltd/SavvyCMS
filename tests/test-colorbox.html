@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>Test colorbox</title>
+		<meta name="author" content="">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+
+		<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+		<link rel="stylesheet" type="text/css" href="../js/colorbox/colorbox.css">
+		<script language="JavaScript" src="../js/jQuery/jquery-1.3.2.min.js"></script>
+		<script language="JavaScript" src="../js/colorbox/jquery.colorbox-min.js"></script>
+	</head>
+	<body>
+		<a href="#" onclick="jQuery.fn.colorbox({href:'lorem.html',width:300, height:300});return false;">Test colorbox</a>
+		
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('.button').colorbox({transition:'fade', speed:500});
+			
+			
+		});
+		
+		function test()
+		{
+			$.fn.colorbox({transition:'fade', speed:500});
+		}
+	</script>
+	<input type="button" class="xbutton" value="hey" onclick="test()">
+	</body>
+</html>

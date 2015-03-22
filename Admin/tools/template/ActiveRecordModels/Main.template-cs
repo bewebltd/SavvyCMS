@@ -1,0 +1,15 @@
+﻿//-------------------------------------------------
+// Generated Beweb Savvy ActiveRecord Model Classes
+// This code was written by a tool.
+//-------------------------------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Data.Common;
+using System.Linq;
+using Beweb;
+using Models;
+
+#region "ActiveRecord generated code"
+
+namespace Models {

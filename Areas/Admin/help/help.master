@@ -1,0 +1,64 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="help.master.cs" Inherits="admin_help_help" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Help - Savvy - Beweb</title>
+    <link href="help.css" rel="stylesheet" type="text/css" media="screen" />
+    <script type="text/javascript">
+	    <!--
+	    function GetScrollPos() {
+		    var point={x: 0, y: 0};
+		    if(typeof(window.parent.window.pageYOffset)=='number'){
+			     point.y=window.parent.window.pageYOffset;
+			     point.x=window.parent.window.pageXOffset;
+		    }else if(window.parent.document.body.scrollLeft || window.parent.document.body.scrollTop){
+			    point.y=window.parent.document.body.scrollTop;
+			    point.x=window.parent.document.body.scrollLeft;
+		    }else if(window.parent.document.documentElement&&window.parent.document.documentElement.scrollLeft!==undefined){
+			    point.y=window.parent.document.documentElement.scrollTop;
+			    point.x=window.parent.document.documentElement.scrollLeft;
+		    }
+		    return point;
+	    }
+    	
+	    function GoLink(url, hash){
+		    var point=GetScrollPos();
+		    url += "?x="+point.x+"&y="+point.y+"#"+hash;
+		    document.location = url;
+	    }
+	    function GoAnchor(anc){
+		    var point=GetScrollPos();
+		    document.location.hash=anc;
+		    scrollTimer = setTimeout("ScrollToPos("+point.x+", "+point.y+")", 0)
+	    }
+    	
+	    function ScrollToPos(x,y){
+		    window.parent.scrollTo(x,y)
+		    clearInterval(scrollTimer);
+	    } 
+    	
+	    function init(){
+		    // if the page loaded and has an anchor link
+		    if(document.location.hash+"" != ""){
+			    // this is to fix the parent scrolling in IE6
+			    document.location.hash = document.location.hash
+			    // this is to fix the parent scrolling in FF, but all browsers need to reposition anyways.
+			    scrollTimer = setTimeout("ScrollToPos(<%=x%>, <%=y%>)", 0)
+		    }
+	    }
+	    window.onload = init;
+	    //-->
+    </script>
+</head>
+<body class="help">
+  <form runat="server">
+    <a name="top"></a>
+    <div id="wrapper">
+    	<asp:ContentPlaceHolder id="BodyContent" runat="server"></asp:ContentPlaceHolder>
+    </div>
+  </form>
+</body>
+</html>

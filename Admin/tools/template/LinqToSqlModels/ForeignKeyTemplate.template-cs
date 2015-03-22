@@ -1,0 +1,39 @@
+﻿namespace Models
+{
+	// define foreign key as object in partial table class 
+	public partial class xxxtablenamexxx {
+		private xxxforeigntablenamexxx _xxxpropertynamexxx;
+		
+		public xxxforeigntablenamexxx xxxpropertynamexxx
+		{
+			get
+			{
+				// TODO: lazy load
+				return this._xxxpropertynamexxx;
+			}
+			set
+			{
+				this._xxxpropertynamexxx = value;
+			}
+		}
+	}
+	
+	// define list in partial foreign table class 
+	public partial class xxxforeigntablenamexxx {
+		private xxxtablenamexxxList _xxxlistnamexxx;
+		
+		public xxxtablenamexxxList xxxlistnamexxx
+		{
+			get
+			{
+				// TODO: lazy load
+				return this._xxxlistnamexxx;
+			}
+			set
+			{
+				this._xxxlistnamexxx = value;
+			}
+		}
+	}
+	
+}

@@ -1,0 +1,173 @@
+.noteBox
+{
+	background-color:lightyellow;
+	border:1px solid #333;
+	width:88%;
+	padding:6px;
+}
+
+h1.homePage {
+	margin-bottom: 10px;
+	font-size: 16pt;
+}
+
+h1.article, h1.faqCategory {
+	font-size: 16pt;
+}
+
+h2.articleTitle
+{
+	display: inline;
+}
+
+h2.section, h2.faqDesc {
+	display: inline;
+	font-size: 10pt;
+}
+
+.content, div.description {
+	line-height: 150%;
+}
+
+div.articleSpotlight {
+	background-color: #ddd;
+	padding: 2px 15px 2px 15px;
+	margin: 10px 33px 10px 33px;
+}
+
+a.spotlightTitle {
+	font-weight: bold;
+}
+
+.sponsoredBy {
+	font-style: italic;
+}
+
+.content center font {
+	line-height: 115%;
+}
+
+.pubDate { font-style: italic; padding:3px;}
+
+A
+{
+    COLOR: #336666;
+    FONT-FAMILY: Verdana, Helvetica, sans-serif;
+    TEXT-DECORATION: underline;
+}
+A:hover
+{
+	background-color: #336666;
+	color: white;
+}
+TD
+{
+    FONT-SIZE: 9pt;
+    COLOR: #000000;
+    FONT-FAMILY: Verdana, Helvetica, sans-serif;
+    TEXT-DECORATION: none
+}
+A.guysnav
+{
+    FONT-SIZE: 8pt;
+    COLOR: #000000;
+    FONT-FAMILY: Verdana, Helvetica, sans-serif;
+    TEXT-DECORATION: none
+}
+A.guysnav:link
+{
+    FONT-SIZE: 8pt;
+    COLOR: #000000;
+    FONT-FAMILY: Verdana, Helvetica, sans-serif;
+    TEXT-DECORATION: none
+}
+A.guysnav:visited
+{
+    FONT-SIZE: 8pt;
+    COLOR: #000000;
+    FONT-FAMILY: Verdana, Helvetica, sans-serif;
+    TEXT-DECORATION: none
+}
+A.guysnav:hover
+{
+    FONT-SIZE: 8pt;
+    COLOR: #cc0000;
+    background-color: white;
+    FONT-FAMILY: Verdana, Helvetica, sans-serif;
+    TEXT-DECORATION: underline
+}
+A.readmore
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 8pt;
+    COLOR: #cc9933;
+    FONT-FAMILY: Verdana, Helvetica, sans-serif;
+    TEXT-DECORATION: none
+}
+A.readmore:link
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 8pt;
+    COLOR: #cc9933;
+    FONT-FAMILY: Verdana, Helvetica, sans-serif;
+    TEXT-DECORATION: none
+}
+A.readmore:visited
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 8pt;
+    COLOR: #cc9933;
+    FONT-FAMILY: Verdana, Helvetica, sans-serif;
+    TEXT-DECORATION: none
+}
+A.readmore:hover
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 8pt;
+    COLOR: #cc0000;
+    background-color: white;
+    FONT-FAMILY: Verdana, Helvetica, sans-serif;
+    TEXT-DECORATION: underline
+}
+.headlines
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 14pt;
+    FONT-FAMILY: Verdana, Helvetica, sans-serif;
+    TEXT-DECORATION: none
+}
+A.headlines
+{
+    COLOR: #336666;
+}
+A.headlines:link
+{
+    FONT-WEIGHT: bold;
+    COLOR: #336666;
+    FONT-FAMILY: Verdana, Helvetica, sans-serif;
+    TEXT-DECORATION: none;
+	FONT-SIZE:16px;
+}
+A.headlines:visited
+{
+    FONT-WEIGHT: bold;
+    COLOR: #336666;
+    FONT-FAMILY: Verdana, Helvetica, sans-serif;
+    TEXT-DECORATION: none
+}
+A.headlines:hover
+{
+    FONT-WEIGHT: bold;
+    COLOR: #cc9933;
+    background-color: white;
+    FONT-FAMILY: Verdana, Helvetica, sans-serif;
+    TEXT-DECORATION: underline
+}
+navhdr
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11pt;
+    COLOR: #ffffff;
+    FONT-FAMILY: Verdana, Helvetica, sans-serif;
+    TEXT-DECORATION: none
+}@media (min-width: 768px) and (max-width: 1200px) {div#adwrapper { width: 580px !important;   }}

@@ -1,0 +1,10 @@
+<%@ Page Title="Export [---pagetitle---]" Inherits="System.Web.Mvc.ViewPage<Models.[---tablename---]>" Language="C#" MasterPageFile="~/Areas/Admin/admin-export.master" %>
+<%@ Import Namespace="Beweb" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="BodyContent" Runat="Server">
+  <%var record = Model; %>
+	<table class="svyEdit" cellspacing="0">
+		[---modelviewfields---]
+	</table>
+</asp:Content>
+

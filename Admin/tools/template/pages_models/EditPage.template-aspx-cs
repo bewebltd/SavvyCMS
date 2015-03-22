@@ -1,0 +1,101 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using Beweb;
+using Models;
+namespace Savvy.Admin
+{
+	public partial class [---tablename---]Edit : System.Web.UI.Page
+	{
+		string PageErrorMessage = "";
+		protected Breadcrumbs bread = null;
+
+		protected Models.[---tablename---] record=null;
+		public string pageTitle = "[---pagetitle---]";
+		protected Locking lockobj = new Locking();
+
+		protected void Page_Init(object sender, EventArgs e)
+		{
+			//(new Forms.RichTextEditor()).InitMCE(this.Page);
+			lockobj.InitLocking(UserSession.PersonID);
+		}
+		
+		protected void Page_Load(object sender, EventArgs e)
+		{
+			bread = new Breadcrumbs(Request, Session);
+			bread.AddBreadcrumb(3, pageTitle+" Edit");
+			if(Request["[---pkname---]"] != null)
+			{
+				record = Models.[---tablename---].LoadBy[---pkname---](Request["[---pkname---]"].ToInt());
+				if(!lockobj.LockTable(record.GetTableName(),record.ID,record.Title))
+				{
+					PageErrorMessage = lockobj.LockMessage;
+					DeleteButton.Enabled=false;
+					SaveAndRefreshButton.Enabled=false;
+					AddOrUpdateButton.Enabled=false;
+				}
+			}else
+			{	
+				record = new Models.[---tablename---]();
+				//set defaults here or create a model partial class
+			}
+
+			if (!Page.IsPostBack)
+			{
+				[---nonpostbackprocedures---]
+			}
+		}	
+		
+		protected void Page_PreRender(object sender, EventArgs e)
+		{			
+			ErrorMessageArea.Text = PageErrorMessage;
+			ErrorMessageArea.Visible = !String.IsNullOrEmpty(PageErrorMessage);
+			// enable file uploads
+			this.Form.Enctype = "multipart/form-data";
+		}
+
+		protected bool Save()
+		{
+			bool result = true;
+			record.UpdateFromRequest();				 //fix the update to read any webforms ids
+			[---presaveprocedures---]
+			
+			record.Save();
+
+			return result;
+		}
+		protected void SaveAndRefreshButton_Click(object sender, EventArgs e)
+		{
+			Save();	
+			Response.Redirect(Web.PageFileName + "?" + record.ID_Field.Name.UrlEncode() + "=" + record.[---pkname---].ToString().UrlEncode()+ "&df_returnpage=" + Util.GetReturnPage().UrlEncode());		
+		}	
+		protected void AddOrUpdateButton_Click(object sender, EventArgs e)
+		{
+			if(Save())
+			{
+				//go back	if save was ok
+				lockobj.UnLockTable(record.GetTableName(),record.ID);
+				Response.Redirect(Util.GetReturnPage());
+			}
+		}	
+		protected void CancelButton_Click(object sender, EventArgs e)
+		{
+			//go back
+			if(record!=null)lockobj.UnLockTable(record.GetTableName(),record.ID);
+			Response.Redirect(Util.GetReturnPage());
+		}	
+		protected void DeleteButton_Click(object sender, EventArgs e)
+		{
+			record.Delete();
+			lockobj.UnLockTable(record.GetTableName(),record.ID);
+			Response.Redirect(Util.GetReturnPage());
+		}	
+	}
+}

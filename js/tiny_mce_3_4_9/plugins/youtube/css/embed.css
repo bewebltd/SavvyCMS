@@ -1,0 +1,110 @@
+/*.mceLinkList, .mceAnchorList, #targetlist {width:280px;}
+.mceActionPanel {margin-top:7px;}
+/*.panel_wrapper div.current {height:280px;}!1!
+#classlist, #title, #href {width:280px;}
+#popupurl, #popupname {width:200px;}
+#popupwidth, #popupheight, #popupleft, #popuptop {width:30px;vertical-align:middle;text-align:center;}
+#id, #style, #classes, #target, #dir, #hreflang, #lang, #charset, #type, #rel, #rev, #tabindex, #accesskey {width:200px;}
+#events_panel input {width:200px;}
+.SearchAltRow{background-color:#fff;}
+.SearchRowOver{background-color:#339933;color:white;}
+.SearchRow{background-color:#f0f0f0;}
+.loading { background: url(../images/loading.gif) no-repeat; padding-left: 135px; font-weight:bold; color: Black; }*/
+
+
+html,body {
+ background: white !important; 
+}
+input, select, textarea {
+ border: 1px solid #ccc !important;
+ font-size: 13px !important; 
+}
+
+a:link, a:visited {
+ color: #0097D0  !important; 
+}
+
+
+.svyVideoEmbed  {
+	margin: 10px;
+	padding: 10px;
+	xborder: 1px solid #ccc
+}
+
+.mainContent {
+	padding: 10px;
+	border: 1px solid #ccc;
+}
+
+.helper {
+	display: none;
+}
+
+.btn {
+	margin: 5px 0;
+}
+
+.fullPathHelper:hover .helper {
+	display: block !important;
+
+}
+
+.helper {
+	display: block;
+	position: absolute;
+	border: 1px solid #551901;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	z-index: 9999999 !important;
+	margin-top: -30px;
+	margin-left: 20px;
+	padding:10px;
+	background-color: white;
+}
+
+.fullPath,.embedPath,.embedPathComplete {
+	position: relative;
+}
+
+.dimensionsWrapper .label {
+	margin-right: 10px;
+}
+
+.dimensionsWrapper {
+	padding:10px;
+	border: 1px solid #ccc;
+	margin-top: 10px;
+	display: inline-block;
+}
+
+.dimensionsWrapper [type=text] {
+	width:75px;
+}
+
+.or {
+	margin-left: 5px;
+}
+
+#error {
+	display: inline-block;
+	background: red;
+	color: white;
+	text-align: center;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	padding: 7px;
+}
+
+.embedwWrapper {
+	float: right;
+}
+
+.autoplayCheck {
+width: 15px;
+height: 15px;
+vertical-align: bottom;
+margin-left: -12px;
+margin-bottom: 3px;
+}

@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BFBD2C71-8623-4D3E-9CFC-D1763C2D70F2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BewebCore</RootNamespace>
+    <AssemblyName>BewebCore</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;DOTNET4;MVC;ModificationLog;Keystone</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;DOTNET4;MVC;Keystone;ModificationLog</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>beweb.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BitMiracle.LibJpeg.NET">
+      <HintPath>bin\BitMiracle.LibJpeg.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageManipulation, Version=1.0.2991.26405, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\ImageManipulation.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>bin\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Keystone, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Keystone\obj\Debug\Keystone.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="nQuant.Core">
+      <HintPath>bin\nQuant.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NRtfTree">
+      <HintPath>..\bin\NRtfTree.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpZipLib">
+      <HintPath>bin\SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Beweb\ActiveField.cs" />
+    <Compile Include="Beweb\ActiveRecord.cs" />
+    <Compile Include="Beweb\ActiveRecordGenerator.cs" />
+    <Compile Include="Beweb\Address.cs" />
+    <Compile Include="Beweb\BewebCoreSettings.cs" />
+    <Compile Include="Beweb\Colour.cs" />
+    <Compile Include="Beweb\Conv.cs" />
+    <Compile Include="Beweb\EXIFextractor.cs" />
+    <Compile Include="Beweb\Dates.cs" />
+    <Compile Include="Beweb\DelimitedString.cs" />
+    <Compile Include="Beweb\Form.cs" />
+    <Compile Include="Beweb\Importer.cs" />
+    <Compile Include="Beweb\KeywordSearch.cs" />
+    <Compile Include="Beweb\Otherwise.cs" />
+    <Compile Include="Beweb\SecurityRolesCore.cs" />
+    <Compile Include="Beweb\StringConst.cs" />
+    <Compile Include="Beweb\Zip.cs" />
+    <Compile Include="Savvy\AdminGenerator.cs" />
+    <Compile Include="Beweb\BaseTypeExtensions.cs" />
+    <Compile Include="Beweb\BewebData.cs" />
+    <Compile Include="Beweb\Crypto.cs" />
+    <Compile Include="Beweb\Datablock.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Beweb\Debug.cs" />
+    <Compile Include="Beweb\Email.cs" />
+    <Compile Include="Beweb\Error.cs" />
+    <Compile Include="Beweb\Export.cs" />
+    <Compile Include="Beweb\FileSystem.cs" />
+    <Compile Include="Beweb\Fmt.cs" />
+    <Compile Include="Beweb\Html.cs" />
+    <Compile Include="Beweb\Http.cs" />
+    <Compile Include="Beweb\ImageProcessing.cs" />
+    <Compile Include="Beweb\Numbers.cs" />
+    <Compile Include="Beweb\PathAndFile.cs" />
+    <Compile Include="Beweb\RandomPassword.cs" />
+    <Compile Include="Beweb\Security.cs" />
+    <Compile Include="Beweb\SendEMail.cs" />
+    <Compile Include="Beweb\Sql.cs" />
+    <Compile Include="Beweb\SqlStringBuilder.cs" />
+    <Compile Include="Savvy\BreadCrumb.cs" />
+    <Compile Include="Savvy\HelpText.cs" />
+    <Compile Include="Savvy\dps.cs" />
+    <Compile Include="Savvy\Hierarchy.cs" />
+    <Compile Include="Savvy\ListPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Savvy\Locking.cs" />
+    <Compile Include="Savvy\NavTree.cs" />
+    <Compile Include="Savvy\PageControls.cs" />
+    <Compile Include="Savvy\RandomPassword.cs" />
+    <Compile Include="Savvy\SavvyDataForm.cs" />
+    <Compile Include="Savvy\SavvyDataList.cs" />
+    <Compile Include="Savvy\Search.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Savvy\TextBlock.cs" />
+    <Compile Include="Beweb\Util.cs" />
+    <Compile Include="Beweb\VBCode.cs" />
+    <Compile Include="Beweb\Web.cs" />
+    <Compile Include="Beweb\Xml.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Savvy\YouTube.cs" />
+    <Compile Include="ThirdParty\CsvParser.cs" />
+    <Compile Include="ThirdParty\HTTPUtil.cs" />
+    <Compile Include="ThirdParty\PDFToText\PDFParser.cs" />
+    <Compile Include="ThirdParty\PerformanceTimer.cs" />
+    <Compile Include="ThirdParty\ReadWordDocText\DocxToText.cs" />
+    <Compile Include="ThirdParty\RFC882DateTime.cs" />
+    <Compile Include="ThirdParty\SearchTextExtractor.cs" />
+    <Compile Include="Beweb\ResharperAnnotations.cs" />
+    <Compile Include="ThirdParty\SoundsLikeExtensions.cs" />
+    <Compile Include="ThirdParty\ReadWordDocText\WordDocConverter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="beweb.ico" />
+    <Content Include="Beweb\_codelibrary utils without ui.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+		mkdir $(SolutionDir)bin-pub
+copy $(TargetPath) $(SolutionDir)bin-pub\
+copy $(TargetDir)BewebCore.pdb $(SolutionDir)bin-pub\BewebCore.pdb
+</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

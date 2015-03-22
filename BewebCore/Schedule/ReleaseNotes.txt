@@ -1,0 +1,3 @@
+﻿20100927 MK - fixed some compiler warnings
+20100927 MN - ActiveRecordList.LoadAll() and .LoadActive() - added itemsPerPage and pageNum params to easily enable paging or TOP n functionality (eg .LoadActive(5) returns top 5)
+20100927 MN - started this file as a place to write up new features, communicate breaking changes or note bug fixes

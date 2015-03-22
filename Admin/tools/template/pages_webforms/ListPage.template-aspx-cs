@@ -1,0 +1,48 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using Beweb;
+
+namespace Savvy.Admin
+{
+	public partial class [---tablename---]List : ListPage
+	{
+		// handle an fk (rename fkid, then uncomment)
+		//public int fkID = Web.RequestEx["PassedFKID"].ToInt();
+
+		protected override void Page_Load(object sender, EventArgs e)
+		{
+			base.Page_Load(sender, e);
+			Sql sql = new Sql("SELECT * FROM [---tablename---] where 1=1");
+			if(searchText.Text!="")
+			{
+				// uncomment and alter as necessary to enable search
+				//sql.Add(" and title like ",searchText.Text.SqlizeLike());
+
+			}
+			// handle an fk (rename fkid, then uncomment)
+			//sql.Add("and xxreplacexxID=", fkID);
+			// set order by to be the same order as displayed in the front end (eg "order by SortPosition, Title")
+			sql.Add("[---orderbyclause---]");//order by
+			ListPage.SelectCommand=sql.ToString();
+
+			// pass an fk through to edit page (see also asp:hiddenfield in markup - rename fkid, then uncomment)
+			//PassedFKID.Value = fkID.ToString();
+
+		}
+		protected void Export(object sender, EventArgs e)
+		{
+			string url = "~/admin/modules/export/export-simple.aspx?obj=---tablename---";
+			Response.Redirect(url);
+		}
+		
+	}
+}
+

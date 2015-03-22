@@ -1,0 +1,51 @@
+<%@ Page Title="Admin - [---pagetitle---]" Language="C#" MasterPageFile="~/admin/admin.master" AutoEventWireup="true" CodeFile="[---tablename---]List.aspx.cs" Inherits="Savvy.Admin.[---tablename---]List" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="BodyContent" Runat="Server">
+	<%--put this in the ~/web.sitemap
+	<siteMapNode   url="~/admin/[---tablename---]List.aspx"                title="[---pagetitle---] List" description="">
+		<siteMapNode url="~/admin/[---tablename---]Edit.aspx"                title="Edit [---pagetitle---]" description=""></siteMapNode>
+	</siteMapNode>
+	--%>
+	<bwb:AddNewButton ID="AddNew" Text="Add New [---pagetitle---]" CssClass="svyAddNew" runat="server" />
+
+	<%-- pass an fk through to edit page (see also in codebehind) 
+	<asp:HiddenField ID="PassedFKID" runat="server" Visible="true" />
+	--%>
+	<asp:Button ID="ExportDataBtn" OnClick="Export" Text="Export" runat="server" Visible="false"  />	
+
+	<table class="titleHeading" cellpadding="0" cellspacing="0">
+		<tr>
+			<th><div style="float:left">[---pagetitle---]</div>
+			<asp:PlaceHolder runat="server" id="FilterPanel" Visible="false">
+				<div style="float:right">
+					Find:
+						<asp:TextBox runat="server" Width="95" ID="searchText" CausesValidation="false" ToolTip="Enter a keyword of something to search for here, then click search"></asp:TextBox>
+						<asp:Button runat="server" ID="searchButton" Text="Filter"  ToolTip="Enter a keyword of a something to search for to the left, then click this" CausesValidation="false" />
+				</div>
+			</asp:PlaceHolder>
+			</th>
+		</tr>
+		<tr>
+			<td>
+				<bwb:svyGridView ID="ListPageGV" DataSourceID="ListPage" IsSimpleMode="true" runat="server">
+					<Columns>
+						<asp:TemplateField HeaderText="Action">
+							<ItemTemplate>
+								<a href="[---tablename---]Edit.aspx?[---tablename---]ID=<%# Eval("[---tablename---]ID") %>">Edit</a>
+								<asp:PlaceHolder runat="server" id="ViewPanel" Visible="false">
+									<a href="[---tablename---]View.aspx?[---tablename---]ID=<%# Eval("[---tablename---]ID") %>">View</a>
+								</asp:PlaceHolder>
+							</ItemTemplate>
+						</asp:TemplateField> 			
+						[---boundfields---]
+						
+					</Columns>
+					<EmptyDataTemplate>There are no [---tablename---] items to display</EmptyDataTemplate>
+					
+				</bwb:svyGridView>
+			</td>
+		</tr>
+	</table>
+	<bwb:svySqlDataSource ID="ListPage" runat="server" />
+
+</asp:Content>

@@ -1,0 +1,59 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using Beweb;
+using Models;
+using Page=System.Web.UI.Page;
+
+namespace Savvy.Admin
+{
+	public partial class [---tablename---]List : System.Web.UI.Page
+	{
+		// handle an fk (rename fkid, then uncomment)
+		//public int landingPageID = Web.RequestEx["PassedLandingPageID"].ToInt();
+
+		protected [---tablename---]DataList dataList = new [---tablename---]DataList();
+
+		protected  void Page_Load(object sender, EventArgs e)
+		{
+			Breadcrumbs bread = new Breadcrumbs(Request,Session);
+			bread.AddBreadcrumb(2,"[---pagetitle---] List");
+			Util.SetReturnPage(2);
+			dataList.PageLoad(this);
+			//dataList.ShowSearch=true;
+		}
+	}
+	public class [---tablename---]DataList : SavvyDataList<Models.[---tablename---]> {
+		public override Sql GetSql() {
+			Sql sql = new Sql("SELECT * FROM [---tablename---] where 1=1");
+			if (SearchText != "") {
+				// sort by standard name field - you can change this if you like
+				sql.AddKeywordSearch(SearchText, new Models.[---tablename---]().GetNameField().Name, true);
+
+				//once this is defined, you can set dataList.ShowSearch = true; in page_load
+				//sql.Add(" and (([--Field--] like ", SearchText.SqlizeLike(), ")");
+				//sql.Add(" or (Title like ", SearchText.SqlizeLike(), ")");
+				//sql.Add(")");
+			}
+			// handle an fk (rename fkid, then uncomment)
+			//sql.Add("and landingPageID=", landingPageID);
+			//sql.AddRawSqlString("and [extra raw sql here]");
+			// set order by to be the same order as displayed in the front end (eg "order by SortPosition, Title")
+			if (SortBy.IsBlank()) {
+				// hint: to change the default order by for both admin and front end, override Destination.GetDefaultOrderBy in model partial 
+				sql.AddRawSqlString(new Models.[---tablename---]().GetDefaultOrderBy());   
+			} else {
+				sql.AddSql(GetOrderBySql());
+			}
+			return sql;
+		}
+	}
+}
+

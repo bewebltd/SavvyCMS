@@ -1,0 +1,18 @@
+﻿20131218 - default picture subfolders now autodetect for backwards compatibility
+2013 sometime - Savvy Validate classnames changed - check your CSS
+2013 sometime - Picture Upload javascript changed a couple of times - update Forms.cs and \js\BewebCore\forms.js together
+2013 sometime - default picture subfolders changed from 999x999_99x99 to svy999x999t99x99
+20130613 MN - GST calculations now round to nearest cent
+20110725 MN & JB = ActiveRecord default order by - this was originally applied and we are changing it back to apply default order by again, as it only adds the order by if there is not already an order by and there is no point in having no order by because sql server will then return records in undefined order
+20110511 MN - Web.RedirectPermanently() breaking change - now ends the response, which it should have always done
+20110323 MN - Fmt.CleanInt() breaking change - if supply $5.00 it used to return 500, now it returns 5
+20110125 JB - added image dimension calculations in ImageProcessing and Html
+20110125 MN - improvements to GenAdmin - now generates model, updates proj build file, file and class names now correct
+20110124 MN - now both SuperAdmin and Dev are automatically given HTML access in rich text editing
+20110101 MK - changed web config key "Beweb.Security.PersonTableName" to "Beweb_Security_PersonTableName" as it wasn't working
+20101224 JB/MN - removed unneccessary js files into intallers
+20101221 MN - Sql: added SQL statement logging and timing information
+            - Web.Request: you can now use both a querystring and form item with the same name and the form item will win
+20100927 MK - fixed some compiler warnings
+20100927 MN - ActiveRecordList.LoadAll() and .LoadActive() - added itemsPerPage and pageNum params to easily enable paging or TOP n functionality (eg .LoadActive(5) returns top 5)
+20100927 MN - started this file as a place to write up new features, communicate breaking changes or note bug fixes

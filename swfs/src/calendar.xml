@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<data>
+	<year value="2011">
+		<month value="6">
+			<date value="15">
+				<event>
+					<title>this is the title</title>
+					<location>this is the location</location>
+					<time>this is the time</time>
+					<detail>these are the details</detail>
+				</event>
+			</date>
+			<date value="20">
+			</date>
+			<date value="28">
+			</date>
+		</month>
+	</year>
+</data>

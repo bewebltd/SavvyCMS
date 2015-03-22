@@ -1,0 +1,5 @@
+C:\data\projects\CodelibMVCOpenSource\Keystone\bin\Debug\Keystone.dll
+C:\data\projects\CodelibMVCOpenSource\Keystone\bin\Debug\Keystone.pdb
+C:\data\projects\CodelibMVCOpenSource\Keystone\obj\Debug\Keystone.csprojResolveAssemblyReference.cache
+C:\data\projects\CodelibMVCOpenSource\Keystone\obj\Debug\Keystone.dll
+C:\data\projects\CodelibMVCOpenSource\Keystone\obj\Debug\Keystone.pdb

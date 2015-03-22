@@ -1,0 +1,51 @@
+﻿//-----------------------------------------
+// MANY TO MANY: xxxtable1xxx <---> xxxtable2xxx
+//-----------------------------------------
+
+	// define foreign key as object in table1 class 
+	public partial class xxxtable1xxx {
+		[NonSerialized]		
+		private xxxtable2xxxList _xxxpropertynamexxx;
+
+		[JetBrains.Annotations.NotNull]
+		public xxxtable2xxxList xxxpropertynamexxx {
+			get {
+				// lazy load
+				if (this._xxxpropertynamexxx == null) {
+					var sql = new Sql("select * from xxxtable2xxx where xxxtable2pkxxx in (select xxxtable2fkxxx from xxxtable1xxxHasxxxtable2xxx where xxxtable1pkxxx=", this.ID, ")");
+					this._xxxpropertynamexxx = Models.xxxtable2xxxList.Load(sql);
+				}
+				return this._xxxpropertynamexxx;
+			}
+			set {
+				this._xxxpropertynamexxx = value;
+			}
+		}
+	}
+	
+	// define list in table2 class 
+	public partial class xxxtable2xxx {
+		[NonSerialized]		
+		private xxxtable1xxxList _xxxlistnamexxx;
+		// kf1 = xxxtable1fkxxx
+		// fk2 = xxxtable2fkxxx
+
+		[JetBrains.Annotations.NotNull]
+		public xxxtable1xxxList xxxlistnamexxx
+		{
+			get
+			{
+				// lazy load
+				if (this._xxxlistnamexxx == null) {
+					var sql = new Sql("select * from xxxtable1xxx where xxxtable1pkxxx in (select xxxtable1fkxxx from xxxtable1xxxHasxxxtable2xxx where xxxtable2fkxxx=", this.ID, ")");
+					this._xxxlistnamexxx = Models.xxxtable1xxxList.Load(sql);
+				}
+				return this._xxxlistnamexxx;
+			}
+			set
+			{
+				this._xxxlistnamexxx = value;
+			}
+		}
+	}
+	

@@ -1,0 +1,90 @@
+﻿namespace Models
+{
+	using System.Data.Linq;
+	using System.Data.Linq.Mapping;
+	using System.Data;
+	using System.Collections.Generic;
+	using System.Reflection;
+	using System.Linq;
+	using System.Linq.Expressions;
+	using System.ComponentModel;
+	using System;
+
+
+	// define accessor method in data context
+	public partial class DataClassesDataContext
+	{
+		partial void Insertxxxtablenamexxx(xxxtablenamexxx instance);
+		partial void Updatexxxtablenamexxx(xxxtablenamexxx instance);
+		partial void Deletexxxtablenamexxx(xxxtablenamexxx instance);
+	    	
+		public System.Data.Linq.Table<xxxtablenamexxx> xxxtablenamepluralxxx
+		{
+			get
+			{
+				return this.GetTable<xxxtablenamexxx>();
+			}
+		}
+	}
+
+
+	[Table(Name = "dbo.xxxtablenamexxx")]
+	public partial class xxxtablenamexxx : ModelBase, INotifyPropertyChanging, INotifyPropertyChanged
+	{
+
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+
+
+		#region Extensibility Method Definitions
+		partial void OnLoaded();
+		partial void OnValidate(System.Data.Linq.ChangeAction action);
+		partial void OnCreated();
+		#endregion
+
+		public xxxtablenamexxx()
+		{
+			InitSavvyFieldBinders();
+			OnCreated();
+		}
+
+
+		// linq to sql stuff
+		public event PropertyChangingEventHandler PropertyChanging;
+
+		public event PropertyChangedEventHandler PropertyChanged;
+
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+
+	// collection
+	public partial class xxxtablenamexxxList : System.Collections.Generic.List<xxxtablenamexxx> { }
+
+}
+
+namespace Beweb {
+	/// <summary>
+	/// Extensions to Sql class for retrieving data into app specific model objects
+	/// This is intended to be generated automatically
+	/// </summary>
+	public partial class Sql {
+
+		public Models.xxxtablenamexxx Loadxxxtablenamexxx() {
+			return this.LoadPoo<Models.xxxtablenamexxx>();
+		}
+
+	}
+}

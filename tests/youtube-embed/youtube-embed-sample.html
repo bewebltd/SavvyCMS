@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>html - overlay opaque div over youtube iframe </title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+</head>
+<body>
+	<div>
+		<div id="content">
+			<div itemscope>
+				<div style="position: absolute; top: 200px; left: 108px; width: 100px; height: 100px; background-color: rgba(74, 85, 218, 0.44)">
+					<!--<a href="http://beweb.co.nz">hover over</a>-->
+					logo here
+					<img src="OwlAlpha-0.25.png" width="80" />
+				</div>
+
+			</div>
+
+			<div id="ytplayer"></div>
+			<script type="text/javascript">
+				var player;
+
+				$(window).load(function () {
+					$(this).on('resize', function () {
+						setTimeout(function () {
+							$('#ytplayer').css('width', $(window).width() - 20);
+						}, 100);
+					});
+				});
+
+				var tag = document.createElement('script');
+				tag.src = "http://www.youtube.com/player_api";
+				//tag.src = "//www.youtube.com/player_api";
+				//tag.src = "https://www.youtube.com/player_api";
+				//tag.src = "https://www.youtube.com/iframe_api";
+				var firstScriptTag = document.getElementsByTagName('script')[0];
+				firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+				function onYouTubePlayerAPIReady() {
+					player = new YT.Player('ytplayer', {
+						width: '960', height: '540',		//16/9
+						//videoId: 'pb4erBLCgj4',
+						playerVars: { 'enablejsapi': 1, 'autoplay': 0, 'controls': 0, 'modestbranding': 1 },
+						events: {
+							'onReady': onPlayerReady,
+							'onPlaybackQualityChange': onPlayerPlaybackQualityChange,
+							'onStateChange': onPlayerStateChange,
+							'onError': onPlayerError
+						}
+					});
+				}
+				function onPlayerReady() {
+					player.loadVideoById({'videoId':'pb4erBLCgj4', 'startSeconds':0, 'suggestedQuality':'hd720'});
+					//player.setPlaybackQuality('hd720');
+					player.mute(); //Mutes the player.
+					player.pauseVideo();
+
+					//player.unMute()//Unmutes the player.
+					//player.isMuted()//Returns true if the player is muted, false if not.
+					//player.setVolume(volume:Number):Void
+					//Sets the volume. Accepts an integer between 0 and 100.
+					//player.getVolume():Number
+					//Returns the player's current volume, an integer between 0 and 100. Note that getVolume() will return the volume even if the player is muted.
+					//player.setPlaybackQuality('hd1080');
+
+					//$('a.html5-title-text').hide();
+				}
+				function onPlayerPlaybackQualityChange() { }
+				function onPlayerStateChange() {
+				}
+				function onPlayerError() { }
+
+				window.setTimeout(function () { player.playVideo(); }, 4000);
+				window.setTimeout(function () { player.pauseVideo(); }, 8000);
+
+			</script>
+		</div>
+	</div>
+</body>
+</html>

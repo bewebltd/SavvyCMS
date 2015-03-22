@@ -1,0 +1,19 @@
+﻿<!--
+    You can find existing browser definitions at
+    <windir>\Microsoft.NET\Framework\<ver>\CONFIG\Browsers
+
+		This definition is to enable Forms Auth to realise that unknown browsers such as iPhone web apps support cookies even when added to home screen and not reporting as safari
+-->
+<browsers>
+	<browser refID="Mozilla" >
+		<capabilities>
+			<capability name="cookies"  value="true" />
+		</capabilities>
+	</browser>
+
+	<browser refID="Default">
+		<capabilities>
+			<capability name="cookies" value="true" />
+		</capabilities>
+	</browser>
+</browsers>

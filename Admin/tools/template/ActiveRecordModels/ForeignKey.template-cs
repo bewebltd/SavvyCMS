@@ -1,0 +1,65 @@
+﻿//-----------------------------------------
+// FOREIGN KEY: xxxpropertynamexxx
+//-----------------------------------------
+
+	// define foreign key as object in partial table class 
+	public partial class xxxtableclassnamexxx {
+		[NonSerialized]		
+		private xxxforeignclassnamexxx _xxxpropertynamexxx;
+
+		[JetBrains.Annotations.CanBeNull]
+		public xxxforeignclassnamexxx xxxpropertynamexxx
+		{
+			get
+			{
+				 // lazy load
+				if (this._xxxpropertynamexxx == null && this.xxxfieldnamexxx != null) {
+					var container = GetContainingList();
+					if (container != null && container.PrefetchCounter.ContainsKey("xxxpropertynamexxx") && container.PrefetchCounter["xxxpropertynamexxx"] == 2) {  // MN 20110726 - fixed bug - eager fetch should happen only once
+						ActiveRecordLoader.LoadRecordsByKeyValues<Models.xxxforeignclassnamexxx>("xxxidfieldnamexxx",container.Select(r=>r.xxxfieldnamexxx).ToList(),"xxxforeigntablenamexxx",Otherwise.Null);
+					}
+					this._xxxpropertynamexxx = Models.xxxforeignclassnamexxx.LoadByxxxidpropertynamexxx(xxxfieldvaluexxx);
+					if (container != null) {
+						if (!container.PrefetchCounter.ContainsKey("xxxpropertynamexxx")) {
+							container.PrefetchCounter["xxxpropertynamexxx"] = 0;
+						}
+						container.PrefetchCounter["xxxpropertynamexxx"]++;
+					}
+				}
+				return this._xxxpropertynamexxx;
+			}
+			set
+			{
+				this._xxxpropertynamexxx = value;
+			}
+		}
+	}
+
+	public partial class xxxtableclassnamexxxList {
+		internal int numFetchesOfxxxpropertynamexxx = 0;
+	}
+	
+	// define list in partial foreign table class 
+	public partial class xxxforeignclassnamexxx {
+		[NonSerialized]		
+		private xxxtableclassnamexxxList _xxxlistnamexxx;
+		
+		[JetBrains.Annotations.NotNull]
+		public xxxtableclassnamexxxList xxxlistnamexxx
+		{
+			get
+			{
+				// lazy load
+				if (this._xxxlistnamexxx == null) {
+					this._xxxlistnamexxx = Models.xxxtableclassnamexxxList.LoadByxxxfieldnamexxx(this.ID);
+					this._xxxlistnamexxx.SetParentBindField(this, "xxxdbfieldnamexxx");
+				}
+				return this._xxxlistnamexxx;
+			}
+			set
+			{
+				this._xxxlistnamexxx = value;
+			}
+		}
+	}
+	

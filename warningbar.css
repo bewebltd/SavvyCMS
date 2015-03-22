@@ -1,0 +1,46 @@
+.StagingServer
+{
+	/* stripe along top to show if it is a staging server */
+	background: #FCD5B4;
+	color: black;
+	font-size: 12px;
+	text-align: center;
+	vertical-align: middle;
+	height: 38px;
+}
+
+.StagingServer
+{
+	float: right;
+	width: 170px;
+	position: absolute;
+	right: 0;
+	height: 45px;
+	font-size: 12px;
+	z-index: 4000;
+	margin-right: 160px;
+}
+.LiveServer
+{
+	/* stripe along top to show if it is a live server */
+	background: #ff482b;
+	color: white;
+	font-size: 12px;
+	text-align: center;
+	font-weight: bold;
+	vertical-align: middle;
+	height: 38px;
+}
+
+.LiveServer
+{
+	float: right;
+	width: 170px;
+	position: absolute;
+	right: 0;
+	height: 45px;
+	font-size: 12px;
+	z-index: 4001;
+	margin-right: 155px;
+}
+

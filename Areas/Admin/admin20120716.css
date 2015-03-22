@@ -1,0 +1,373 @@
+.dummy { }
+/* ------------- savvy cms common styles --------------- */
+body { background-color: #ffffff; font-family: verdana, geneva, helvetica, sans-serif; font-size: 11px; color: #000000; }
+td,
+.dataheading,
+.label,
+.colhead,
+.colheadfilters,
+.field { font-family: verdana, geneva, helvetica, sans-serif; font-size: 11px; color: #000000; }
+input,
+textarea,
+select { font-family: verdana, geneva, helvetica, sans-serif; font-size: 11px; }
+img { border: 0 }
+input { padding: 1px }
+input[type=button],input[type=submit] { padding: 2px 6px; }
+textarea { padding: 2px }
+A { text-decoration: none; color: #0097D0; }
+A:hover { color: #993300; text-decoration: underline; }
+A:visited { color: #0043b3 }
+img { border: 0 }
+.databox,
+.svyLogin { BORDER: #ccc 1px solid; PADDING: 0; BACKGROUND-COLOR: #ffffff; border-collapse: collapse; clear: both; }
+.databox { min-width: 550px }
+.databox .row-last .width-expander { width: 550px; height: 1px; line-height: 1px; line-height: 1px; margin: 0; padding: 0; }
+.dataheading,
+.pageheading,
+.heading { FONT-SIZE: 10pt; FONT-WEIGHT: bold; MARGIN: 0px; padding: 0px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; BACKGROUND-COLOR: #ccc; COLOR: #ffffff; background: url(images/dataheading-bg-black.gif) center; height: 26px; }
+.dataheading .dataheading { padding: 0px; background: none; }
+tr.colhead td,
+td.colhead,
+tr.row-last td { BACKGROUND-COLOR: #ccc; padding-left : 5px; padding-right : 6px; padding-top: 0px; padding-bottom: 0px; height: 20px; }
+td.colhead div { padding-left : 5px; padding-right : 6px; padding-top: 2px; padding-bottom: 2px; font-size: 10px; }
+tr.colheadfilters td,
+td.colheadfilters { BACKGROUND-COLOR: #999; padding-left : 5px; padding-right : 6px; padding-top: 4px; padding-bottom: 4px; height: 20px; }
+/* from here down, I don't think anything is needed - if it is then please move it */
+.databackground { BACKGROUND-COLOR: #ffffff }
+.label { BACKGROUND-COLOR: #ffffff; padding-left : 5px; padding-right : 5px; padding-top: 1px; padding-bottom: 1px; /*height: 20px;*/ width: 208px; }
+.labelbackground { BACKGROUND-COLOR: #ffffff }
+.field { BACKGROUND-COLOR: #f6f6f6; border-top : 1px solid #ccc; padding-left : 5px; padding-right : 5px; padding-top: 2px; height: 20px; /*    vertical-align: top;   not sure about this */  }
+.fieldbackground { BACKGROUND-COLOR: #ffffff }
+.toolbutton { margin: 2px; border: 0px none; cursor: hand; line-height: 19px; }
+.toolbutton_up { margin: 1px; border: 1px solid navy; background-color: #B5BED6; cursor: hand; line-height: 19px; }
+.toolbutton_down { margin: 2px 0px 0px 2px; border: 1px solid navy; background-color: #99ccff; background-color: #8492B5; cursor: hand; line-height: 19px; }
+.Toolbar { /*height: 220px;_NO__DOTCOMMA__AFTER__*/ }
+.RichEditor { width: 500px; height: 200px; background: white; border: 1px solid #789CB8; padding-left: 4px; }
+.HtmlEditor { width: 500px; height: 200px; font-family: courier new, courier, monospace; }
+.hint { font-size: 10px; color: #8492B5; width: 160px; }
+.numfield input { text-align: right }
+.pagingnavcurrent { font-weight: bold }
+/*
+.dataheading_pagingnav, .dataheading_pagingnav A, .dataheading_pagingnav A:visited, .dataheading_pagingnav A:link, .dataheading_pagingnav A:hover, .dataheading_pagingnav A:active{
+    background-color: #318AAD;
+    background: url(includes/images/dataheading-bg-black.gif) center;
+    color: #FFFFFF;
+}
+*/
+.row0 .field,
+.row-odd td { background-color: #f0f0f0; border-top: 0px; }
+.row1 .field,
+.row-even td { background-color: #ffffff; border-top: 0px; }
+.highlight .field { background-color: #ffffcc; border-top: 0px; }
+.negativeCurrency { color: red }
+.highlightRow td { background-color: #c2c2ff; border-top: 0px; }
+.dataheading a { color: #c2c2ff; text-decoration: underline; font-size: 11px; }
+.dataheading a:hover { color: white; text-decoration: underline; font-size: 11px; }
+.inactive, .inactive .field { color: #666 }
+/* Mike's new styles ----------------------------- 
+note: most of the above it probably not used at all, so please move anything you know if moved below this line
+*/
+.colsort { padding-right: 14px }
+.colsort.selected { }
+.colsort.selected.ascending { background-image: url(images/sort_up_white.png); background-position: right; background-repeat: no-repeat; font-weight: bold; }
+.colsort.selected.descending { background-image: url(images/sort_down_white.png); background-position: right; background-repeat: no-repeat; font-weight: bold; }
+.row-odd td,
+.row-even td { padding-left : 5px; padding-right : 5px; padding-top: 2px; height: 20px; }
+tr.inactive td { color: #666 }
+.row-last .pagingnav-wrapper { float: right }
+.dataheading .pagingnav-wrapper { font-weight: normal; color: #ddd; font-size: 10px; float: right; }
+.dataheading .pagingnav-wrapper a.pagingnav { font-weight: normal; color: #FFF; text-decoration: underline; }
+.dataheading .pagingnav-wrapper a.pagingnavcurrent { font-weight: bold }
+/* savvy .net styles for admin */
+BODY { margin: 0 }
+INPUT,
+SELECT,
+TEXTAREA { font-family: verdana, geneva, helvetica, sans-serif; font-size: 12px; color: black; }
+.svyAdmin { font-family: verdana, geneva, helvetica, sans-serif; font-size: 11px; padding: 10px; }
+.svyAdmin h1 { font-size: 16px }
+.svyAdmin h1.adminTitle { font-size: 20px; font-weight: bold; color: #551901; }
+.svyAdmin h2 { font-size: 14px }
+.svyLogo { float: right }
+.svyNotificationSuccess { color: green }
+.svyNotification { color: Red }
+.svyError { display: block; border: solid 1px red; color: Red; padding: 5px; margin-bottom: 10px; float: left; }
+.svyEditFV { clear: both }
+label.error { color: #ff0000; margin: 5px 0; display: block; }
+input.error, textarea.error, select.error { border: 1px dotted #ff0000; background-color: #f0dada; }
+TABLE.svyLogin { position: relative; top: 100px; left: 50%; width: 400px; margin-left: -200px; }
+.svyLogin td { padding: 2px 5px !important }
+table.svyLogin td input.loginfield { width: 250px }
+/* whats this for?
+.login  { width: 280px;}
+.login td { padding: 2px 5px !important; background-color:#F6F6F6; }
+*/
+/* List page title heading */
+.titleHeading { border: 1px solid #ccc }
+.titleHeading th { color: white; padding: 5px; background: url(images/dataheading-bg-black.gif) 0 0 repeat-x; font-weight: bold; text-align: left; }
+.titleHeading td { border: 0; padding: 0; }
+/* gridview styles */
+/*.AspNet-GridView { float: left; }_NO__DOTCOMMA__AFTER__*/
+/*ul li {
+    list-style-position: outside;
+    list-style-type: none;
+    list-style-image: url('');
+    font-weight:normal;
+}
+*/
+.svyList { border-collapse: collapse; width: 100%; }
+.svyList TD,
+.svyList TH { padding: 5px !important; font-size: 11px; float: none; }
+.svyList TH { white-space: nowrap }
+.svyList .AspNet-GridView-Header A { color: black; font-weight: normal; text-align: left; text-decoration: underline; }
+.svyList .AspNet-GridView-Header A:hover { text-decoration: none }
+.svyList .AspNet-GridView-Header TH { background-color: #ccc; background-image: none; color: black!important; font-weight: normal !important; text-align: left; }
+.svyList .AspNet-GridView-Normal { background: #eeeeee }
+.svyList .AspNet-GridView-Normal .textblock { border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; }
+.svyList .AspNet-GridView-Alternate { background: white }
+.svyList .section { border-top: 4px solid #929497; background-color: #e1e1e1; }
+.right { text-align: right }
+.center { text-align: center }
+.left { text-align: left }
+/* highlighting - makes use of jquery in admin.master*/
+.svyList tr.highlight { background-color: #c2c2ff }
+.svyPager { /*xborder: solid 1px black;*/ background: #eeeeee; text-align: right; padding: 5px 5px;  }
+.svyPager A { text-decoration: none }
+.svyPager A:hover { text-decoration: underline }
+.AspNet-GridView-Top { border-bottom: none }
+.AspNet-GridView-Bottom { border-top: none }
+/* edit pages */
+.svyEdit { border-collapse: collapse }
+.svyEdit TD { padding: 3px 5px; border-top: solid 1px #ccc; border-bottom: solid 1px #ccc; background: #eeeeee; }
+.svyEdit TH { height: 28px; padding: 0 5px; white-space: nowrap; background: #2a166f url(images/dataheading-bg-black.gif) 0 0 repeat-x; color: White; font-weight: bold; font-size: 13px; text-align: left; }
+.svyEdit .label { background: white; vertical-align: top; padding: 5px; }
+.svyEdit INPUT,
+.svyEdit TEXTAREA,
+.svyEdit SELECT { font-size: 11px; font-family: verdana, geneva, helvetica, sans-serif; vertical-align: middle; }
+/*.svyEdit INPUT[type='text'], .svyEdit TEXTAREA{width:530px;}_NO__DOTCOMMA__AFTER__*/
+.svyEdit .svyText { width: 250px }
+.svyEdit .svyShortText { width: 30px }
+.svyEdit .svyMediumText { width: 60px }
+.svyEdit .svyWideText { width: 500px }
+.svyEdit .svyDatePickerIcon { vertical-align: top }
+.svyEdit .svyDatePickerIcon IMG { vertical-align: middle }
+.svyEdit .svyGeoAddress { display: none; width: 300px; height: 300px; border: solid 1px black; margin: 10px; }
+.svyEdit .help_text { font-size: 12px; display: none; padding: 2px 0 4px 0; }
+.svyEdit .footer { padding: 7px; border-bottom: 3px solid #666; border-top: 3px solid #666; background-color: #ccc; }
+.svyEdit .header { padding: 7px; border-bottom: 3px solid #666; background-color: #ccc; }
+/*.svyEdit span.mceEditor {display:none;}   -- this just doesnt work _NO__DOTCOMMA__AFTER__*/
+.svyEdit .mceEditor .mceToolbar { border-top: solid 1px #cccccc !important; border-bottom: solid 1px #cccccc !important; }
+.svyEdit .mceEditor .mceToolbar .mceToolbar { border: none !important }
+.svyEdit .mceEditor .mceStatusbar { line-height: 20px; border-top: solid 1px #cccccc !important; border-bottom: solid 1px #cccccc !important; }
+.svyEdit .mceEditor .mceStatusbar DIV { color: #cccccc; padding-left: 3px; }
+/* for sub tables we don't want borders or extra padding */
+.svyEdit TD TD { padding: 0px !important; border: 0 !important; }
+.svyEdit OL { margin: 0; padding: 0; list-style-position: inside; }
+.svyEdit OL LI { padding: 2px 0 }
+.svyEdit UL { margin: 0; padding: 0; }
+.svyEdit UL.RatingOptions LI { float: left; width: 30px; }
+.svyEdit UL.RatingOptions LI INPUT { vertical-align: bottom; margin-right: 3px; }
+.svyHorizontalRadioList TD { vertical-align: middle }
+.svyScrollHeight { height: 200px; overflow: auto; }
+.svyEdit TR.advancedOptions .label { font-style: italic }
+.svyEdit .section { border-top: 4px solid #929497 }
+/* Subform  */
+.svySubform .remove input { padding: 0px; width: 15px; }
+.svySubform td { vertical-align: top }
+/* Breadcrumb */
+.svyBreadcrumb { display: block; margin-top: 5px; }
+/* Calendar */
+.svyCal { border: solid 1px black }
+.svyCalToday { color: black; background: #87b1f5; }
+.svyCalSelector A { background: #FFCC66 }
+.svyCalNextPrev A { font-size: 9pt; text-decoration: none; }
+.svyCalDay { background: #cccccc }
+.svyCalSelected { font-weight: bold; background: #CCCCFF; }
+.svyCalTitle { font-size: 9pt; font-weight: bold; color: white; background: #2a166f; }
+.svyCalOtherMonth A { color: silver }
+/* NavTree */
+.svyNavTree { width: 600px; margin: 0; padding: 0; background: #eeeeee; }
+.svyNavTree LI { list-style-type: none; margin-left: 0; padding: 0; }
+.svyNavTree A { display: block; padding: 5px 10px; text-decoration: none; }
+.svyNavTree A SPAN { text-decoration: underline }
+.svyNavTree .link a { float: right; margin-left: 5px; width: 15px; text-align: right; font-weight: normal; font-size: 10px; padding-left: 0px; border: none; }
+.svyNavTree .newpage a { float: right; margin-left: 5px; width: 15px; text-align: right; font-weight: normal; font-size: 10px; padding-left: 0px; border: none; }
+.svyNavTree .sort_position { float: right; margin-left: 5px; width: 35px; text-align: right; font-weight: normal; font-size: 10px; }
+.svyNavTree .preview { float: right; margin-left: 5px; font-weight: normal; font-size: 10px; }
+.svyNavTree LI A { padding-left: 10px; background: #939393; color: white; font-weight: bold; font-size: 12px; }
+.svyNavTree LI UL { margin: 0; padding-left: 0; }
+.svyNavTree LI UL LI A { padding-left: 30px; background: #bfbfbf; color: black; font-weight: normal; font-size: 11px; border-bottom: solid 1px #ccc; }
+.svyNavTree LI UL LI UL LI A { padding-left: 50px; background: #e6e6e6; }
+.svyNavTree LI UL LI UL LI UL LI A { padding-left: 70px; background: #fff; }
+.svyNavTree .invisible A { color: Silver; background: white; font-weight: normal; font-size: 11px; }
+/* highlighting - makes use of jquery in admin.master*/
+.svyNavTree li a.highlight { background-color: #c2c2ff } /* top level highlight */
+/*.svyNavTree li li a.highlight { background-color: #c2c2ff; }_NO__DOTCOMMA__AFTER__*/
+.address { width: 300px }
+.address_map { display: none; height: 300px; border: solid 1px #244a4f; }
+#searchButton { font-size: 8pt; height: 10px; }
+/* these are copied from the site.css for the mceEditor - add !important to everything except the margins */
+.mceText { font-family: Arial, sans-serif!important }
+.mce_p .mceText { font-size: 12px!important; color: #999999!important; }
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+/* these are copied from the site.css for the mceEditor - add !important to everything except margins, padding, line-height etc     */
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+/*.mce_h1 .mceText { font-size: 28px!important; font-weight: bold!important; color: #a75b4e!important; margin: 0 0 7px 0; }
+.mce_h2 .mceText { font-size: 14px !important; font-weight: bold !important; color: #1E3444 !important; margin: 0px 0 7px 0; line-height: 150%; }
+.mce_h3 .mceText { font-size: 13px !important; font-weight: bold !important; color: #1E3444 !important; margin: 12px 0 3px 0; line-height: 150%; }
+.mce_h4 .mceText { font-size: 12px !important; font-weight: bold !important; color: #1E3444 !important; margin: 12px 0 3px 0; line-height: 150%; }
+.mce_h5 .mceText { font-size: 15px !important; font-weight: normal !important; color: #032969 !important; margin: 20px 20px 20px 20px; line-height: 150%; }
+.mce_h6 .mceText { font-size: 11px !important; font-weight: normal !important; color: #666 !important; margin: 0 0 10px 0; line-height: 140%; }
+
+.mceListBoxMenu H1 { font-size: 38px !important; font-weight: normal !important; color: #999999 !important; margin: 5px 0 11px 0; }
+.mceListBoxMenu H2 { font-size: 16px !important; font-weight: bold !important; color: #cc0000 !important; margin: 0 0 2px 0; }
+.mceListBoxMenu H3 { font-size: 14px !important; font-weight: normal !important; color: #0099ff !important; margin: 13px 0; }
+.mceListBoxMenu H4 { font-size: 13px !important; font-weight: bold !important; color: black !important; margin: 13px 0 7px 0; }
+.mceListBoxMenu H5 { font-size: 16px !important; font-weight: normal !important; color: #000066 !important; margin: 0 0 7px 0; }
+
+*/
+.mce_h1 .mceText { font-size: 16px !important; font-weight: normal!important; color: #002975!important; text-transform: uppercase; }
+.mce_h2 .mceText { font-size: 14px !important; font-weight: normal !important; color: #002975 !important; text-transform: uppercase; }
+.mce_h3 .mceText { font-size: 14px !important; font-weight: normal !important; color: #003366 !important; }
+.mce_h4 .mceText { font-size: 12px !important; font-weight: normal !important; color: #002975 !important; }
+.mce_h5 .mceText { font-size: 12px !important; font-weight: bold !important; }
+.mceListBoxMenu H1 { font-size: 16px !important; font-weight: normal !important; color: #002975 !important; text-transform: uppercase; }
+.mceListBoxMenu H2 { font-size: 14px !important; font-weight: normal !important; color: #002975 !important; text-transform: uppercase; }
+.mceListBoxMenu H3 { font-size: 14px !important; font-weight: normal !important; color: #003366 !important; }
+.mceListBoxMenu H4 { font-size: 12px !important; font-weight: normal !important; color: #002975 !important; }
+.mceListBoxMenu H5 { font-size: 12px !important; font-weight: bold !important; }
+input.sortposition { width: 120px }
+/* ------ savvy model forms image upload control with select from server -------*/
+.svyPicSelectContainer { position: relative }
+.svyEdit a.svyPicChooseSelectFile,
+.svyEdit a.svyPicCancelChange { color: #06c; display: block; width: 140px; padding: 1px 0; }
+.svyPicBrowseDimensions { margin-left: 10px }
+.svyEdit a.svyPicCancelFile { color: #06c; font-size: 11px; display: block; }
+select.svyPicSelectFile { margin-bottom: 5px; width: 300px; height: 200px; }
+.svyPicSelectFilterLabel { position: absolute; top: 73px; left: 310px; }
+.svyPicSelectPreview { position: absolute; left: 310px; }
+.svyPicCancelChange { margin-bottom: 5px }
+img.SavvyUploadPreview { margin-right: 10px; float: left; width: 30px; }
+#ulc_Picture{ width: 560px;}
+.svyPicOptions { }
+.svyEdit a.svyPicChange { color: #06c; display: block; width: 140px; padding: 5px 0 2px 3px; }
+label.svyPicRemove { float: left; margin-top: 1px; padding-bottom: 4px; }
+.svyPicSites { float: right; margin-right: 36px; }
+/* ------ END savvy model forms image upload control with select from server -------*/
+/*input.delete { float: right; }
+a.delete { float: right; padding-top: 6px; }*/
+a.delete { margin-left: 50px; padding-top: 6px; }
+
+.story-template,
+.page-template,
+.link-template,
+.special-template { display: none }
+
+a.colsort { color: Black; }
+
+.InfoMessage {
+	background: url(../../admin/images/info-icon-small.gif) no-repeat 10px;
+	border: 2px solid #4969c1;
+	padding: 10px;
+	padding-left: 40px;
+	color: #4969c1;
+	font-size: 13px;
+	font-weight: bold;
+	margin-bottom: 12px;	
+	-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px;
+	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.ErrorMessage {
+	background: url(../../admin/images/error-icon-small.gif) no-repeat 10px;
+	border: 2px solid #cc0000;
+	padding: 10px;
+	padding-left: 40px;
+	color: #cc0000;
+	font-size: 13px;
+	font-weight: bold;
+	margin-bottom: 12px;	
+	background-color: White;
+	-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px;
+	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.WarningMessage, .validation-summary-errors {
+	background: url(../../admin/images/warning-icon-small.gif) no-repeat 10px;
+	border: 2px solid #fd9c0f;
+	padding: 10px;
+	padding-left: 40px;
+	color: orange;
+	font-size: 13px;
+	font-weight: bold;
+	margin-bottom: 12px;	
+	background-color: White;
+	-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px;
+	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.validation-summary-errors ul {
+	margin: 0 25px;
+	padding: 0;
+}
+
+/* bubble validation */
+.validation{ display: none; position: relative;}
+.validation .outer{ background: url(../../images/error_msg_arrow.png) 15px 19px no-repeat; padding-bottom: 12px;  position: absolute; top: -30px; left: -35px; z-index: 99; width: auto !important;}
+.validation .inner{ background: #e30418; font-weight: bold; font-size: 11px;line-height: 15px;color: #fff; padding: 5px 10px;  border-radius: 4px; white-space:nowrap;}
+
+.publish-status-Live {
+	font-weight: bold;
+	color: Green;
+	text-transform: uppercase;
+}
+
+.publish-status-Scheduled {
+	font-weight: bold;
+	color: #00cccc;
+}
+
+.yesno-Yes {
+	font-weight: bold;
+	color: green;
+}
+.yesno-No {
+	font-weight: bold;
+	color: #cc0000;
+}
+
+.geoaddress-map {
+	height: 300px;
+}
+
+form { padding:0; margin:0; }
+
+.CreateNewButton {
+	float: left;
+}
+.clientLogo{float:right;}
+.hide{ display: none;}
+
+.ui-datepicker-trigger{
+vertical-align:middle;
+margin:1px 2px;
+}
+.placeholder-active{color:#999;}
+#searchBox{ width: 200px;}
+
+
+/* jQuery UI calendar override*/
+/*this is to override the default black calendar in http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/themes/vader/jquery-ui.css */
+.ui-datepicker-calendar th{ border:1px solid #333;}
+.ui-datepicker-calendar th span{ color: #ccc!important;}
+.ui-datepicker td a:hover{ text-decoration: none;}
+.ui-datepicker select.ui-datepicker-month{ width: 50px;}
+.ui-datepicker select.ui-datepicker-year{ width: 70px;}
+
+/* jquery.clockpick */
+.ClockPick_button { vertical-align: middle; margin:0 2px; }
+.svyDateInput { width:90px; }
+.svyTimeInput { width:70px; }
+.svyDateTimeInput { width:140px; }
+
+.good {font-weight:bold;color:green;}
+.bad {font-weight:bold;color:#cc0000;}

@@ -1,0 +1,1 @@
+put plugins in separate subfolders

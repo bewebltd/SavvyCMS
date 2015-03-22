@@ -1,0 +1,50 @@
+<%@ Page Title="Edit [---pagetitle---]" Language="C#" MasterPageFile="~/admin/admin.master" AutoEventWireup="true" CodeFile="[---tablename---]Edit.aspx.cs" Inherits="Savvy.Admin.[---tablename---]Edit" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="BodyContent" Runat="Server">
+
+	<asp:Label ID="ErrorMessageArea" CssClass="svyError" runat="server" />
+
+	<asp:FormView ID="EditFV" DataSourceID="EditPage" DataKeyNames="[---tablename---]ID" DefaultMode="Edit" CssClass="svyEditFV" OnItemInserting="EditFV_Inserting" OnItemUpdating="EditFV_Updating" runat="server" >
+		<EditItemTemplate>
+			<table class="svyEdit" cellspacing="0">
+				<tr>
+					<th colspan="2">[---pagetitle---]</th>
+				</tr>				
+				[---editablefields---]
+				<tr>
+					<td colspan="2" class="footer">
+						<asp:Button Text="Save & Refresh" CommandName="Update" ID="SaveAndRefreshButton" OnClick="SaveAndRefreshButton_Click" runat="server" />
+						<asp:Button Text="Save & Return" CommandName="Update" ID="AddOrUpdateButton" OnClick="AddOrUpdateButton_Click" runat="server" />
+						<asp:Button Text="Cancel" CommandName="Cancel" ID="CancelButton" OnClick="CancelButton_Click" runat="server" />
+						<asp:Button Text="Delete" CommandName="Delete" ID="DeleteButton" OnClick="DeleteButton_Click" OnClientClick="return confirm('Are you sure you want to delete this?')" runat="server" />
+						<br/>
+						<asp:ValidationSummary ID="ValidationSummary" DisplayMode="List" ShowSummary="false" ShowMessageBox="true" HeaderText="Please check the following:" runat="server" />
+
+					</td>
+				</tr>
+			</table>
+		</EditItemTemplate>
+	</asp:FormView>	
+
+	<bwb:svySqlDataSource
+		ID="EditPage"
+		DeleteCommand="DELETE FROM [---tablename---] WHERE [---tablename---]ID=@[---tablename---]ID" 
+		InsertCommand="INSERT INTO [---tablename---] ([---insertcolumns---]) VALUES ([---insertvalues---]); SELECT @NewID = @@Identity"
+		SelectCommand="SELECT * FROM [---tablename---] WHERE [---tablename---]ID=@[---tablename---]ID" 
+		UpdateCommand="UPDATE [---tablename---] SET [---updatecolumnsandvalues---] WHERE [---tablename---]ID=@[---tablename---]ID" runat="server">
+		<SelectParameters>
+			<asp:QueryStringParameter Name="[---tablename---]ID" Type="String" QueryStringField="[---tablename---]ID" />
+		</SelectParameters>
+		<InsertParameters>
+			<asp:Parameter Name="NewID" Direction="Output" Size="4" Type="int32" />
+		</InsertParameters>
+		<UpdateParameters>
+			<asp:Parameter Name="[---tablename---]ID" Type="String" />
+		</UpdateParameters>
+		<DeleteParameters>
+			<asp:Parameter Name="[---tablename---]ID" Type="String" />
+		</DeleteParameters>
+	</bwb:svySqlDataSource>
+
+</asp:Content>
+

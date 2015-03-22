@@ -1,0 +1,166 @@
+﻿<%@ Master Language="C#" Inherits="Site.SiteCustom.ViewMaster" %>
+<%@ Import Namespace="Beweb" %>
+<%@ Import Namespace="Models" %>
+<%@ Import Namespace="Site.Controllers" %>
+<%@ Import Namespace="Site.SiteCustom" %>
+<%// ScheduledTaskController.Check(); %>
+<% PasswordLockController.CheckCookie(); %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">-->
+	<meta content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" name="SKYPE_TOOLBAR" /> <%--turn off skype toolbar recognise phone numbers--%>
+	<meta name="apple-mobile-web-app-capable" content="yes">    
+	<meta http-equiv="X-UA-Compatible" content="IE=10" />
+<!-- font include - see https://github.com/typekit/webfontloader
+	<style>
+	.wf-hide-until-loaded,.wf-loading { -ms-opacity: 0; opacity: 0; -webkit-transition: opacity 1s ease; -moz-transition: opacity 1s ease; -ms-transition: opacity 1s ease; -o-transition: opacity 1s ease; transition: opacity 1s ease; }
+	.wf-active,.wf-inactive { -ms-opacity: 1; opacity: 1;}
+	</style>
+	<script type="text/javascript">
+	WebFontConfig = { google: { families: ['Open Sans'] } };
+	(function () {
+		var wf = document.createElement('script');
+		wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+	'://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js';
+		wf.type = 'text/javascript';
+		wf.async = 'true';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(wf, s);
+	})();
+	</script>
+-->
+	<meta name="description" content="<%=Model.MetaDescription.HtmlEncode()%>" />
+	<meta name="keywords" content="<%=Model.MetaKeywords.HtmlEncode() %>" />
+
+	<link rel="shortcut icon" href="<%=Web.Root %>favicon.ico" type="image/x-icon" /> 
+	<title><%=Model.PageTitleTagOutput%></title>
+	<script type="text/javascript">
+		var websiteBaseUrl = "<%=Web.BaseUrl%>";
+		var showDetailedErrors = "<%=Beweb.Error.ShowDetailedErrors.ToString().ToLower()%>"=="true";
+		var isMobile = "<%=Web.IsMobileDevice.ToString().ToLower()%>"=="true";
+		<%if(Model.WebsiteImagesBaseUrl != "(local)") { %>var websiteImagesBaseUrl = '<%=Model.WebsiteImagesBaseUrl%>';<% }%>
+	</script>
+	
+	<%Util.IncludeThemeStyles(); %>
+	<%Util.IncludeStylesheetFile("~/site.css"); %>
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	<%Util.IncludejQuery(); %>
+	<%Util.IncludeThemeJavascript(); %>
+	<%Util.IncludeJavascriptFile("~/js/common.js"); %>	
+	
+<!--	
+	<script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js" defer async></script>
+	<script>
+	WebFont.load({
+		google: {
+			families: ['Open Sans'] 
+			//['Passion One:400,700', 'Roboto:400,500']
+		},
+		active: function() {
+			onFontLoad();
+		},
+		inactive: function() {
+			onFontLoad();
+		}
+	});
+	
+	function onFontLoad() {
+		// Wait for once the DOM is ready or executes immediately if dom already loaded
+		$(document).ready(function () {
+			setTimeout(function () {
+				//if (window.console) console.log("onFontLoad - showing fonts...");
+			}, 300);
+		});
+	}
+	</script>
+-->
+	
+	<asp:ContentPlaceHolder id="HeadContent" runat="server"></asp:ContentPlaceHolder>
+
+	<%if (Util.ServerIsLive) { %>
+		<meta name="robots" content="index">
+		<meta name="canonical" content="<%=Web.FullRawUrl%>">
+		<%=Settings.All.AnalyticsTags %>
+	<%} else { %>
+		<meta name="robots" content="noindex">
+	<% } %>
+	<style media="print">.dontprint { display:none;  }</style>
+</head>
+
+<body id="thebody" class="site-body <%if(Web.IsMobile || Web.IsMobileDevice){ %>mobile <%} %> <%=Model.BodyCssClass%>">
+	
+<%//Html.RenderAction<CommonController>(controller => controller.SvyAdminBanner(Model.ContentPage)); %>
+
+<% Html.RenderAction<CommonController>(c => c.WarningBar());%>
+
+<div id="wrapper" class="clearfix">
+	
+	<div id="header">
+		<div class="container">
+			<h1 id="title"><a href="<%=Web.Root%>">sitename</a></h1>
+		</div> <!-- /container -->
+	</div> <!-- /header -->	
+	
+	<%Html.RenderAction<NavigationController>(controller => controller.MainNav(Model.SectionCode, Model.ContentPage, false)); %>
+	
+	<asp:ContentPlaceHolder id="BodyContent" runat="server"></asp:ContentPlaceHolder>
+
+	<div id="StickyFooterPush"></div>
+</div> <!-- /wrapper -->
+
+<div id="StickyFooter">  <!-- StickyFooter needs to be outside of the wrapper -->
+	<div id="footer" class="container">
+		<div class="row">
+				
+			<div class="grid-4">
+				<% var footerTextBlock = TextBlockCache.GetRich("Footer","Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."); %>
+				<h1 id="footer-logo"><%:footerTextBlock.Title %></h1>
+				<p><%=footerTextBlock.BodyTextHtml %></p>
+			</div> <!-- /grid-4 -->
+				
+			<div class="grid-4">
+				<h3><span class="slash">//</span> Socialize with us!</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt magna aliqua.</p>
+				<ul class="social-icons-container">						
+					<li><a href="javascript:;" class="social-icon social-icon-twitter">Twitter</a></li>
+					<li><a href="javascript:;" class="social-icon social-icon-googleplus">Google +</a></li>
+					<li><a href="javascript:;" class="social-icon social-icon-facebook">Facebook</a></li>
+				</ul>
+			</div> <!-- /grid-4 -->
+				
+			<div class="grid-4">
+				<h3><span class="slash">//</span> Subscribe and get updates</h3>
+				<p>Subscribe to our newsletter and get exclusive deals you wont find anywhere else straight to your inbox!</p>
+					<input type="text" name="subscribe_email" placeholder="Your Email">
+					<br />
+					<button class="btn btn-warning">Subscribe</button>
+			</div><!-- /grid-4 -->
+
+		</div> <!-- /row -->
+	</div> <!-- /container -->
+
+	<div id="copyright">
+		<div class="container">
+			<div class="row">
+				<div id="rights" class="grid-6">© <%=DateTime.Now.Year %>. All Rights Reserved.</div>
+				<div id="totop" class="grid-6"></div>
+			</div> <!-- /row -->
+		</div> <!-- /container -->
+	</div> <!-- /copyright -->
+
+</div> <!-- /footer -->
+
+
+<%--<a href="" onclick="$('#brcap').show();return false;"><br/><small>(?)</small></a>--%>
+ <%--<div id="brcap" style="display: none">--%>
+ <%--<small><%=Savvy.Site.GetBrowserCaps().Replace("\n","<br>") %>	 </small>--%>
+<%Sql.OutputTraceLog(); %>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<%@ Page Title="Edit [---pagetitle---]" Language="C#" MasterPageFile="~/admin/admin.master" AutoEventWireup="true" CodeFile="[---tablename---]Edit.aspx.cs" Inherits="Savvy.Admin.[---tablename---]Edit" %>
+<%@ Import Namespace="Beweb" %>
+<%@ Import Namespace="Models" %>
+<%@ Import Namespace="Savvy" %>
+
+<asp:Content ID="head" runat="server" ContentPlaceHolderID="HeadContent">
+	<script type="text/javascript">
+		$(document).ready(function() {
+			BewebInitForm("aspnetForm")
+		});
+	</script>
+</asp:Content>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="BodyContent" Runat="Server">
+	<script language="javascript" type="text/javascript">
+	</script>
+	<asp:Label ID="ErrorMessageArea" CssClass="svyError" runat="server" />
+
+	<table class="svyEdit" cellspacing="0">
+		<tr>
+			<th colspan="2"><%=pageTitle %></th>
+		</tr>				
+		[---modeleditablefields---]
+		<%//= Savvy.Site.ShowModificationLog(record)%>
+		<tr>
+			<td colspan="2" class="footer">
+				<asp:Button Text="&nbsp;&nbsp;&nbsp;Save&nbsp;&nbsp;&nbsp;" ID="AddOrUpdateButton" OnClick="AddOrUpdateButton_Click" runat="server" />
+				<asp:Button Text="Save &amp; Refresh" ID="SaveAndRefreshButton" OnClick="SaveAndRefreshButton_Click" runat="server" />
+				<asp:Button Text="Cancel" CommandName="Cancel" ID="CancelButton" OnClick="CancelButton_Click" CssClass="cancel" runat="server" />
+				<asp:Button Text="Delete" CommandName="Delete" ID="DeleteButton" OnClick="DeleteButton_Click" CssClass="delete" OnClientClick="return confirm('Are you sure you want to delete this?')" runat="server" />
+				<br/>
+				<asp:ValidationSummary ID="ValidationSummary" DisplayMode="List" ShowSummary="false" ShowMessageBox="true" HeaderText="Please check the following:" runat="server" />
+				<input type="hidden" name="df_returnpage" value="<%=Util.GetReturnPage() %>" />
+			</td>
+		</tr>
+	</table>
+</asp:Content>
+

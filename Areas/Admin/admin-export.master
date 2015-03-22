@@ -1,0 +1,3 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="admin-export.master.cs" Inherits="Savvy.AdminExportMaster" %>
+<%@ Import Namespace="Beweb"%>
+<asp:ContentPlaceHolder ID="BodyContent" runat="server"></asp:ContentPlaceHolder>

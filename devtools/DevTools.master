@@ -1,0 +1,81 @@
+﻿<%@ Master Language="C#" %>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Savvy | DevTools</title>
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="styles/reset.css" />
+	<link rel="stylesheet" type="text/css" href="styles/global.css" />
+</head>
+<body>
+
+	<header>
+		<h1>Savvy<strong>DevTools</strong></h1>
+		<p class="<%=Util.ServerIs()%>">
+			<%
+				switch (Util.ServerIs()) {
+						case "DEV": Web.Write("Dev server"); break;
+						case "STG": Web.Write("Staging server"); break;
+						case "LVE": Web.Write("Live server"); break;
+				}
+			%>
+		</p>
+	</header>
+
+	<nav id="menu">
+		<ul>
+			<li><a href="Default.aspx">Realtime Monitor</a></li>
+			<li><a href="#" onclick="return false;">ASP.NET</a>
+				<ul>
+					<li><a href="#">Generate Models</a></li>
+				</ul>
+			</li>
+			<li><a href="#" onclick="return false;">Database</a>
+				<ul>
+					<li><a href="AddFields.aspx">Add missing tables/fields</a></li>
+					<li><a href="DBStructure.aspx">Structure Comparison</a></li>
+					<li><a href="DBManager.aspx">Manager</a></li>
+					<li><a href="DBUsage.aspx">Usage</a></li>
+				</ul>
+			</li>
+			<li><a href="#" onclick="return false;">Filesystem</a>
+				<ul>
+					<li><a href="Vacuum2.aspx">Vacuum</a></li>
+				</ul>
+			</li>
+			<li><a href="#" onclick="return false;">Tools</a>
+				<ul>
+
+					<li>
+						<a href="#">Encode/Decode</a>
+						<ul>
+							<li><a href="#">Base64</a></li>
+							<li><a href="#">Keystone</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Counter</a></li>
+					<li><a href="#">Json Parse</a></li>
+					<li><a href="TextCompare.aspx">Text Compare</a></li>
+				</ul>
+			</li>
+			<li><a href="#" onclick="return false;">Tests</a>
+				<ul>
+					<li><a href="#">Numbers</a></li>
+					<li><a href="#">Active Record</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+	
+	<script type="text/javascript" src="scripts/jquery.min.js"></script>
+
+	<section id="content">
+		<asp:ContentPlaceHolder ID="BodyContent" runat="server"></asp:ContentPlaceHolder>	
+	</section>
+	
+	<!--[if lt IE 9]><script language="javascript" type="text/javascript" src="scripts/excanvas.js"></script><![endif]-->
+	<script type="text/javascript" src="scripts/Modal.js"></script>
+	<script type="text/javascript" src="scripts/core.js"></script>
+</body>
+</html>
